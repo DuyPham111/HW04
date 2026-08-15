@@ -1,0 +1,33 @@
+{
+  "name": "hw04-automation-testing",
+  "version": "1.0.0",
+  "description": "HW04 - Automation Testing on EShop SUT (Playwright, data-driven, 3 browsers). SV 23127183.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "preflight": "node tools/preflight.mjs",
+    "test:a": "playwright test tests/feature-a-login.spec.js",
+    "test:b": "playwright test tests/feature-b-coupon.spec.js",
+    "test:c": "playwright test tests/feature-c-product-admin.spec.js",
+    "test:all-browsers": "node tools/run-all-browsers.mjs",
+    "summary": "node tools/summarize.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuyPham111/HW04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DuyPham111/HW04/issues"
+  },
+  "homepage": "https://github.com/DuyPham111/HW04#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
