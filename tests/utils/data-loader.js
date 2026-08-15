@@ -1,0 +1,129 @@
+// data-loader.js — nạp test data từ .csv / .json NGOÀI script (§6: "The test data must be
+// stored in a separate .csv or .json file — hardcoded inline arrays or objects in the script
+// are not accepted").
+//
+// Vì thế các file .spec.js không được chứa mảng dữ liệu nào; chúng chỉ gọi loadCsv()/loadJson().
+//
+// CSV parser viết tay (không thêm dependency): hỗ trợ ô bọc trong dấu ngoặc kép có chứa dấu
+// phẩy, và "" là escape của một dấu ngoặc kép bên trong ô.
+//
+// Token trong ô dữ liệu — cho phép diễn tả các giá trị mà CSV/JSON không viết thẳng ra được:
+//   <empty>            → chuỗi rỗng ''            (test case "để trống")
+//   <spaces:3>         → '   '                    (chuỗi chỉ gồm khoảng trắng)
+//   <repeat:A:255>     → 'A' × 255                (test case biên độ dài)
+//   <uniq>             → hậu tố duy nhất theo lần chạy (email/tên sản phẩm không trùng),
+//                        thay được ở BẤT KỲ đâu trong chuỗi, ví dụ "lock-<uniq>@hw04.test"
+// Token được giải ở tầng loader để file dữ liệu vẫn đọc được bằng mắt và bằng Excel.
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.join(HERE, '..', 'data');
+
+/**
+ * Hậu tố duy nhất cho mỗi lần chạy suite. Dùng cho các test case tạo dữ liệu mới (đăng ký
+ * user, tạo sản phẩm...): chạy lại với cùng một giá trị cố định sẽ đụng dữ liệu của lần
+ * chạy trước và biến một test case hợp lệ thành flaky. Ổn định trong cùng một tiến trình
+ * (một project browser = một worker process), và có thể ép cố định qua PW_RUN_ID để 9 lượt
+ * (3 feature × 3 engine) dùng chung một mã, dễ truy vết trong DB.
+ */
+export const RUN_ID = process.env.PW_RUN_ID || Date.now().toString(36);
+
+/** Tách một dòng CSV thành mảng ô, xử lý dấu ngoặc kép và escape "". */
+function splitCsvLine(line) {
+  const cells = [];
+  let cur = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; } else { inQuotes = false; }
+      } else {
+        cur += ch;
+      }
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ',') {
+      cells.push(cur);
+      cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  cells.push(cur);
+  return cells;
+}
+
+/** Giải các token <...> trong một ô dữ liệu. */
+export function resolveToken(raw) {
+  const v = String(raw ?? '').trim();
+
+  if (v === '<empty>') return '';
+
+  const spaces = v.match(/^<spaces:(\d+)>$/);
+  if (spaces) return ' '.repeat(Number(spaces[1]));
+
+  const repeat = v.match(/^<repeat:(.+?):(\d+)>$/);
+  if (repeat) return repeat[1].repeat(Number(repeat[2]));
+
+  // <uniq> có thể nằm giữa chuỗi: "hw04-<uniq>@domain.com"
+  return v.replace(/<uniq>/g, RUN_ID);
+}
+
+/**
+ * Nạp file CSV → mảng object theo dòng header.
+ * Dòng trống và dòng bắt đầu bằng '#' được bỏ qua (cho phép ghi chú ngay trong file dữ liệu).
+ */
+export function loadCsv(fileName) {
+  const file = path.join(DATA_DIR, fileName);
+  const text = fs.readFileSync(file, 'utf8');
+
+  const rawLines = text.split(/\r?\n/);
+  const lines = [];
+  const lineNumbers = []; // số dòng gốc trong file, để báo lỗi đúng vị trí
+
+  rawLines.forEach((l, idx) => {
+    if (l.trim() === '' || l.trimStart().startsWith('#')) return;
+    lines.push(l);
+    lineNumbers.push(idx + 1);
+  });
+
+  if (lines.length < 2) {
+    throw new Error(`File dữ liệu ${fileName} không có dòng dữ liệu nào (chỉ có header hoặc rỗng).`);
+  }
+
+  const header = splitCsvLine(lines[0]).map((h) => h.trim());
+
+  return lines.slice(1).map((line, i) => {
+    const cells = splitCsvLine(line);
+    if (cells.length !== header.length) {
+      throw new Error(
+        `${fileName} dòng ${lineNumbers[i + 1]}: có ${cells.length} ô nhưng header có ${header.length} cột. ` +
+        `Ô chứa dấu phẩy phải bọc trong dấu ngoặc kép ("...").`,
+      );
+    }
+    const row = {};
+    header.forEach((key, colIdx) => { row[key] = resolveToken(cells[colIdx]); });
+    return row;
+  });
+}
+
+/** Nạp file JSON. Mọi giá trị chuỗi đều được giải token, kể cả trong object/array lồng nhau. */
+export function loadJson(fileName) {
+  const file = path.join(DATA_DIR, fileName);
+  const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));
+  return deepResolve(parsed);
+}
+
+function deepResolve(node) {
+  if (typeof node === 'string') return resolveToken(node);
+  if (Array.isArray(node)) return node.map(deepResolve);
+  if (node && typeof node === 'object') {
+    return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, deepResolve(v)]));
+  }
+  return node;
+}
