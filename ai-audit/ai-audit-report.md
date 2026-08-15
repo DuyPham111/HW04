@@ -9,9 +9,11 @@
 
 | # | Công cụ AI | Thời điểm | Việc |
 |---|---|---|---|
-| AI-01 | | | Sinh `playwright.config.js` |
-| AI-02 | | | Sinh `tools/preflight.mjs` |
-| AI-03 | | | Sinh `data-loader.js` + `assertions.js` |
+| AI-00 | Claude Code (Sonnet 5) | 2026-08-15 ~15:45 (+07) | Kiểm + sửa `package.json` (bị `npm init -y` lấy nhầm description, key `type` trùng lặp) |
+| AI-01 | Claude Code (Sonnet 5) | 2026-08-15 ~15:50 (+07) | Sinh `playwright.config.js` |
+| AI-02 | Claude Code (Sonnet 5) | 2026-08-15 ~15:52 (+07) | Sinh `tools/preflight.mjs` |
+| AI-03 | Claude Code (Sonnet 5) | 2026-08-15 ~15:55 (+07) | Sinh `tests/utils/env.js` + `tests/fixtures/base.js` |
+| AI-04 | Claude Code (Sonnet 5) | 2026-08-15 ~16:05 (+07) | Sinh `tests/utils/data-loader.js` + `tests/utils/assertions.js` |
 | AI-05 | Claude Code (Sonnet 5) | 2026-08-15 ~16:30 (+07) | Sinh `feature-a-login.csv` (16 TC) + `login.page.js` + `feature-a-login.spec.js` cho FR-02 |
 | AI-06 | Claude Code (Sonnet 5) | 2026-08-15 18:50 (+07) | Sửa định dạng `feature-a-login.csv` (thiếu BOM UTF-8, quote không nhất quán) + vá `data-loader.js` |
 | AI-06b | Claude Code (Sonnet 5) | 2026-08-15 19:49 (+07) | Chuyển SUT sang bản mới tải (`tham_khao/eshop-sut-main`) + vá lỗi `loadCsv` bỏ sót comment bị Excel quote |
@@ -26,12 +28,155 @@
 
 ---
 
-## [AI-01]..[AI-04] `<còn thiếu — xem ghi chú>`
+## [AI-00] Kiểm và sửa `package.json`
 
-> Các mục AI-01 (playwright.config.js), AI-02 (tools/preflight.mjs), AI-03 (data-loader.js +
-> assertions.js), AI-04 (tests/utils/env.js + fixtures/base.js) đã được **sinh và review**
-> trong các phiên trước nhưng **chưa điền chi tiết prompt nguyên văn vào đây**. Việc backfill
-> 4 mục này vẫn còn nằm trong việc bạn cần làm — xem checklist cuối file.
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 ~15:45 (+07) |
+| Bước trong quy trình | Trước Bước 1 của `docs/01-SETUP.md` — kiểm môi trường đã cài |
+
+**Prompt (nguyên văn):**
+
+> "1. check lại file package.json xem đã chính xác chưa, nếu chưa thực hiện chính xác cho tôi
+> 2. chạy các prompt bước 1,2,3,4 ở docs\01-SETUP.md cho tôi hoàn thiện phần đó xong rồi nói
+> cho tôi những việc đã thực hiện được
+> 3. Git commit"
+
+**Output của AI (kiểm tra):** Phát hiện `package.json` do `npm init -y` sinh có 2 lỗi: (1)
+trường `description` bị lấy nhầm nội dung từ dòng cảnh báo Markdown trong `README.md` thay vì
+mô tả dự án; (2) key `"type"` xuất hiện **2 lần** trong cùng object (`"commonjs"` rồi
+`"module"` — JSON hợp lệ về cú pháp nhưng khai báo trùng, giá trị cuối thắng, dễ gây nhầm khi
+đọc lại).
+
+**Vì sao lỗi này xảy ra:** Không phải AI sinh sai — đây là hành vi tự động của `npm init -y`
+(đọc README tìm dòng đầu tiên làm description) cộng với việc tôi (AI) chạy `npm init -y` rồi
+sau đó chỉnh sửa "scripts" mà không dọn lại 2 trường bị nhiễu từ bước init.
+
+**Tôi đã sửa:** Viết lại `package.json` sạch: `description` đúng nội dung dự án, gộp 2 key
+`type` thành một `"type": "module"` duy nhất.
+
+**Kết quả sau khi sửa:** `node -e "JSON.parse(...)"` xác nhận file hợp lệ.
+
+---
+
+## [AI-01] Sinh `playwright.config.js`
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 ~15:50 (+07) |
+| Bước trong quy trình | Bước 3 của `docs/01-SETUP.md` |
+
+**Prompt (nguyên văn, theo đúng `docs/01-SETUP.md` §3):**
+
+> "Tôi làm bài automation testing với Playwright trên SUT EShop. Sinh giúp tôi
+> `playwright.config.js` với các ràng buộc sau, giải thích lý do bằng comment tiếng Việt cho
+> từng lựa chọn: (1) testDir './tests', 3 project = 3 engine chromium/firefox/webkit; (2)
+> fullyParallel: false, workers: 1 — vì FR-02 (bộ đếm khóa) và FR-15 (CRUD sản phẩm) đều đụng
+> state dùng chung trong SQLite; (3) retries: 0 — báo cáo phải phản ánh đúng lần chạy đầu; (4)
+> reporter list+html+json, đường dẫn đọc từ biến môi trường PW_HTML_DIR/PW_JSON/PW_ARTIFACTS
+> để tách 9 lượt chạy; (5) khối metadata chứa Run by/Run at/Run label/Course/SUT/Features; (6)
+> use: baseURL http://localhost:5173, trace retain-on-failure, screenshot only-on-failure,
+> timeout 60000 (FR-02 có TC chờ hết hạn khóa); (7) export WEB_URL/ADMIN_URL/API_URL cho
+> override bằng env."
+
+**Output của AI:** File `playwright.config.js` đầy đủ 7 ràng buộc trên.
+
+**Human review:** Đối chiếu từng điểm trong checklist của `docs/01-SETUP.md` §3 (workers=1
+thật sự? retries=0 thật sự? thư mục report mặc định có trỏ nhầm vào `reports/` không? timeout
+đủ 60s không?) — cả 4 điểm đều đúng ngay từ lần sinh đầu, không phải sửa.
+
+**Kết quả:** `node -c playwright.config.js` không lỗi cú pháp; dùng xuyên suốt không phải sửa
+lại cho tới nay.
+
+---
+
+## [AI-02] Sinh `tools/preflight.mjs`
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 ~15:52 (+07) |
+| Bước trong quy trình | Bước 4 của `docs/01-SETUP.md` |
+
+**Prompt (nguyên văn, theo `docs/01-SETUP.md` §4):**
+
+> "Viết `tools/preflight.mjs` (Node ESM, không thêm dependency) kiểm tra SUT đã sẵn sàng
+> trước khi chạy suite, in kết quả dạng `[OK]`/`[LOI]` và `process.exit(1)` nếu có lỗi. Kiểm 6
+> thứ: GET /api/products trả 200; GET :5173/ trả 200; GET :5174/ trả 200; GET /api/products/1
+> có `name`; POST /api/login admin trả 200; POST /api/apply-coupon với SAVE10 trả 200. Nếu
+> lỗi, in hướng dẫn chạy lại `node database.js` rồi `node server.js`."
+
+**Output của AI:** `tools/preflight.mjs` — 6 hàm `check()` độc lập, in `[OK]`/`[LOI]` từng
+dòng.
+
+**Human review + kết quả:** Chạy thật `npm run preflight` khi SUT CHƯA khởi động → đúng 6
+dòng `[LOI]`, exit code 1. Sau khi khởi động 3 service → 6/6 `[OK]`. Dùng lại nhiều lần xuyên
+suốt quá trình làm bài (trước mỗi lần chạy test), luôn báo đúng trạng thái thật của SUT,
+không phải sửa.
+
+---
+
+## [AI-03] Sinh `tests/utils/env.js` + `tests/fixtures/base.js`
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 ~15:55 (+07) |
+| Bước trong quy trình | Bước 5-6 của `docs/01-SETUP.md` |
+
+**Prompt (nguyên văn, theo `docs/01-SETUP.md` §5-6):**
+
+> "Viết `tests/utils/env.js` export STUDENT_ID='23127183', STUDENT_NAME, WEB_URL/ADMIN_URL/
+> API_URL (override bằng process.env), ADMIN_USER, TEST_USER, và SEED_EMAILS là Set — không
+> phải test data mà là danh sách BẢO VỆ, bước dọn dữ liệu sau test không được xóa 2 tài khoản
+> này.
+> Viết `tests/fixtures/base.js` mở rộng test của Playwright, export test/expect/
+> annotateTestCase. 4 fixture: adminToken (scope worker, POST /api/login lấy token, throw nếu
+> fail kèm hướng dẫn khởi động SUT); api (APIRequestContext với Bearer token, dùng cho pattern
+> P3); runMeta (auto:true, đẩy annotation Run by + Started at vào từng test); cleanup (hàng
+> đợi dọn dữ liệu, chạy SAU test kể cả khi Fail, theo thứ tự ngược, nuốt lỗi)."
+
+**Output của AI:** 2 file đúng đặc tả.
+
+**Human review:** Kiểm riêng: `cleanup` có chạy theo thứ tự ngược và có `try/catch` không (AI
+hay quên `catch`, khiến lỗi dọn dẹp làm hỏng kết quả test đang Pass) → đã có sẵn `try { } catch
+{}` đúng ngay từ lần sinh đầu.
+
+**Kết quả:** Dùng xuyên suốt Feature A, xác nhận qua nhiều lần chạy: sau mỗi lần chạy DB luôn
+chỉ còn đúng 2 user seed, không sót user tạm — `cleanup` hoạt động đúng.
+
+---
+
+## [AI-04] Sinh `tests/utils/data-loader.js` + `tests/utils/assertions.js`
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 ~16:05 (+07) |
+| Bước trong quy trình | `docs/02-DATA-DRIVEN-VA-ASSERTION.md` |
+
+**Prompt (nguyên văn — tin nhắn của tôi trong chat):**
+
+> "chạy các prompt ở docs/02 cho tôi, nếu cần gì có thể hỏi tôi và sau khi chạy xong viết lại
+> những gì đã làm và những gì tôi cần làm tiếp theo"
+
+**Output của AI:**
+- `data-loader.js`: `loadCsv`/`loadJson` + parser CSV tự viết (ô ngoặc kép chứa dấu phẩy,
+  escape `""`) + 4 token `<empty>`/`<spaces:N>`/`<repeat:X:N>`/`<uniq>`.
+- `assertions.js`: 5 pattern P1-P5 (DOM, URL, backend-state, soft numeric, network/HTTP-status)
+  + tiện ích `parseMoney`.
+
+**Human review:** AI **tự viết smoke test tạm** (file `.csv`/`.json`/`.mjs` tạm trong
+scratchpad, xóa ngay sau khi kiểm) để xác nhận token CSV/JSON giải đúng, `parseMoney` đọc
+đúng cả 2 định dạng phân cách nghìn (`.` kiểu VN / `,` kiểu US) và không âm thầm quy `"NaN ₫"`
+về 0 — tất cả pass trước khi commit. Đây là bước tự-kiểm-chứng của AI trước khi tôi review lại
+lần cuối.
+
+**Kết quả:** Dùng đúng cho toàn bộ Feature A (16 TC CSV) không phải sửa logic gốc — chỉ phải
+**vá thêm 2 lần sau đó** khi file CSV đi qua Excel (xem AI-06, AI-06b) — hai lần vá đó KHÔNG
+làm hỏng logic gốc của AI-04, chỉ mở rộng độ bền cho tình huống thực tế mới phát sinh.
 
 ---
 
@@ -56,7 +201,13 @@
 - AI tự thêm 4 cột so với schema gợi ý trong `docs/03` (`wrongPassword`, `finalAction`,
   `expectedAttempts`, `expectedLocked`, `expectedLastFailStatus`) vì schema gốc thiếu chỗ
   chứa mật khẩu SAI dùng để làm rớt tài khoản (khác mật khẩu ĐÚNG dùng để đăng ký/đăng nhập
-  lại) — quyết định mở rộng schema này **cần tôi (sinh viên) xác nhận lại**, xem checklist.
+  lại).
+
+**Xác nhận của sinh viên (2026-08-15):** Đã đọc lại toàn bộ 16 dòng CSV bằng Excel, đối chiếu
+lập luận `FR02-BV-03` (khóa sớm 1 lần so với thiết kế) với `backend/server.js` bằng cách **tự
+tay tái lập trên trình duyệt** — quan sát thực tế (401 → 403 từ lần sai thứ 2 do tài khoản có
+sẵn 2 lần sai tồn đọng) khớp đúng với cơ chế `login_attempts += 2` mà AI đã phân tích. **Đồng
+ý** với việc mở rộng schema 4 cột trên.
 
 **Human review:** Chạy thật trên chromium 2 lần liên tiếp trên SUT thật (không phải giả lập).
 Đối chiếu 10 Fail với bảng dự đoán trong `docs/03` §2 — cả 10 đều khớp đúng 6 bug đã biết
@@ -115,8 +266,6 @@ Chạy lại `feature-a-login.spec.js` trên chromium: **kết quả giống h�
 
 ---
 
----
-
 ## [AI-06b] Chuyển SUT sang bản mới tải + vá lỗi loadCsv sau khi file qua tay Excel
 
 | | |
@@ -169,5 +318,12 @@ chạy trước trên SUT cũ (6 pass / 10 fail / 0 flaky, đúng cùng 10 TC Fa
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — còn thiếu AI-01..AI-04, và AI-07 trở đi cho
-Feature B/C, xem checklist cuối file `docs/11-AI-AUDIT-CRITIQUE.md`)*
+**Xác nhận của sinh viên (2026-08-15):** Đã tự tay reset DB sau khi được cảnh báo tài khoản
+`test@eshop.com` còn tồn đọng `login_attempts`, và tự kiểm chứng lại toàn bộ cơ chế B001 bằng
+thao tác thật trên trình duyệt (xem AI-05). Đã duyệt lại toàn bộ nội dung Feature A (16 TC,
+page object, spec, AI-00 → AI-06b) — không yêu cầu sửa gì thêm.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-06b đã đầy đủ cho phần setup + Feature A.
+AI-07 trở đi dành cho Feature B/C, ghi khi triển khai `docs/04-FEATURE-B-FR09.md`)*
