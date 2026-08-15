@@ -7,12 +7,20 @@
 
 ## 1. Khởi động SUT
 
-SUT nằm sẵn ở `D:\Nam3\HK3\Kiểm thử phần mềm\HW02-new\eshop-sut-main`. Dùng **3 cửa sổ PowerShell**, mỗi cái một service — đừng đóng chúng khi đang chạy test.
+SUT nằm ở `D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main` (bản tải mới nhất từ repo gốc, thay cho bản HW02 cũ — đã đối chiếu `diff`, mã nguồn hai bản giống hệt nhau nên mọi test data/selector trong `docs/03-05` không cần đổi gì). Dùng **3 cửa sổ PowerShell**, mỗi cái một service — đừng đóng chúng khi đang chạy test.
+
+**Lần đầu tiên** (thư mục mới tải chưa có `node_modules`):
+
+```bash
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\backend"; npm install
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\frontend-web"; npm install
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\frontend-admin"; npm install
+```
 
 **Cửa sổ 1 — Backend (:3000).** Lần đầu và mỗi khi cần reset dữ liệu về gốc:
 
 ```bash
-cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW02-new\eshop-sut-main\backend"; node database.js; node server.js
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\backend"; node database.js; node server.js
 ```
 
 `node database.js` **xóa và seed lại DB** (`database.sqlite`). Chạy nó **trước mỗi lượt 9 browser** để 9 report cùng xuất phát từ một trạng thái — không thì lượt sau ăn rác của lượt trước và số liệu không giải thích được.
@@ -20,13 +28,13 @@ cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW02-new\eshop-sut-main\backend"; node
 **Cửa sổ 2 — Frontend web (:5173):**
 
 ```bash
-cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW02-new\eshop-sut-main\frontend-web"; npm run dev
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\frontend-web"; npm run dev
 ```
 
 **Cửa sổ 3 — Frontend admin (:5174):**
 
 ```bash
-cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW02-new\eshop-sut-main\frontend-admin"; npm run dev
+cd "D:\Nam3\HK3\Kiểm thử phần mềm\HW04\tham_khao\eshop-sut-main\frontend-admin"; npm run dev
 ```
 
 Kiểm nhanh bằng mắt: mở `http://localhost:5173/login` và `http://localhost:5174`.

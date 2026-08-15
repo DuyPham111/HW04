@@ -90,6 +90,13 @@ export function resolveToken(raw) {
 /**
  * Nạp file CSV → mảng object theo dòng header.
  * Dòng trống và dòng bắt đầu bằng '#' được bỏ qua (cho phép ghi chú ngay trong file dữ liệu).
+ *
+ * QUAN TRỌNG: việc kiểm '#' phải làm SAU KHI đã tách ô bằng splitCsvLine, không phải trên
+ * chuỗi thô. Nếu một dòng comment chứa dấu ngoặc kép (ví dụ giải thích token `"-"`), Excel sẽ
+ * tự động bọc CẢ DÒNG trong ngoặc kép khi lưu lại ("Save As → CSV UTF-8") để escape hợp lệ —
+ * lúc đó dòng comment không còn bắt đầu bằng ký tự '#' theo đúng nghĩa đen ở byte đầu tiên
+ * nữa (nó bắt đầu bằng '"'), dù nội dung bên trong vẫn là comment. Kiểm trên chuỗi thô sẽ bỏ
+ * sót dòng này, khiến nó bị nạp nhầm thành dòng header/dữ liệu và làm lệch toàn bộ file.
  */
 export function loadCsv(fileName) {
   const file = path.join(DATA_DIR, fileName);
@@ -100,7 +107,9 @@ export function loadCsv(fileName) {
   const lineNumbers = []; // số dòng gốc trong file, để báo lỗi đúng vị trí
 
   rawLines.forEach((l, idx) => {
-    if (l.trim() === '' || l.trimStart().startsWith('#')) return;
+    if (l.trim() === '') return;
+    const firstCell = splitCsvLine(l)[0] ?? '';
+    if (firstCell.trimStart().startsWith('#')) return;
     lines.push(l);
     lineNumbers.push(idx + 1);
   });

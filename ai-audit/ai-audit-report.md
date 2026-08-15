@@ -14,6 +14,7 @@
 | AI-03 | | | Sinh `data-loader.js` + `assertions.js` |
 | AI-05 | Claude Code (Sonnet 5) | 2026-08-15 ~16:30 (+07) | Sinh `feature-a-login.csv` (16 TC) + `login.page.js` + `feature-a-login.spec.js` cho FR-02 |
 | AI-06 | Claude Code (Sonnet 5) | 2026-08-15 18:50 (+07) | Sửa định dạng `feature-a-login.csv` (thiếu BOM UTF-8, quote không nhất quán) + vá `data-loader.js` |
+| AI-06b | Claude Code (Sonnet 5) | 2026-08-15 19:49 (+07) | Chuyển SUT sang bản mới tải (`tham_khao/eshop-sut-main`) + vá lỗi `loadCsv` bỏ sót comment bị Excel quote |
 | AI-07 | | | Đọc UI `/checkout`, phân tích state giỏ hàng |
 | AI-08 | | | Sinh `feature-b-coupon.json` |
 | AI-09 | | | Sinh `checkout.page.js` + `feature-b-coupon.spec.js` |
@@ -111,6 +112,60 @@ việc MÁY đọc (Node.js `fs.readFileSync(..., 'utf8')` không cần BOM). AI
 `xxd`. `loadCsv` đọc đúng 16 dòng, cột đầu tiên của header là `"tcId"` sạch (không dính BOM).
 Chạy lại `feature-a-login.spec.js` trên chromium: **kết quả giống hệt trước khi sửa format**
 (6 pass / 10 fail / 0 flaky) — xác nhận việc đổi format không ảnh hưởng dữ liệu hay logic.
+
+---
+
+---
+
+## [AI-06b] Chuyển SUT sang bản mới tải + vá lỗi loadCsv sau khi file qua tay Excel
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-15 19:49 (+07) |
+| Bước trong quy trình | Đổi nguồn SUT + review lại `data-loader.js` |
+
+**Prompt (nguyên văn):**
+
+> "tôi vừa tải file eshop-sut bản mới về folder tham_khao, hãy dừng các bản đang chạy ở hw02
+> giúp tôi và chạy bản mới nhất ở hw04 giúp tôi (set up rồi run cho tôi) vì bản hw2 có thể
+> tôi đã từng đổi code nên sợ k khớp"
+
+**Output của AI:**
+1. Dừng 3 process cũ (backend/web/admin chạy từ `HW02-new/eshop-sut-main`) bằng
+   `Stop-Process -Force` theo PID lấy từ `Get-NetTCPConnection`.
+2. `diff` toàn bộ file nguồn liên quan (`server.js`, `database.js`, `Login.jsx`,
+   `Checkout.jsx`, `Cart.jsx`, `AuthContext.jsx`, `CartContext.jsx`, `App.jsx` web+admin)
+   giữa bản HW02 cũ và bản mới ở `tham_khao/eshop-sut-main` — **kết quả: giống hệt nhau**,
+   nỗi lo của tôi (đã lỡ sửa code bản cũ) không có cơ sở.
+3. `npm install` cho cả 3 thư mục (`backend`, `frontend-web`, `frontend-admin`) của bản mới
+   — thư mục vừa tải chưa có `node_modules`.
+4. Seed DB + khởi động lại 3 service từ bản mới, `npm run preflight` → 6/6 `[OK]`.
+5. **Phát hiện lỗi khi chạy lại `feature-a-login.spec.js` trên SUT mới**: tất cả 16 test báo
+   `duplicate test title "...undefined — undefined"`. Nguyên nhân: file
+   `tests/data/feature-a-login.csv` đã bị **Excel resave** (chính người dùng đã mở/lưu lại
+   bằng Excel giữa 2 lượt chat) — dòng comment giải thích token `"-"` chứa dấu ngoặc kép bên
+   trong, nên khi Excel lưu lại đã **tự động bọc cả dòng đó trong ngoặc kép** để escape hợp
+   lệ. Dòng comment không còn bắt đầu bằng ký tự `#` ở byte đầu tiên nữa (bắt đầu bằng `"`),
+   nên bộ lọc `l.trimStart().startsWith('#')` trong `loadCsv` bỏ sót nó — dòng đó bị hiểu
+   nhầm thành header, làm lệch toàn bộ 16 dòng dữ liệu.
+
+**Vì sao AI (ở các lần sinh trước) không tự bắt được lỗi này:** Bộ lọc comment ban đầu kiểm
+trên CHUỖI THÔ (`l.trimStart().startsWith('#')`) thay vì trên Ô ĐÃ ĐƯỢC TÁCH bởi
+`splitCsvLine`. Giả định ngầm là "dòng comment không bao giờ bị CSV-quote" — đúng với file
+tự tay ghi, nhưng SAI khi file đi qua một vòng Excel "mở → sửa → lưu", vì Excel áp dụng luật
+CSV-escaping cho MỌI dòng, kể cả dòng bắt đầu bằng `#`, nếu nội dung có ký tự cần escape
+(dấu `"`, dấu `,`). Đây là lỗi về **giả định môi trường vận hành thực tế** (file sẽ được
+người dùng mở bằng Excel) chứ không phải lỗi cú pháp.
+
+**Tôi đã sửa:** `tests/utils/data-loader.js` — đổi bộ lọc comment sang tách ô bằng
+`splitCsvLine(l)[0]` TRƯỚC rồi mới kiểm `startsWith('#')` trên ô đầu tiên đã unescape. Cách
+này đúng bất kể dòng comment có bị Excel bọc quote hay không.
+
+**Kết quả sau khi sửa:** `loadCsv` đọc lại đúng 16 dòng từ file đã qua Excel. Chạy lại
+`feature-a-login.spec.js --project=chromium` trên SUT MỚI: **kết quả giống hệt** các lần
+chạy trước trên SUT cũ (6 pass / 10 fail / 0 flaky, đúng cùng 10 TC Fail) — xác nhận cả việc
+đổi SUT lẫn việc vá loader đều không làm thay đổi hành vi test.
 
 ---
 

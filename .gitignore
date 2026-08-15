@@ -5,3 +5,8 @@ playwright-report/
 reports/artifacts/
 *.zip
 .DS_Store
+
+# §6 chi chap nhan .csv/.json lam test data - file Excel tam do mo/luu tests/data/*.csv
+# khong phai file du lieu chinh thuc, khong duoc dua vao ban nop.
+tests/data/*.xlsx
+tests/data/~$*
