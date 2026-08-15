@@ -36,6 +36,35 @@ export async function expectVisibleText(locator, expectedSubstring, label = 'n�
   });
 }
 
+/**
+ * Chuẩn hoá chuỗi tiếng Việt về dạng không dấu, chữ thường — để so khớp thông báo mà không
+ * phụ thuộc cách gõ dấu. Cần thiết vì file dữ liệu ghi `expectedError` ở dạng không dấu
+ * ("toi thieu", "het han"): chuỗi không dấu sống sót qua mọi vòng chuyển đổi bảng mã
+ * (Excel, CSV, clipboard), còn chuỗi có dấu thì không.
+ */
+export function normalizeVi(text) {
+  return String(text ?? '')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase();
+}
+
+/** P1 — DOM: text của locator chứa chuỗi con, so khớp KHÔNG phụ thuộc dấu tiếng Việt. */
+export async function expectVisibleTextVi(locator, expectedSubstring, label = 'nội dung hiển thị', { soft = false } = {}) {
+  await test.step(`P1 DOM · ${label}`, async () => {
+    await E(soft)(locator).toBeVisible();
+    if (expectedSubstring) {
+      const actual = await locator.textContent();
+      E(soft)(
+        normalizeVi(actual).includes(normalizeVi(expectedSubstring)),
+        `Thông báo phải chứa "${expectedSubstring}" (bỏ dấu) — thực tế: "${(actual ?? '').trim()}"`,
+      ).toBe(true);
+    }
+  });
+}
+
 /** P1 — DOM: locator KHÔNG hiển thị (dùng cho "không được báo lỗi khi dữ liệu hợp lệ"). */
 export async function expectHidden(locator, label = 'phần tử không hiển thị', { soft = false } = {}) {
   await test.step(`P1 DOM · ${label}`, async () => {
@@ -104,13 +133,26 @@ export async function captureResponse(page, urlPart, action, { method, timeout =
 }
 
 /**
- * Đọc số tiền hiển thị → số nguyên. Bỏ mọi ký tự không phải chữ số, vì dấu phân cách
- * nghìn khác nhau giữa các browser (`toLocaleString()` không truyền locale trong SUT:
- * Chrome cho "1,234,567", Firefox/WebKit có thể cho "1.234.567").
- * Trả NaN khi ô hiển thị "NaN ₫" — chính là một dạng bug kiểu dữ liệu của SUT, phải nhìn
- * thấy chứ không được im lặng quy về 0.
+ * Đọc số tiền hiển thị → số nguyên (CÓ DẤU). Bỏ mọi ký tự không phải chữ số để lấy phần trị
+ * tuyệt đối, vì dấu phân cách nghìn khác nhau giữa các browser (`toLocaleString()` không
+ * truyền locale trong SUT: Chrome cho "1,234,567", Firefox/WebKit có thể cho "1.234.567").
+ *
+ * PHẢI giữ dấu âm: bug công thức percent của FR-09 (`Math.floor(total * (1 - discount_value))`
+ * với `discount_value = 10`) sinh ra số tiền giảm ÂM, hiển thị "-54.000.000 ₫". Nếu hàm này
+ * nuốt dấu trừ thì bug report sẽ ghi sai trị số thực tế (dương thay vì âm) — vẫn Fail nhưng
+ * bằng chứng bị bóp méo. Số âm chính là dấu hiệu đặc trưng nhất của bug này.
+ *
+ * Trả NaN khi ô hiển thị "NaN ₫" — một dạng bug kiểu dữ liệu khác của SUT, phải nhìn thấy
+ * chứ không được im lặng quy về 0.
  */
 export function parseMoney(text) {
-  const digits = String(text ?? '').replace(/\D/g, '');
-  return digits === '' ? NaN : Number(digits);
+  const s = String(text ?? '');
+  const firstDigit = s.search(/\d/);
+  if (firstDigit === -1) return NaN;
+
+  const value = Number(s.replace(/\D/g, ''));
+  // Dấu trừ phải nằm ngay trước cụm chữ số (cho phép khoảng trắng ở giữa), để không nhầm
+  // với dấu gạch ngang dùng làm ký tự trang trí ở chỗ khác trong chuỗi.
+  const negative = /-\s*$/.test(s.slice(0, firstDigit));
+  return negative ? -value : value;
 }

@@ -71,9 +71,20 @@ function splitCsvLine(line) {
   return cells;
 }
 
-/** Giải các token <...> trong một ô dữ liệu. */
-export function resolveToken(raw) {
-  const v = String(raw ?? '').trim();
+/**
+ * Giải các token <...> trong một ô dữ liệu.
+ *
+ * `trim` — CSV mặc định TRUE, JSON mặc định FALSE. Lý do khác nhau:
+ *   · Trong CSV, khoảng trắng quanh ô thường là nhiễu định dạng (`a, b` sau dấu phẩy) chứ
+ *     không phải dữ liệu, nên cắt đi là đúng.
+ *   · Trong JSON, chuỗi `"  SAVE10  "` là khoảng trắng CỐ Ý do người viết đặt vào. Nếu loader
+ *     tự cắt thì test case "SUT có tự trim mã giảm giá không" sẽ nhận chuỗi ĐÃ ĐƯỢC CẮT SẴN
+ *     và Pass mà chẳng kiểm gì cả — một Pass giả đúng nghĩa, vì công lao trim là của loader
+ *     chứ không phải của SUT.
+ * Muốn diễn tả chuỗi toàn khoảng trắng trong CSV thì dùng token `<spaces:N>`.
+ */
+export function resolveToken(raw, { trim = true } = {}) {
+  const v = trim ? String(raw ?? '').trim() : String(raw ?? '');
 
   if (v === '<empty>') return '';
 
@@ -134,7 +145,10 @@ export function loadCsv(fileName) {
   });
 }
 
-/** Nạp file JSON. Mọi giá trị chuỗi đều được giải token, kể cả trong object/array lồng nhau. */
+/**
+ * Nạp file JSON. Mọi giá trị chuỗi đều được giải token, kể cả trong object/array lồng nhau.
+ * KHÔNG trim — xem giải thích trong `resolveToken`: khoảng trắng trong JSON là cố ý.
+ */
 export function loadJson(fileName) {
   const file = path.join(DATA_DIR, fileName);
   const parsed = JSON.parse(stripBom(fs.readFileSync(file, 'utf8')));
@@ -142,7 +156,7 @@ export function loadJson(fileName) {
 }
 
 function deepResolve(node) {
-  if (typeof node === 'string') return resolveToken(node);
+  if (typeof node === 'string') return resolveToken(node, { trim: false });
   if (Array.isArray(node)) return node.map(deepResolve);
   if (node && typeof node === 'object') {
     return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, deepResolve(v)]));
