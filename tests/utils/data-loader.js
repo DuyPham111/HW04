@@ -23,6 +23,19 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(HERE, '..', 'data');
 
 /**
+ * Bỏ BOM (Byte Order Mark, U+FEFF) ở đầu file nếu có. File .csv/.json chứa tiếng Việt CẦN
+ * ghi kèm BOM để Excel trên Windows mở đúng bảng mã (không có BOM, Excel double-click sẽ
+ * đoán nhầm sang codepage hệ thống và hiện dấu tiếng Việt thành ký tự lỗi). Ngược lại, Node
+ * đọc 'utf8' lại giữ nguyên BOM như MỘT KÝ TỰ trong chuỗi, làm cột đầu tiên của header CSV
+ * dính BOM vào tên cột (`﻿tcId` thay vì `tcId`) và `JSON.parse` báo lỗi cú pháp. Excel
+ * cũng tự thêm BOM mỗi khi "Save As → CSV UTF-8", nên hàm này còn cần thiết cho lần sau nếu
+ * file được mở/sửa/lưu lại bằng Excel.
+ */
+function stripBom(text) {
+  return text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
+}
+
+/**
  * Hậu tố duy nhất cho mỗi lần chạy suite. Dùng cho các test case tạo dữ liệu mới (đăng ký
  * user, tạo sản phẩm...): chạy lại với cùng một giá trị cố định sẽ đụng dữ liệu của lần
  * chạy trước và biến một test case hợp lệ thành flaky. Ổn định trong cùng một tiến trình
@@ -80,7 +93,7 @@ export function resolveToken(raw) {
  */
 export function loadCsv(fileName) {
   const file = path.join(DATA_DIR, fileName);
-  const text = fs.readFileSync(file, 'utf8');
+  const text = stripBom(fs.readFileSync(file, 'utf8'));
 
   const rawLines = text.split(/\r?\n/);
   const lines = [];
@@ -115,7 +128,7 @@ export function loadCsv(fileName) {
 /** Nạp file JSON. Mọi giá trị chuỗi đều được giải token, kể cả trong object/array lồng nhau. */
 export function loadJson(fileName) {
   const file = path.join(DATA_DIR, fileName);
-  const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const parsed = JSON.parse(stripBom(fs.readFileSync(file, 'utf8')));
   return deepResolve(parsed);
 }
 
