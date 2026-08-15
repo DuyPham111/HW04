@@ -1,0 +1,39 @@
+# Feature A — FR-02 Đăng nhập & Khóa tài khoản · dữ liệu cho tests/feature-a-login.spec.js
+#
+# Nguồn: test case HW02 (Main_Report.md — FEATURE A: FR-02). Cột tcId truy ngược về đúng
+# test case đó, nên report tự động truy vết được về HW02.
+#
+# mode          login = một lần submit trên form · ui-check = chỉ kiểm giao diện tĩnh, không
+#               submit · lockout = đăng ký user mới, sai mật khẩu failCount lần rồi thực hiện
+#               finalAction · lockout-wait = như lockout nhưng chờ waitSeconds giây trước
+#               finalAction.
+# finalAction   check = chỉ đọc state backend, không submit thêm · login-correct = submit lại
+#               bằng mật khẩu ĐÚNG sau chuỗi sai.
+# expect        accept = đặc tả nói PHẢI đăng nhập được (chỉ áp dụng khi finalAction=login-correct
+#               hoặc mode=login) · reject = PHẢI bị từ chối.
+# rejectVia     client = form/HTML5 phải chặn trước khi gọi API · server = API phải trả lỗi.
+# expectedAttempts / expectedLocked / expectedLastFailStatus
+#               giá trị ĐÚNG THEO ĐẶC TẢ (spec R1: +1 mỗi lần sai; R2a: khóa khi sai >= 3 lần
+#               liên tiếp; thứ tự xử lý trong code kiểm khóa bằng state TRƯỚC request nên lần
+#               sai thứ 3 vẫn trả 401, 403 chỉ xuất hiện từ lần thứ 4). SUT có bug cố ý (+2/lần,
+#               khóa 180s thay vì 30s) nên Fail ở các cột này chính là bằng chứng bug, không
+#               phải script sai.
+# <uniq>        loader thay bằng mã duy nhất của lần chạy → user lockout không đụng dữ liệu cũ.
+#
+tcId,title,mode,email,password,wrongPassword,failCount,waitSeconds,finalAction,expect,expectedError,rejectVia,expectedAttempts,expectedLocked,expectedLastFailStatus,technique,specRef,bugRef,note
+FR02-DT-01,"Đăng nhập thành công (happy path)",login,test@eshop.com,Test1234!,-,-,-,-,accept,<empty>,-,0,FALSE,-,"EP vùng hợp lệ",FR-02 R4,-,"Tài khoản seed, luôn chạy đầu tiên trong file; sau đăng nhập đúng bộ đếm phải là 0 (R4)"
+FR02-DT-02,"Email chưa đăng ký (đúng định dạng)",login,ghost@eshop.com,Test1234!,-,-,-,-,reject,<empty>,server,-,-,-,"EP vùng không hợp lệ",FR-02 R3,-,"Server phải từ chối bằng câu chung, không lộ lý do chi tiết"
+FR02-DT-03,"Email sai định dạng (thiếu @)",login,abc-khong-phai-email,Test1234!,-,-,-,-,reject,<empty>,client,-,-,-,"EP biên định dạng",FR-02 R5,B005,"Spec đòi type=email để HTML5 chặn; SUT dùng type=text nên không chặn"
+FR02-DT-04,"Email bỏ trống",login,<empty>,Test1234!,-,-,-,-,reject,<empty>,client,-,-,-,"EP vùng không hợp lệ",FR-02 (required),-,"Ô email có required, trình duyệt phải chặn"
+FR02-DT-06,"Mật khẩu bỏ trống",login,test@eshop.com,<empty>,-,-,-,-,reject,<empty>,client,-,-,-,"EP vùng không hợp lệ",FR-02 (required),-,"Ô mật khẩu có required, trình duyệt phải chặn"
+FR02-DT-09,"Ô mật khẩu phải che ký tự (type=password)",ui-check,-,-,-,-,-,-,-,<empty>,-,-,-,-,"quan sát UI",FR-22,B004,"SUT để type=text nên ký tự hiện rõ khi gõ"
+FR02-DT-10,"Tiêu đề/nhãn trang đăng nhập đúng tiếng Việt",ui-check,-,-,-,-,-,-,-,<empty>,-,-,-,-,"quan sát UI",FR-21,B012,"SUT hiện Đăng Ký / Username / Sign In thay vì Đăng Nhập / Email / Đăng Nhập"
+FR02-BV-01,"BVA - sai mật khẩu lần thứ 1 (biên dưới)",lockout,lock01-<uniq>@hw04.test,Test1234!,Wrong123!,1,0,check,-,-,-,1,FALSE,401,"BVA biên dưới (P-01)","FR-02 R1",B001,"Spec +1/lần; SUT thật +2/lần nên login_attempts thật sẽ là 2"
+FR02-BV-02,"BVA - sai mật khẩu lần thứ 2 (giữa vùng hợp lệ)",lockout,lock02-<uniq>@hw04.test,Test1234!,Wrong123!,2,0,check,-,-,-,2,FALSE,401,"BVA in (P-02)","FR-02 R1, R2a",B001,"Theo spec 2 lần sai chưa đủ ngưỡng khóa (>=3)"
+FR02-BV-03,"BVA - sai mật khẩu lần thứ 3 (on-point ngưỡng khóa)",lockout,lock03-<uniq>@hw04.test,Test1234!,Wrong123!,3,0,check,-,-,-,3,TRUE,401,"BVA on-point (P-03)","FR-02 R2a",B001,"Đúng thiết kế: khóa mới SET ở lần 3, enforce từ lần 4 nên response lần 3 vẫn 401"
+FR02-DT-05,"Mới sai 1 lần, xác nhận chưa bị khóa",lockout,lock04-<uniq>@hw04.test,Test1234!,Wrong123!,1,0,check,-,-,-,1,FALSE,401,"EP hợp lệ (login_attempts)","FR-02 R2a",B001,"Nhấn mạnh riêng locked_until phải null sau 1 lần sai"
+FR02-DT-08,"Đăng nhập đúng sau khi sai 1 lần - bộ đếm phải reset",lockout,lock05-<uniq>@hw04.test,Test1234!,Wrong123!,1,0,login-correct,accept,<empty>,-,0,FALSE,401,"dependency C-FR02-01","FR-02 R4",-,"Sau khi đăng nhập đúng, login_attempts phải reset về 0"
+FR02-DT-07,"Nhập đúng mật khẩu khi tài khoản đang bị khóa",lockout,lock06-<uniq>@hw04.test,Test1234!,Wrong123!,3,0,login-correct,reject,khóa,server,-,TRUE,-,"dependency C-FR02-06","FR-02 R3, R2a",B003,"Thông báo phải nói rõ đang khóa, khác câu sai mật khẩu"
+FR02-BV-06,"Đợi hết hạn khóa (31s > 30s spec) rồi đăng nhập đúng",lockout-wait,lock07-<uniq>@hw04.test,Test1234!,Wrong123!,3,31,login-correct,accept,<empty>,-,0,FALSE,-,"BVA on-point thời gian khóa (P-06)","FR-02 R2b",B002,"Spec khóa 30s (demo); SUT thật khóa 180s nên vẫn còn bị từ chối ở mốc 31s"
+FR02-BV-R03,"SQL injection ở ô email",login,' OR 1=1--,Test1234!,-,-,-,-,reject,<empty>,server,-,-,-,robust,"FR-02 (an toàn dữ liệu)",-,"Phải bị từ chối an toàn, không lỗi 500, không bypass"
+FR02-BV-R04,"Mật khẩu rất dài (500 ký tự)",login,test@eshop.com,<repeat:A:500>,-,-,-,-,reject,<empty>,server,1,FALSE,-,robust,"FR-02 (an toàn dữ liệu)",B001,"Kiểm không treo/crash; đồng thời là 1 lần sai đơn lẻ trên tài khoản seed - spec +1 thì attempts=1"
