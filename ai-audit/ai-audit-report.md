@@ -17,9 +17,9 @@
 | AI-05 | Claude Code (Sonnet 5) | 2026-08-15 ~16:30 (+07) | Sinh `feature-a-login.csv` (16 TC) + `login.page.js` + `feature-a-login.spec.js` cho FR-02 |
 | AI-06 | Claude Code (Sonnet 5) | 2026-08-15 18:50 (+07) | Sửa định dạng `feature-a-login.csv` (thiếu BOM UTF-8, quote không nhất quán) + vá `data-loader.js` |
 | AI-06b | Claude Code (Sonnet 5) | 2026-08-15 19:49 (+07) | Chuyển SUT sang bản mới tải (`tham_khao/eshop-sut-main`) + vá lỗi `loadCsv` bỏ sót comment bị Excel quote |
-| AI-07 | | | Đọc UI `/checkout`, phân tích state giỏ hàng |
-| AI-08 | | | Sinh `feature-b-coupon.json` |
-| AI-09 | | | Sinh `checkout.page.js` + `feature-b-coupon.spec.js` |
+| AI-07 | Claude Code (Opus 5) | 2026-08-15 20:55 (+07) | Đọc UI `/checkout` + `/cart` + `ProductDetail`, phân tích state giỏ hàng |
+| AI-08 | Claude Code (Opus 5) | 2026-08-15 21:05 (+07) | Sinh `feature-b-coupon.json` (18 TC) + phát hiện 3 lỗi trong utils |
+| AI-09 | Claude Code (Opus 5) | 2026-08-15 21:17 (+07) | Sinh `checkout.page.js` + `cart.page.js` + `feature-b-coupon.spec.js`, chạy thật |
 | AI-10 | | | Đọc UI admin, phân tích `handleProductSubmit`/`deleteProduct` |
 | AI-11 | | | Sinh `feature-c-product-admin.csv` |
 | AI-12 | | | Sinh `admin-products.page.js` + spec |
@@ -325,5 +325,67 @@ page object, spec, AI-00 → AI-06b) — không yêu cầu sửa gì thêm.
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-06b đã đầy đủ cho phần setup + Feature A.
-AI-07 trở đi dành cho Feature B/C, ghi khi triển khai `docs/04-FEATURE-B-FR09.md`)*
+## [AI-07 → AI-09] Feature B — FR-09 Mã giảm giá (đọc UI · data file · page object · spec)
+
+| | |
+|---|---|
+| Công cụ | Claude Code (**Opus 5** — đổi model từ Sonnet 5 sang Opus 5 bắt đầu từ lượt này) |
+| Thời điểm | 2026-08-15 20:55 → 21:17 (+07) |
+| Bước trong quy trình | Toàn bộ `docs/04-FEATURE-B-FR09.md` (Bước 1 → 6) |
+
+**Prompt (nguyên văn):**
+
+> "chuyển sang doc 4 cho tôi, chạy các prompt các phần trong file docs/04 và trình bày chi tiết
+> các phầnđã làm sau khi chạy và các phần tôi cần bổ sung nội dung hoặc cần review lại nội dung
+> thật chi tiết để tôi làm để hoàn thiện phần 04 trước khi qua 05"
+
+**Output của AI:**
+- `tests/data/feature-b-coupon.json` — 18 TC, 6 mode (cart-flow / total-set / guest /
+  empty-code / usage-seed / ui-check).
+- `tests/pages/checkout.page.js`, `tests/pages/cart.page.js` — page object, không assertion.
+- `tests/feature-b-coupon.spec.js` — spec data-driven.
+- **3 phát hiện quan trọng khi đọc UI thật (Bước 1)** mà `docs/04` viết trước đó chưa lường:
+  1. `ProductDetail.jsx` **nuốt click đầu tiên** vào "Thêm vào giỏ hàng" (`clickCount === 0 →
+     return`). Đây là bug của FR-07, không phải FR-09 → nếu để lẫn vào sẽ làm nhoè kết quả
+     Feature B. Xử lý: TC `DT-01` vào giỏ từ **trang chủ** (nút này chạy ngay click đầu), TC
+     `DT-08` vào từ **trang chi tiết** với hàm chờ-xác-nhận-rồi-bấm-bù.
+  2. Trang chủ có cặp `<a href="/product/{id}">` và `<button>Thêm vào giỏ</button>` **liền kề
+     nhau** → selector `a[href="..."] + button` chính xác tuyệt đối, không cần đếm thứ tự thẻ.
+  3. Thanh toán thành công **không đổi URL** (chỉ đổi state `success`) → Feature B **không dùng
+     được pattern P2**, phải bù bằng P3 (đối chiếu UI với body API).
+
+**Human review — AI tự soát và tìm ra 3 lỗi THẬT trong code của chính các bước trước:**
+
+| # | Lỗi | Vì sao lọt qua các bước trước |
+|---|---|---|
+| 1 | `parseMoney` **nuốt dấu âm** | Feature A không có phép tính tiền nào, nên hàm chỉ được kiểm với số dương. Bug B007 sinh ra tiền giảm ÂM (`-54.000.000 ₫`); hàm cũ trả về `54000000` → test vẫn Fail nhưng **bug report sẽ ghi sai trị số thực tế**, làm hỏng bằng chứng. |
+| 2 | `loadJson` **tự trim chuỗi** → **Pass giả** | `resolveToken` trim mọi giá trị (đúng cho CSV — khoảng trắng quanh ô là nhiễu định dạng). Nhưng TC `FR09-BV-R03` kiểm *"SUT có tự cắt khoảng trắng thừa trong mã giảm giá không"*: với loader trim sẵn, TC nhận chuỗi **đã được cắt** và Pass mà **không kiểm gì cả** — công lao trim là của loader chứ không phải của SUT. |
+| 3 | Thiếu cách so khớp thông báo tiếng Việt không phụ thuộc dấu | File dữ liệu ghi `expectedError` dạng không dấu (để sống sót qua các vòng chuyển đổi bảng mã như đã gặp ở AI-06/AI-06b), nhưng SUT trả thông báo **có dấu** → so khớp trực tiếp sẽ luôn sai. |
+
+**Tôi đã sửa:**
+1. `parseMoney` giữ dấu trừ khi nó nằm ngay trước cụm chữ số. Unit-test 8 trường hợp.
+2. `resolveToken(raw, { trim })` — CSV giữ `trim: true`, JSON dùng `trim: false`. Kiểm lại
+   Feature A (CSV) không bị ảnh hưởng: vẫn đọc đúng 16 dòng.
+3. Thêm `normalizeVi` + `expectVisibleTextVi`, unit-test với 4 thông báo thật của SUT.
+
+**Kết quả:** 18/18 test chạy, **11 pass / 7 fail / 0 flaky** trên chromium, chạy **2 lần độc
+lập cho kết quả giống hệt nhau** (đúng cùng 7 TC Fail). 11 thông báo lỗi truy về đúng **4 bug**
+đã dự đoán trong `docs/04` §3:
+
+| Bug | TC Fail | Bằng chứng máy ghi được |
+|---|---|---|
+| **B006** — ngưỡng dùng `>` thay vì `>=` | BV-02, BV-05 | đơn đúng bằng ngưỡng (300.000 / 500.000) bị trả 400 thay vì 200; lặp lại trên **cả hai** loại coupon ⇒ lỗi ở phép so sánh dùng chung, không phải ở nhánh tính tiền |
+| **B007** — công thức percent | DT-01, DT-08, BV-03 | tiền giảm **âm** `-54.000.000 ₫`, thành tiền `60.000.000 ₫` (gấp 10 lần đơn gốc 6.000.000) |
+| **B008** — khách vãng lai | DT-07 | server trả **200** cho request không có `user_id`, bỏ qua toàn bộ nhánh kiểm giới hạn lượt |
+| **B013** — ô tổng tiền sửa tự do | DT-10 | ô `isEditable() === true`, và số gõ tay `999.999.999` chảy thẳng thành số tiền phải thanh toán |
+
+**Phát hiện thêm (không có trong dự đoán ban đầu):** assertion P3 (đối chiếu số trên UI với
+`body` API thật) **không Fail ở bất kỳ TC nào** — nghĩa là UI hiển thị **đúng y nguyên** con số
+API trả về. Kết luận: B007 nằm ở **tầng tính toán của API**, không phải tầng hiển thị. Đây là
+loại kết luận mà kiểm thử thủ công ở HW02 không tách bạch được, vì mắt người chỉ thấy con số
+cuối cùng trên màn hình.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-09 đã đầy đủ cho setup + Feature A + B.
+AI-10 trở đi dành cho Feature C, ghi khi triển khai `docs/05-FEATURE-C-FR15.md`)*
