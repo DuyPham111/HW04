@@ -24,7 +24,7 @@
 | AI-10 | Claude Code (Sonnet 5) | 2026-08-16 17:50 (+07) | Đọc UI admin + `README.md` đặc tả gốc, phát hiện bug FR-12 (broken access control) |
 | AI-11 | Claude Code (Sonnet 5) | 2026-08-16 17:58 (+07) | Sinh `feature-c-product-admin.csv` (19 TC, gồm 4 TC mới) |
 | AI-12 | Claude Code (Sonnet 5) | 2026-08-16 18:05 → 18:22 (+07) | Sinh `admin-products.page.js` + spec, tìm & sửa 3 lỗi script, chạy thật |
-| AI-13 | | | Sinh `run-all-browsers.mjs` + `stamp-report.mjs` + `summarize.mjs` |
+| AI-13 | Claude Code (Sonnet 5) | 2026-08-16 18:40 → 19:18 (+07) | Sinh `run-all-browsers.mjs` + `stamp-report.mjs` + `summarize.mjs`, chạy 9 lượt chính thức, sửa 2 lỗi công cụ |
 | AI-14 | | | Hỗ trợ phân loại Fail / viết gap analysis |
 
 ---
@@ -565,5 +565,79 @@ Feature C (`docs/05`) được coi là **hoàn thiện**, sẵn sàng sang `docs
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-12b đã đầy đủ cho setup + 3 feature.
-AI-13 trở đi dành cho công cụ multi-browser report, ghi khi triển khai `docs/06`)*
+---
+
+## [AI-13] Công cụ multi-browser + chạy 9 lượt chính thức (`docs/06`)
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-16 18:40 → 19:18 (+07) |
+| Bước trong quy trình | Toàn bộ `docs/06-MULTI-BROWSER-REPORT.md` |
+
+**Prompt (nguyên văn):**
+
+> "chuyển sang doc6 cho tôi, chạy các prompt các phần trong file docs/06 và trình bày chi tiết
+> các phầnđã làm sau khi chạy và các phần tôi cần bổ sung nội dung hoặc cần review lại nội dung
+> thật chi tiết để tôi làm để hoàn thiện phần 06 trước khi qua 07"
+
+Kèm một prompt xen giữa (trong lúc 9 lượt đang chạy nền):
+
+> "1. hãy check lại các phần ở feature-c-product-admin.spec.js các mục fail screenshot đều bị
+> lỗi hãy check cho tôi"
+
+**Output của AI:** 3 công cụ (`run-all-browsers.mjs`, `stamp-report.mjs`, `summarize.mjs`) +
+9 lượt chạy chính thức + `reports/summary.md`.
+
+**Human review — người dùng phát hiện 1 lỗi, AI tự phát hiện thêm 3 lỗi:**
+
+| # | Lỗi | Ai phát hiện | Vì sao lọt qua |
+|---|---|---|---|
+| 1 | **Ảnh chụp Fail trắng tinh** (4254 byte, giống hệt nhau ở cả 3 TC `SEC-*`) | **Người dùng** | 3 TC này là test THUẦN API (`playwright.request`), `page` chưa từng điều hướng đi đâu → `screenshot: only-on-failure` chụp đúng `about:blank`. AI viết test API mà quên rằng cơ chế chụp ảnh của Playwright gắn với `page`, không gắn với request context |
+| 2 | **`BV-R03` bị trộn lẫn với chính bug FR-12** | AI (khi kiểm lỗi #1) | Comment trong code đã ghi rõ *"BV-R03 dùng POST nhưng CÓ token — không thuộc nhóm này"* nhưng **code thật không hề cài đặt phân biệt đó** — mọi dòng `mode=security` đều dùng `noAuthApi`. Đây là lỗi **comment nói một đằng, code làm một nẻo**: TC kiểm ràng buộc `category_id` bị chặn bởi bug thiếu auth trước khi chạm tới nhánh kiểm FK → vi phạm single-fault |
+| 3 | **Cột Engine luôn ghi "chromium"** trên cả 9 report | AI (khi đọc `summary.md` vừa sinh) | `report.config.projects` liệt kê CẢ 3 project **cấu hình** trong `playwright.config.js`, không phải project **đã chạy** qua `--project=x`. Đọc `projects[0].name` luôn ra phần tử đầu mảng. Nguồn đúng là `spec.tests[0].projectName` của từng test |
+| 4 | **`runLabel` bị cắt cụt** còn đúng chữ "Feature" | AI (khi kiểm dải Run by trên report firefox) | `spawnSync(cmd, args, {shell:true})` trên Windows **không tự quote** từng phần tử `args` — nó nối cả mảng thành một dòng lệnh cho `cmd.exe`, nên arg chứa khoảng trắng bị tách vụn. Đã viết script độc lập kiểm chứng cơ chế trước khi kết luận thay vì đoán |
+
+**Tôi đã sửa:**
+1. Thêm `page.goto(API_URL + '/api/products')` **sau** khi đọc xong `res.status()` (không ảnh
+   hưởng assertion) → ảnh chụp Fail giờ hiện đúng JSON thật, nhìn thấy rõ sản phẩm bị tạo/sửa/
+   xoá trái phép nằm trong response. Kích thước ảnh từ 4KB (trắng) lên ~29KB (có nội dung).
+2. Thêm biến `isAuthBypassTest` tách 2 nhóm: `SEC-*` dùng context không token, `BV-R03` dùng
+   fixture `api` (đã có Bearer token admin) → mỗi TC chỉ còn kiểm đúng một biến.
+3. Đọc `spec.tests[0].projectName` thay cho `config.projects[0].name` ở **cả**
+   `stamp-report.mjs` và `summarize.mjs`.
+4. Thêm hàm `quoteArg()` bọc ngoặc kép mọi arg có khoảng trắng trước khi đưa vào `spawnSync`.
+
+Với lỗi #3 và #4: **không cần chạy lại test** vì dữ liệu JSON gốc vẫn đúng, chỉ sai ở khâu
+hiển thị → chỉ cần đóng dấu lại 9 report (`stamp-report.mjs`) và sinh lại `summary.md`.
+
+**Kết quả 9 lượt chính thức:**
+
+| Chỉ số | Giá trị |
+|---|---|
+| Test case automation | **53** (A:16 · B:18 · C:19) — vượt mức ≥36 của §6 |
+| Lượt browser | **9** (3 feature × chromium/firefox/webkit) |
+| Lần thực thi (TC × engine) | **159** |
+| Pass / Fail | **76 / 83** |
+| **Flaky** | **0** |
+| Test case Fail ở ≥1 engine | **29** |
+| Tổng thời gian | 881.1s |
+
+**Phân tích cross-browser (§6 yêu cầu):**
+- **27/29 TC Fail y hệt nhau trên CẢ 3 ENGINE (3/3)** → bằng chứng rất mạnh rằng Fail phản ánh
+  bug của SUT, không phụ thuộc trình duyệt hay timing.
+- **2/29 TC** (`FR09-DT-02`, `FR09-DT-03`) chỉ Fail riêng trên **firefox** (1/3). Đã chạy lại
+  riêng 2 TC này trên firefox: **PASS**. Lỗi thật là
+  `browserContext.close: Protocol error (Browser.removeBrowserContext)` — lỗi **hạ tầng của
+  Firefox** lúc đóng browser context sau khi chạy suite dài, **không phải bug SUT**, cũng
+  **không phải flaky wait** trong script (assertion nghiệp vụ đã chạy xong và Pass trước đó).
+  Sẽ ghi vào gap analysis ở `docs/08` như một hạn chế môi trường.
+
+**Bằng chứng §11 (`Run by` + timestamp ISO) có ở BA chỗ trên mỗi report:** metadata đầu report ·
+annotation trên từng test case · dải cố định chân trang + thẻ `<title>`. Đã kiểm bằng mắt.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-13 đã đầy đủ cho setup + 3 feature +
+multi-browser report. AI-14 trở đi dành cho bug report / gap analysis, ghi khi triển khai
+`docs/07` và `docs/08`)*
