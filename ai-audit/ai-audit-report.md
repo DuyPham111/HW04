@@ -20,6 +20,7 @@
 | AI-07 | Claude Code (Opus 5) | 2026-08-15 20:55 (+07) | Đọc UI `/checkout` + `/cart` + `ProductDetail`, phân tích state giỏ hàng |
 | AI-08 | Claude Code (Opus 5) | 2026-08-15 21:05 (+07) | Sinh `feature-b-coupon.json` (18 TC) + phát hiện 3 lỗi trong utils |
 | AI-09 | Claude Code (Opus 5) | 2026-08-15 21:17 (+07) | Sinh `checkout.page.js` + `cart.page.js` + `feature-b-coupon.spec.js`, chạy thật |
+| AI-09b | Claude Code (Sonnet 5) | 2026-08-16 12:27 (+07) | Sửa lỗi mất report HTML/JSON Feature B (tự gây ra do `--reporter=list`) |
 | AI-10 | | | Đọc UI admin, phân tích `handleProductSubmit`/`deleteProduct` |
 | AI-11 | | | Sinh `feature-c-product-admin.csv` |
 | AI-12 | | | Sinh `admin-products.page.js` + spec |
@@ -385,7 +386,77 @@ API trả về. Kết luận: B007 nằm ở **tầng tính toán của API**, k
 loại kết luận mà kiểm thử thủ công ở HW02 không tách bạch được, vì mắt người chỉ thấy con số
 cuối cùng trên màn hình.
 
+**Đối chiếu với `Bug_Report.md` của chính tôi ở HW02** (sinh viên tự làm, xem checklist cuối
+mục AI-09b): cả 4 bug đều khớp đúng cơ chế đã ghi trước đó —
+- B006: HW02 test cả SAVE10 (300k) lẫn BIGBUY (500k), cùng kết luận lỗi `>` thay `>=` ở
+  `server.js:379` — khớp `BV-02`/`BV-05`.
+- B007: HW02 dùng giỏ 350k → "-3.150.000 ₫" (= -9×350k), thành tiền 3.500.000 (=10×350k).
+  Feature B dùng AirPods 6.000.000 → "-54.000.000 ₫" (= -9×6.000.000) — **cùng công thức**,
+  chỉ khác giỏ hàng, càng củng cố kết luận bug nằm ở hằng số `discount_value=10` bị dùng như
+  10 thay vì 0.1.
+- B008: HW02 xác nhận bug chỉ ở bước `apply-coupon` (không auth), bước `checkout` cuối vẫn
+  chặn đúng (401) — Feature B chỉ kiểm đúng bước `apply-coupon`, không đụng `checkout`.
+- B013: HW02 đã tạo đơn hàng giả thật (350.000.000 ₫, đơn #4) để xác nhận backend không tính
+  lại; Feature B dừng ở bước kiểm ô sửa được (không tạo đơn giả) vì bảng `orders` không có API
+  xoá — quyết định này đã ghi trong "TC không automation được" của `docs/04`.
+
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-09 đã đầy đủ cho setup + Feature A + B.
+## [AI-09b] Sửa lỗi mất report HTML/JSON của Feature B (tự gây ra khi verify)
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-16 12:27 (+07) |
+| Bước trong quy trình | Kiểm lại report Feature B theo yêu cầu người dùng |
+
+**Prompt (nguyên văn):**
+
+> "1. recheck lại câu lệnh npx playwright show-report demo/reports/html/b-chromium do k có tệp
+> này
+> 2. ở mục c hãy trình bày chi tiết hơn như vào file nào đọc mục nào để recheck được tốt hơn"
+
+**Lỗi phát hiện:** Ở 2 lần chạy Feature B trước đó, tôi tự thêm `--reporter=list` vào dòng lệnh
+(chỉ để log console gọn khi tôi tự đọc). Cờ này **ghi đè toàn bộ mảng `reporter`** trong
+`playwright.config.js` — kể cả `html` và `json` bị bỏ qua hoàn toàn, không file report nào được
+tạo ra (không phải ở đường dẫn dự định, cũng không phải ở đường dẫn mặc định).
+
+**Vì sao AI (ở 2 lần chạy trước) không tự bắt được:** Chính `playwright.config.js` mà AI (tôi)
+đã viết ở AI-01 **đã có sẵn comment cảnh báo** đúng vấn đề này ("KHÔNG truyền `--reporter` ở
+đây: cờ CLI ghi đè cả mảng reporter..."), nhưng khi tôi tự thêm `--reporter=list` vào lệnh chạy
+ở bước sau, tôi không đối chiếu lại với chính comment đó — hai bước cách nhau và không có cơ
+chế nào bắt được mâu thuẫn tự thân này ngoài việc người/AI đọc lại toàn bộ trước khi chạy.
+
+**Tôi đã sửa:**
+1. Viết 2 test thực nghiệm (TEST 1 có `--reporter=list`, TEST 2 không có) trên cùng một TC để
+   xác nhận chính xác cơ chế trước khi kết luận, thay vì đoán.
+2. Chạy lại Feature B **không** kèm `--reporter`, để config tự quyết định `[list, html, json]`.
+3. Dọn thư mục `demo/reports/html/adhoc` và `demo/reports/artifacts/adhoc` — đây là rác từ
+   lệnh đếm test (`--list`) chạy trước đó, không phải kết quả thật (JSON của nó ghi
+   `"skipped": 34` cho toàn bộ, không phải Pass/Fail thật).
+
+**Kết quả sau khi sửa:** `demo/reports/html/b-chromium/index.html` (600KB) và
+`demo/reports/json/b-chromium.json` (113KB) tồn tại thật. Kết quả **giống hệt** 2 lần chạy
+trước (7 fail / 11 pass, đúng cùng 7 TC) — xác nhận lỗi chỉ ở khâu ghi report, không ảnh hưởng
+tới kết quả test hay bug đã tìm được.
+
+---
+
+**Xác nhận của sinh viên (2026-08-16):** Đã đọc lại `tests/data/feature-b-coupon.json` và đối
+chiếu với mã nguồn thật (`ProductDetail.jsx`, `server.js` dòng 363-441) theo hướng dẫn. Kết
+luận từng mục:
+- **C1** (2 TC robust không kiểm số tiền) — đồng ý giữ `null`.
+- **C2** (tách `DT-01`/`DT-08` theo 2 đường vào giỏ) — đồng ý, hợp lý.
+- **C3** (`expectedStatus: "4xx"` cho khách vãng lai) — đối chiếu `Main_Report.md` HW02, xác
+  nhận đặc tả không quy định mã lỗi cụ thể, giữ nguyên.
+- **C4** (`expectedError` không dấu) — giữ nguyên.
+- **C5** (đối chiếu 4 bug với `Bug_Report.md` HW02) — đã tự đọc lại, xác nhận khớp hoàn toàn,
+  chốt không cần sửa.
+
+Feature B (`docs/04`) được coi là **hoàn thiện**, không còn mục nào cần review thêm trước khi
+sang `docs/05-FEATURE-C-FR15.md`.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-09b đã đầy đủ cho setup + Feature A + B.
 AI-10 trở đi dành cho Feature C, ghi khi triển khai `docs/05-FEATURE-C-FR15.md`)*
