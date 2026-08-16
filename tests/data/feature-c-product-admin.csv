@@ -1,0 +1,47 @@
+﻿# Feature C - FR-15 Quan ly San pham (Admin CRUD) · du lieu cho tests/feature-c-product-admin.spec.js
+#
+# Nguon: test case HW02 (Main_Report.md - FEATURE C: FR-15) + 4 TC MOI o HW04 (SEC-01..03,
+# BV-R03) phat hien khi doi chieu README.md (dac ta goc cua SUT) voi backend/server.js.
+#
+# mode      create = dien form + Luu san pham | edit = sua 1 san pham co san, kiem san pham
+#           KHAC khong bi anh huong | delete = xoa qua UI, kiem bien mat khoi UI va DB |
+#           security = goi thang API POST/PUT/DELETE /api/products MA KHONG KEM TOKEN, kiem
+#           dac ta FR-12 co duoc thuc thi khong.
+# expect    accept/reject THEO DAC TA (README.md muc FR-15, FR-12), khong theo hanh vi hien
+#           tai cua SUT.
+# rejectVia client = input/form phai chan (vd required) | server = API phai tu choi.
+# method    chi dung cho mode=security: POST | PUT | DELETE.
+# <uniq>    loader thay bang ma duy nhat cua lan chay -> ten san pham khong dung giua cac lan.
+#
+# QUAN TRONG - phat hien khi doc UI that (Buoc 1):
+#   · README.md dong 97 "Nut Xoa san pham phai co dialog xac nhan" nam trong muc FR-07 (GIO
+#     HANG), khong phai FR-15. Nut "Xoa" trong admin KHONG bi dac ta doi hoi dialog xac nhan
+#     -> khong dua vao lam TC, chi ghi thanh quan sat UX trong bao cao.
+#   · README.md dong 177 (FR-12): "Tat ca cac API Admin ... va POST/PUT/DELETE /api/products
+#     ... deu phai yeu cau Token JWT hop le + role=admin". Doi chieu backend/server.js dong
+#     167/179/191: CA BA route nay KHONG co middleware authenticateToken (khac han voi
+#     /api/categories cung FR-12 nhung CO middleware). Da xac nhan bang curl that: POST khong
+#     kem token van tao duoc san pham (HTTP 200). HW02 da NGHI NGO dieu nay khi doc code
+#     (Main_Report.md dong 468) nhung KHONG tao duoc TC vi admin UI da chan user thuong tu
+#     truoc (khong cham duoc toi API tu giao dien) - automation goi thang API thi lam duoc.
+#
+tcId,title,mode,productName,price,imageUrl,description,categoryName,editNewName,method,expect,expectedError,rejectVia,technique,specRef,bugRef,note
+FR15-DT-01,"San pham hop le (happy path)",create,"HW04-Tai nghe-<uniq>",1000000,"https://placehold.co/300","Tai nghe chinh hang","Phụ kiện",-,-,accept,<empty>,-,"EP vung hop le","FR-15 rang buoc dau vao",-,"Danh muc chon tu du lieu seed co san (Phu kien)"
+FR15-DT-02,"Ten rong",create,<empty>,1000000,-,-,"Phụ kiện",-,-,reject,<empty>,client,"EP vung khong hop le","FR-15 ten bat buoc",-,"O ten co thuoc tinh required, trinh duyet phai chan truoc khi goi API"
+FR15-DT-03,"Ten chi gom khoang trang",create,"<spaces:3>",1000000,-,-,"Phụ kiện",-,-,reject,<empty>,server,"EP vung khong hop le (rong ve ngu nghia)","FR-15 ten bat buoc",B010,"required chi chan chuoi RONG, khong chan chuoi toan khoang trang - phai server tu choi sau khi trim"
+FR15-DT-04,"Ten chua the HTML (nguy co XSS)",create,"<b>HW04-<uniq></b>",1000000,-,-,"Phụ kiện",-,-,accept,<empty>,-,"EP vung hop le (an toan du lieu)","FR-15 (an toan)",-,"React render {p.name} bang JSX thuan (khong dangerouslySetInnerHTML) nen tu dong escape - du kien AN TOAN, khac voi Header dung dangerouslySetInnerHTML da ghi o HW02"
+FR15-DT-05,"Gia bang 0",create,"HW04-GiaKhong-<uniq>",0,-,-,"Phụ kiện",-,-,reject,<empty>,server,"EP bien duoi khong hop le","FR-15 gia phai duong (>0)",B009,"Spec doi gia > 0; SUT khong validate nen chap nhan gia 0"
+FR15-DT-06,"Gia am",create,"HW04-GiaAm-<uniq>",-1,-,-,"Phụ kiện",-,-,reject,<empty>,server,"EP vung khong hop le","FR-15 gia phai duong (>0)",B009,"Cung nguyen nhan voi DT-05, gia tri khac de xac nhan khong phai truong hop rieng le"
+FR15-DT-07,"Gia rong",create,"HW04-GiaRong-<uniq>",<empty>,-,-,"Phụ kiện",-,-,reject,<empty>,server,"EP vung khong hop le","FR-15 gia bat buoc",B009,"O gia KHONG co required (khac o ten) nen client khong chan; server cung khong validate"
+FR15-BV-02,"BVA - gia duong nho nhat (1)",create,"HW04-Gia1-<uniq>",1,-,-,"Phụ kiện",-,-,accept,<empty>,-,"BVA on-point bien duoi hop le","FR-15 gia phai duong (>0)",-,"Bien duoi CHINH XAC cua vung hop le, phai duoc chap nhan"
+FR15-BV-03,"BVA - ten dai dung 1 ky tu",create,"A",1000000,-,-,"Phụ kiện",-,-,accept,<empty>,-,"BVA on-point do dai ten = 1","FR-15 ten toi da 255 ky tu",-,"Spec khong dinh do dai toi thieu, 1 ky tu la hop le - luu y: KHONG co <uniq> vi TC nay chi kiem do dai, don deu qua <uniq> lam mat y nghia bien"
+FR15-BV-04,"BVA - ten dai dung 255 ky tu (bien tren)",create,"<repeat:H:255>",1000000,-,-,"Phụ kiện",-,-,accept,<empty>,-,"BVA on-point bien tren","FR-15 ten toi da 255 ky tu",-,"Dung bang gioi han toi da, phai duoc chap nhan"
+FR15-BV-05,"BVA - ten dai 256 ky tu (vuot bien tren + 1)",create,"<repeat:H:256>",1000000,-,-,"Phụ kiện",-,-,reject,<empty>,server,"BVA off-point bien tren + 1","FR-15 ten toi da 255 ky tu",B015,"Spec gioi han 255; SUT khong cat/tu choi, luu nguyen 256 ky tu"
+FR15-BV-R01,"Robust - gia tran INTEGER 32-bit (2147483648)",create,"HW04-GiaTran-<uniq>",2147483648,-,-,"Phụ kiện",-,-,accept,<empty>,-,robust,"FR-15 (an toan du lieu)",-,"SQLite INTEGER khong gioi han that theo 32-bit nhu ten goi - khong duoc tran/am"
+FR15-BV-R02,"Robust - go chu vao o gia (type=number chan)",create,"HW04-GiaChu-<uniq>",abc,-,-,"Phụ kiện",-,-,reject,<empty>,client,"robust - kiem soat dau vao trinh duyet","FR-15 gia phai la so",-,"O input type=number: trinh duyet KHONG cho go ky tu chu vao duoc, gia tri o van la rong sau khi go - kiem o muc DOM, khong submit"
+FR15-BV-R03,"Robust - category_id khong ton tai (9999) qua API",security,"HW04-CatSai-<uniq>",1000000,-,-,-,-,POST,reject,<empty>,server,"robust - toan ven tham chieu","FR-15 danh muc phai chon tu danh sach co san",-,"Select tren UI chi liet ke 3 danh muc seed nen KHONG nhap duoc category_id=9999 qua giao dien - ha xuong tang API voi TOKEN HOP LE (khac SEC-01..03 la khong co token). Da xac nhan bang curl: SUT chap nhan (bug), spec doi phai tu choi vi khong ton tai FK"
+FR15-DT-08,"Sua 1 san pham, kiem san pham khac khong doi",edit,"HW04-Goc1-<uniq>",1000000,-,-,"Phụ kiện","HW04-DaSua-<uniq>",-,accept,<empty>,-,"dependency - toan ven du lieu khi sua","FR-15 sua 1 san pham chi doi dung san pham do",B014,"Tao 2 san pham tien de qua API, sua TEN san pham thu nhat qua UI, kiem CA hai tang: UI (dong cua san pham thu hai) va DB (GET /api/products)"
+FR15-DT-09,"Xoa san pham hop le (co token qua UI)",delete,"HW04-XoaOk-<uniq>",1000000,-,-,"Phụ kiện",-,-,accept,<empty>,-,"EP vung hop le","FR-15 xoa san pham",-,"Dung de doi chung voi 3 TC SEC ben duoi - xoa CO token phai thanh cong binh thuong, chi xoa KHONG token moi la bug"
+FR15-SEC-01,"BUG MOI - Tao san pham KHONG kem token (vi pham FR-12)",security,"HW04-SecPost-<uniq>",999000,-,-,-,-,POST,reject,<empty>,server,"security - kiem soat truy cap (broken access control)","FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin",-,"HW02 da nghi ngo qua doc code nhung khong tu dong hoa duoc vi UI admin chan truoc; day la TC dau tien thuc su goi API de xac nhan"
+FR15-SEC-02,"BUG MOI - Sua san pham KHONG kem token (vi pham FR-12)",security,-,-,-,-,-,-,PUT,reject,<empty>,server,"security - kiem soat truy cap (broken access control)","FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin",-,"Can san pham tien de (tao qua API CO token trong buoc setup, khong tinh la phan bug); attempt PUT bang context KHONG co Authorization header"
+FR15-SEC-03,"BUG MOI - Xoa san pham KHONG kem token (vi pham FR-12)",security,-,-,-,-,-,-,DELETE,reject,<empty>,server,"security - kiem soat truy cap (broken access control)","FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin",-,"Tuong tu SEC-02 nhung voi DELETE; day la bug nghiem trong nhat trong 3 TC SEC vi hau qua khong the hoan tac (mat du lieu that)"
