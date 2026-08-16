@@ -21,9 +21,9 @@
 | AI-08 | Claude Code (Opus 5) | 2026-08-15 21:05 (+07) | Sinh `feature-b-coupon.json` (18 TC) + phát hiện 3 lỗi trong utils |
 | AI-09 | Claude Code (Opus 5) | 2026-08-15 21:17 (+07) | Sinh `checkout.page.js` + `cart.page.js` + `feature-b-coupon.spec.js`, chạy thật |
 | AI-09b | Claude Code (Sonnet 5) | 2026-08-16 12:27 (+07) | Sửa lỗi mất report HTML/JSON Feature B (tự gây ra do `--reporter=list`) |
-| AI-10 | | | Đọc UI admin, phân tích `handleProductSubmit`/`deleteProduct` |
-| AI-11 | | | Sinh `feature-c-product-admin.csv` |
-| AI-12 | | | Sinh `admin-products.page.js` + spec |
+| AI-10 | Claude Code (Sonnet 5) | 2026-08-16 17:50 (+07) | Đọc UI admin + `README.md` đặc tả gốc, phát hiện bug FR-12 (broken access control) |
+| AI-11 | Claude Code (Sonnet 5) | 2026-08-16 17:58 (+07) | Sinh `feature-c-product-admin.csv` (19 TC, gồm 4 TC mới) |
+| AI-12 | Claude Code (Sonnet 5) | 2026-08-16 18:05 → 18:22 (+07) | Sinh `admin-products.page.js` + spec, tìm & sửa 3 lỗi script, chạy thật |
 | AI-13 | | | Sinh `run-all-browsers.mjs` + `stamp-report.mjs` + `summarize.mjs` |
 | AI-14 | | | Hỗ trợ phân loại Fail / viết gap analysis |
 
@@ -458,5 +458,76 @@ sang `docs/05-FEATURE-C-FR15.md`.
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-09b đã đầy đủ cho setup + Feature A + B.
-AI-10 trở đi dành cho Feature C, ghi khi triển khai `docs/05-FEATURE-C-FR15.md`)*
+## [AI-10 → AI-12] Feature C — FR-15 Quản lý Sản phẩm (đọc UI · data file · page object · spec)
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-16 17:50 → 18:22 (+07) |
+| Bước trong quy trình | Toàn bộ `docs/05-FEATURE-C-FR15.md` (Bước 1 → 6) |
+
+**Prompt (nguyên văn):**
+
+> "1. git push những gì đã làm cho tôi
+> 2. chuyển sang doc 5 cho tôi, chạy các prompt các phần trong file docs/05 và trình bày chi
+> tiết các phầnđã làm sau khi chạy và các phần tôi cần bổ sung nội dung hoặc cần review lại nội
+> dung thật chi tiết để tôi làm để hoàn thiện phần 05trước khi qua 06"
+
+**Output của AI:**
+- `tests/data/feature-c-product-admin.csv` — 19 TC (13 create, 1 edit, 1 delete, 4 security).
+- `tests/pages/admin-products.page.js`, `tests/feature-c-product-admin.spec.js`.
+- **1 phát hiện lớn khi đọc UI thật (Bước 1)** làm thay đổi hẳn kế hoạch ban đầu của
+  `docs/05`: đối chiếu `README.md` (đặc tả gốc của SUT, không phải do AI suy đoán) với
+  `backend/server.js` phát hiện `POST/PUT/DELETE /api/products` **hoàn toàn không có**
+  middleware `authenticateToken`, vi phạm trực tiếp FR-12 ("Tất cả API Admin ... và
+  POST/PUT/DELETE /api/products ... đều phải yêu cầu Token JWT hợp lệ"). Đã xác nhận bằng
+  `curl` thật: tạo được sản phẩm mà không cần đăng nhập (HTTP 200). **HW02 đã nghi ngờ điều
+  này khi đọc code** (`Main_Report.md` dòng 468: `"❌ → đưa vào AI Gap Analysis, không tạo TC
+  UI"`) nhưng không tự động hóa được vì admin UI chặn user thường từ trước khi chạm tới API —
+  automation gọi thẳng API thì vượt qua được rào cản đó.
+- Vì phát hiện này, **kế hoạch TC "bug mới: xóa sản phẩm không hỏi xác nhận"** trong `docs/05`
+  gốc bị **loại bỏ**: đối chiếu `README.md` cho thấy yêu cầu dialog xác nhận (dòng 97) nằm
+  trong mục **FR-07 (giỏ hàng)**, không phải FR-15 — báo bug này sẽ SAI vì không vi phạm đặc
+  tả nào. Thay bằng 3 TC `SEC-01/02/03` (POST/PUT/DELETE không token) và 1 TC `BV-R03`
+  (category_id không tồn tại) — bug thật, có căn cứ đặc tả rõ ràng.
+
+**Human review — AI tự phát hiện và sửa 3 lỗi THẬT của chính mình trong lúc chạy thử:**
+
+| # | Lỗi | Triệu chứng | Cách tìm ra |
+|---|---|---|---|
+| 1 | `page.goto('/')` dùng `baseURL` config (web `:5173`) thay vì `ADMIN_URL` (`:5174`) | Toàn bộ 19 TC timeout ở `gotoProductsTab` (`waiting for getByText('Sản phẩm')`) | Viết script debug độc lập (`scratch-debug-admin.mjs`, đã xoá) xác nhận điều hướng + đăng nhập hoạt động đúng khi tự tay lặp lại — từ đó khoanh vùng về đúng dòng `page.goto('/')` |
+| 2 | Cột `categoryName` trong file dữ liệu ghi **"Phu kien"** (không dấu) trong khi UI thật hiện **"Phụ kiện"** (có dấu) | `selectOption({label:...})` timeout "did not find some options" dù `<select>` có đúng 3 option | Chạy `DEBUG=pw:api npx playwright test ...` xem log nội bộ Playwright, rồi grep trực tiếp file trên đĩa — phát hiện chính AI đã lẫn quy ước "không dấu cho dòng comment" sang cả cột dữ liệu chức năng |
+| 3 | `fillProduct({name, ...})` destructure sai tên khoá — cột CSV là `productName`, hàm nhận `name` | Ô "Tên sản phẩm" luôn trống khi submit, 4 ô còn lại (giá/ảnh/mô tả/danh mục) vẫn điền đúng | Mở ảnh chụp màn hình lúc Fail (`test-failed-1.png`), thấy rõ tooltip trình duyệt "Please fill out this field" trỏ vào đúng ô Tên sản phẩm đang trống |
+
+**Tôi đã sửa:**
+1. `gotoProductsTab()` đổi sang `page.goto(ADMIN_URL)` (URL tuyệt đối), import `ADMIN_URL` từ
+   `utils/env.js`.
+2. `sed -i 's/"Phu kien"/"Phụ kiện"/g'` trên file CSV — 15/15 chỗ chức năng đã sửa.
+3. `fillProduct` đổi tham số từ `name` sang `productName`, khớp đúng tên cột CSV.
+4. Đổi `'admin@eshop.com'/'Admin123!'` hard-code trong spec sang dùng `ADMIN_USER` từ
+   `utils/env.js` — nhất quán với Feature A/B, grep kiểm tra sạch.
+
+**Kết quả sau khi sửa cả 3 lỗi:** 19/19 test chạy, **9 pass / 10 fail / 0 flaky** trên
+chromium, chạy **3 lần độc lập cho kết quả giống hệt nhau** (đúng cùng 10 TC Fail). DB sạch
+sau mỗi lần chạy (đúng 5 sản phẩm seed, không sót rác).
+
+| Bug | TC Fail | Bằng chứng máy ghi được |
+|---|---|---|
+| **B009** — giá 0/âm/rỗng đều tạo được | DT-05, DT-06, DT-07 | DB phát sinh sản phẩm dù giá vi phạm ràng buộc `>0` |
+| **B010** — tên toàn khoảng trắng vẫn tạo được | DT-03 | DB phát sinh sản phẩm tên `"   "` dù về ngữ nghĩa là rỗng |
+| **B014** — sửa 1 sản phẩm ảnh hưởng cả danh sách | DT-08 | UI hiện sai tên sản phẩm KHÁC; đối chiếu 2 tầng (UI + DB) cho thấy DB vẫn đúng — xác nhận bug nằm ở CLIENT (`setProducts(...map(...))`), không phải backend — kết luận chặt hơn HW02 |
+| **B015** — tên 256 ký tự không bị cắt | BV-05 | DB lưu nguyên 256 ký tự, không cắt còn 255 |
+| **BUG MỚI** — `category_id` không tồn tại vẫn được chấp nhận | BV-R03 | DB phát sinh sản phẩm với `category_id=9999` (không có FK tương ứng), vi phạm "phải chọn từ danh sách có sẵn" |
+| **BUG MỚI — nghiêm trọng** — FR-12 không được thực thi cho `/api/products` | SEC-01, SEC-02, SEC-03 | Cả 3 route `POST/PUT/DELETE` đều trả **200** cho request không có Authorization header, thay vì 401/403 theo đặc tả |
+
+**Đánh giá mức độ nghiêm trọng (tự phân loại, sẽ đối chiếu lại khi viết bug report chính
+thức):** 3 TC `SEC-*` là phát hiện **nghiêm trọng nhất của toàn bộ HW04** — không chỉ là lỗi
+nghiệp vụ (business rule) như B009/B010/B014/B015, mà là lỗi **kiểm soát truy cập** cho phép
+bất kỳ ai (kể cả không đăng nhập) toàn quyền tạo/sửa/xoá catalog sản phẩm. Đây cũng là bug
+**automation tìm ra mà kiểm thử thủ công ở HW02 xác nhận là không làm được** — đúng trọng tâm
+mà §6 của đề nhấn mạnh ("wherever a failing assertion reveals a genuine defect").
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-12 đã đầy đủ cho setup + 3 feature.
+AI-13 trở đi dành cho công cụ multi-browser report, ghi khi triển khai `docs/06`)*
