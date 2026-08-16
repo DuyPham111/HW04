@@ -55,60 +55,86 @@ test.describe('Feature C — FR-15 Quản lý Sản phẩm (admin)', () => {
       annotateTestCase(testInfo, row);
       if (row.note) testInfo.annotations.push({ type: 'Ghi chú thiết kế', description: row.note });
 
-      // ── mode = security: bỏ qua UI, gọi thẳng API bằng context KHÔNG có token ─────────
+      // ── mode = security: bỏ qua UI, gọi thẳng API ────────────────────────────────────
       if (row.mode === 'security') {
-        // 3 TC method !== POST (BV-R03 dùng POST nhưng CÓ token — không thuộc nhóm này) là
-        // lỗi kiểm soát truy cập: hậu quả không giới hạn ở 1 request mà là toàn bộ catalog
-        // sản phẩm bị phơi ra cho bất kỳ ai, không cần đăng nhập — đánh giá Critical, không
-        // cùng mức với các bug nghiệp vụ B009/B010/B014/B015. Sinh viên đã xác nhận mức độ
-        // này (xem AI Audit §AI-12b) trước khi đưa vào bug-report.md ở docs/07.
-        if (row.tcId.startsWith('FR15-SEC-')) {
+        // Hai nhóm KHÁC NHAU về biến đang kiểm, dù cùng mode:
+        //   · SEC-01/02/03: kiểm FR-12 (kiểm soát truy cập) — request KHÔNG token.
+        //   · BV-R03: kiểm ràng buộc category_id (FK) — PHẢI dùng token HỢP LỆ, nếu không
+        //     cũng sẽ bị chặn bởi chính bug FR-12 và không còn cô lập được biến cần kiểm
+        //     (single-fault: chỉ category_id sai, mọi thứ khác phải đúng).
+        const isAuthBypassTest = row.tcId.startsWith('FR15-SEC-');
+
+        if (isAuthBypassTest) {
+          // Hậu quả không giới hạn ở 1 request mà là toàn bộ catalog sản phẩm bị phơi ra cho
+          // bất kỳ ai, không cần đăng nhập — đánh giá Critical, không cùng mức với các bug
+          // nghiệp vụ B009/B010/B014/B015. Sinh viên đã xác nhận mức độ này (§AI-12b) trước
+          // khi đưa vào bug-report.md ở docs/07.
           testInfo.annotations.push({
             type: 'Mức độ nghiêm trọng',
             description: 'Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập',
           });
         }
 
-        const noAuthApi = await playwright.request.newContext({ baseURL: API_URL });
+        const noAuthApi = isAuthBypassTest
+          ? await playwright.request.newContext({ baseURL: API_URL })
+          : null;
+        const client = noAuthApi ?? api; // BV-R03 dùng `api` — context ĐÃ có Bearer token admin.
 
         let targetId = null;
         if (row.method === 'PUT' || row.method === 'DELETE') {
           targetId = await createBaselineProduct(api, { name: `HW04-SecTarget-${Date.now()}` });
-          if (row.method !== 'DELETE') cleanup.add((client) => deleteProductById(client, targetId));
+          if (row.method !== 'DELETE') cleanup.add((c) => deleteProductById(c, targetId));
         }
 
         let res;
         if (row.method === 'POST') {
-          res = await noAuthApi.post('/api/products', {
+          res = await client.post('/api/products', {
             data: { name: row.productName, price: Number(row.price), category_id: 9999 },
           });
           if (res.status() >= 200 && res.status() < 300) {
-            // Bug xác nhận: sản phẩm bị tạo dù không có token. Phải dọn để không để lại rác.
+            // Bug xác nhận: sản phẩm bị tạo dù dữ liệu sai. Phải dọn để không để lại rác.
             const body = await res.json();
-            cleanup.add((client) => deleteProductById(client, body.id));
+            cleanup.add((c) => deleteProductById(c, body.id));
           }
         } else if (row.method === 'PUT') {
-          res = await noAuthApi.put(`/api/products/${targetId}`, {
+          res = await client.put(`/api/products/${targetId}`, {
             data: { name: 'HACKED-NO-TOKEN', price: 1, category_id: 3 },
           });
         } else if (row.method === 'DELETE') {
-          res = await noAuthApi.delete(`/api/products/${targetId}`);
+          res = await client.delete(`/api/products/${targetId}`);
           if (!(res.status() >= 200 && res.status() < 300)) {
             // Nếu server ĐÚNG đặc tả (từ chối), sản phẩm vẫn còn — phải tự dọn.
-            cleanup.add((client) => deleteProductById(client, targetId));
+            cleanup.add((c) => deleteProductById(c, targetId));
           }
         }
 
-        await noAuthApi.dispose();
+        if (noAuthApi) await noAuthApi.dispose();
 
         testInfo.annotations.push({ type: 'HTTP status thật', description: String(res.status()) });
 
-        // P5/P3 (quyết định) — theo FR-12, request KHÔNG token phải bị từ chối (401/403).
-        expect(
-          res.status(),
-          `${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`,
-        ).toBeGreaterThanOrEqual(400);
-        expect(res.status(), `${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);
+        // Bằng chứng hình ảnh: nhánh này là test THUẦN API, `page` chưa từng điều hướng đi
+        // đâu — ảnh chụp lúc Fail mặc định là trang trắng (about:blank), vô nghĩa làm bằng
+        // chứng. Điều hướng `page` tới đúng dữ liệu vừa bị tác động để ảnh chụp cho THẤY
+        // hậu quả thật (sản phẩm mới/đã sửa/đã xoá) — không ảnh hưởng tới assertion vì việc
+        // điều hướng xảy ra SAU khi đã đọc xong `res.status()`.
+        await page.goto(`${API_URL}/api/products`).catch(() => {});
+
+        if (isAuthBypassTest) {
+          // P5 (quyết định) — theo FR-12, request KHÔNG token phải bị từ chối (401/403).
+          expect(
+            res.status(),
+            `${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`,
+          ).toBeGreaterThanOrEqual(400);
+          expect(res.status(), `${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);
+        } else {
+          // P5 (quyết định) — category_id không tồn tại, spec đòi "phải chọn từ danh sách có
+          // sẵn" nên server phải từ chối vì vi phạm ràng buộc FK, bất kể token hợp lệ hay không.
+          expect(
+            res.status(),
+            `${row.tcId}: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế ${res.status()}`,
+          ).toBeGreaterThanOrEqual(400);
+          expect(res.status(), `${row.tcId}: phải là lỗi client (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);
+        }
         return;
       }
 
