@@ -25,7 +25,7 @@
 | AI-11 | Claude Code (Sonnet 5) | 2026-08-16 17:58 (+07) | Sinh `feature-c-product-admin.csv` (19 TC, gồm 4 TC mới) |
 | AI-12 | Claude Code (Sonnet 5) | 2026-08-16 18:05 → 18:22 (+07) | Sinh `admin-products.page.js` + spec, tìm & sửa 3 lỗi script, chạy thật |
 | AI-13 | Claude Code (Sonnet 5) | 2026-08-16 18:40 → 19:18 (+07) | Sinh `run-all-browsers.mjs` + `stamp-report.mjs` + `summarize.mjs`, chạy 9 lượt chính thức, sửa 2 lỗi công cụ |
-| AI-14 | | | Hỗ trợ phân loại Fail / viết gap analysis |
+| AI-14 | Claude Code (Sonnet 5) | 2026-08-16 19:30 → 19:55 (+07) | Chụp ảnh bằng chứng · viết `bug-report.md` (docs/07) · viết `main-report.md` + gap analysis (docs/08) |
 
 ---
 
@@ -638,6 +638,71 @@ annotation trên từng test case · dải cố định chân trang + thẻ `<ti
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-13 đã đầy đủ cho setup + 3 feature +
-multi-browser report. AI-14 trở đi dành cho bug report / gap analysis, ghi khi triển khai
-`docs/07` và `docs/08`)*
+---
+
+## [AI-14] Bug report (`docs/07`) + Báo cáo chính & Gap analysis (`docs/08`)
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-16 19:30 → 19:55 (+07) |
+| Bước trong quy trình | `docs/07` + `docs/08` + phần chụp ảnh của `docs/06` §5 |
+
+**Prompt (nguyên văn — hai lượt):**
+
+> "R1 R2 R3 R4 đều oke, ở r4 bạn có thể chụp giúp tôi không nếu không được thì hãy liệt kê rõ
+> tất cả các phần cần chụp và chụp như thế nào có example, và chụp xong để vào đâu, hoàn thiện
+> tất cả rồi chuyển sang doc7 cho tôi"
+
+> "tôi sẽ thực hiện 2 việc này sau hãy làm docs8 giúp tôi rôi nhắc những việc tôi cần làm ở
+> docs8 kèm với 2 việc trên"
+
+**Output của AI:**
+
+1. **Ảnh bằng chứng (23 ảnh).** Phân định rõ ranh giới theo §11:
+   - AI **làm được**: ảnh chụp HTML report (artifact **thật** do 9 lượt chạy thật sinh ra — chụp
+     lại chỉ là ghi nhận cơ học) và ảnh tái lập bug trên SUT thật.
+   - Sinh viên **phải tự làm**: ảnh trang GitHub Issues (cần tài khoản thật) và video có
+     `whoami`/face-cam (§11 nói thẳng). Đã viết `docs/14-HUONG-DAN-CHUP-ANH.md` liệt kê chi tiết.
+   - `tools/capture-report-evidence.mjs` → 19 ảnh trong `reports/evidence/`.
+   - `tools/capture-bug-evidence.mjs` → 4 ảnh trong `bug-report/screenshots/`, **tái lập bug
+     thật** (gửi request thật, đọc phản hồi thật), có watermark MSSV + ISO timestamp, và **tự dọn
+     dữ liệu** (xác nhận DB còn đúng 5 sản phẩm seed sau khi chạy).
+2. **`bug-report/bug-report.md`** — bảng quy đổi 83 Fail → 29 TC → 16 defect; 2 bug mới đầy đủ;
+   14 defect cũ nối tới Issue của repo nhóm; mục "ứng viên đã loại"; bảng mức độ.
+3. **`bug-report/issue-new-01.md`, `issue-new-02.md`** — nội dung Issue soạn sẵn để dán lên GitHub
+   (máy không có `gh` CLI; tạo Issue cũng là hành động công khai nên để sinh viên tự làm).
+4. **`report/main-report.md`** — 426 dòng, 7 mục theo `docs/08`, đã xuất PDF (12 trang).
+
+**Human review — AI tự phát hiện 3 sai lệch số liệu khi rà soát:**
+
+| # | Sai lệch | Cách phát hiện |
+|---|---|---|
+| 1 | Đếm nhầm **24** TC thuộc nhóm "bug cũ HW02", đúng phải là **23** | Cộng lại 23+4+2 = 29 để đối chiếu với tổng TC Fail trong `summary.md` |
+| 2 | Gán **B004** là Low, nhưng `Bug_Report.md` HW02 ghi **Medium** | Trích lại severity của **từng** bug từ file HW02 gốc thay vì gán theo cảm tính |
+| 3 | Gán **B015** là Medium, nhưng HW02 ghi **Low** | Như trên |
+
+⇒ Đã sửa cả 3, và ghi thêm nguyên tắc vào bug report: **giữ nguyên đánh giá mức độ của HW02 cho
+14 defect cũ**, chỉ 2 bug mới là do HW04 đánh giá — để hai bài nộp nhất quán với nhau.
+
+**Đối chiếu TC HW02 ↔ TC automation (§4 của main report):** viết script so khớp danh sách tcId
+thay vì đếm tay. Kết quả: **8 TC của HW02 không đưa vào suite**, và **không TC nào bị bỏ vì khó
+automation** — tất cả đều là trùng lặp cơ chế với một TC đã có (7 TC) hoặc HW02 đã kết luận không
+phải bug (1 TC: `FR02-BV-R02`). Đồng thời **bổ sung 5 TC mới**, trong đó 4 TC tìm ra cả hai bug mới.
+
+**Nội dung đáng chú ý nhất trong gap analysis (§3.2 main report):** bảng **12 lỗi thật** đã xảy ra
+trong bài, mỗi lỗi ghi rõ nguyên nhân thuộc loại nào (chất lượng prompt / giới hạn mô hình / đặc
+thù feature / giả định môi trường). Nhận xét rút ra: **0/12 lỗi là "selector sai"** — loại lỗi kinh
+điển nhất khi để AI sinh test — vì bước "đọc UI thật" được tách riêng làm trước. Đổi lại, 12 lỗi
+thực tế nằm ở tầng sâu hơn, và **2 lỗi nguy hiểm nhất (#10, #11) đều thuộc dạng "comment mô tả
+đúng ý định nhưng code làm khác"** — chỉ bắt được bằng cách chạy thật rồi đối chiếu kết quả với ý
+định, không phải bằng cách đọc code.
+
+**Kết quả:** `report/main-report.md` (426 dòng) + `bug-report/bug-report.md`, cả hai đã xuất PDF.
+Mọi con số trong hai tài liệu **copy từ `reports/summary.md`**, đã đối chiếu lại bằng grep.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-14 đã đầy đủ cho setup + 3 feature +
+multi-browser report + bug report + main report. Còn lại: video Task 2 (`docs/09`), Agent Skills
+(`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
