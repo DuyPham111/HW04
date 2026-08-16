@@ -27,7 +27,12 @@ function readRunStats(file) {
     for (const s of suites) {
       for (const spec of s.specs ?? []) {
         const status = spec.tests?.[0]?.status ?? 'unknown';
-        cases.push({ title: spec.title, status });
+        // `report.config.projects` liệt kê CẢ 3 project cấu hình trong playwright.config.js,
+        // bất kể `--project=<x>` nào thực sự chạy — KHÔNG dùng projects[0].name để suy engine
+        // (đã tự phát hiện bug: report của lượt firefox/webkit vẫn ghi "chromium" vì nó luôn
+        // là phần tử đầu mảng cấu hình). Tên engine THẬT SỰ nằm ở projectName của từng test.
+        const engine = spec.tests?.[0]?.projectName ?? '';
+        cases.push({ title: spec.title, status, engine });
       }
       walk(s.suites);
     }
@@ -48,7 +53,7 @@ function readRunStats(file) {
     stats,
     startedAt: report.stats?.startTime ?? null,
     durationMs: Math.round(report.stats?.duration ?? 0),
-    engine: report.config?.projects?.[0]?.name ?? '',
+    engine: cases[0]?.engine ?? '',
   };
 }
 
@@ -65,10 +70,10 @@ if (files.length === 0) {
 
 const runs = [];
 for (const file of files) {
-  const label = file.replace(/\.json$/, ''); // vd: a-chromium
-  const [feature, engine] = label.split('-');
-  const data = readRunStats(path.join(JSON_DIR, file));
-  runs.push({ label, feature, engine, ...data });
+  const label = file.replace(/\.json$/, ''); // vd: a-chromium — "feature" suy từ đây được,
+  const [feature] = label.split('-');         // vì đây là quy ước ĐẶT TÊN FILE của chính ta.
+  const data = readRunStats(path.join(JSON_DIR, file)); // "engine" lấy từ data (projectName
+  runs.push({ label, feature, ...data });                // thật trong JSON) — KHÔNG suy từ tên file.
 }
 
 // ── Bảng theo feature ────────────────────────────────────────────────────────────────────

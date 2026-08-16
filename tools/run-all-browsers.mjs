@@ -40,8 +40,21 @@ const TITLE_OF = {
 const argFeatures = process.argv[2] ? [process.argv[2]] : ['a', 'b', 'c'];
 const argBrowsers = process.argv[3] ? [process.argv[3]] : ['chromium', 'firefox', 'webkit'];
 
+/**
+ * `spawnSync(cmd, args, { shell: true })` trên Windows KHÔNG tự quote từng phần tử của
+ * `args` — nó nối cả mảng thành một dòng lệnh rồi giao cho cmd.exe, nên bất kỳ phần tử nào
+ * chứa khoảng trắng sẽ bị TÁCH VỤN thành nhiều đối số. Đã tự kiểm chứng: gọi
+ * `stamp-report.mjs <htmlDir> <jsonFile> "Feature A · chromium"` mà không quote, script nhận
+ * được runLabel chỉ còn đúng chữ "Feature" — mất hết phần sau. Phải tự quote mọi arg có
+ * khoảng trắng trước khi đưa vào spawnSync.
+ */
+function quoteArg(a) {
+  const s = String(a);
+  return /[\s"]/.test(s) ? `"${s.replace(/"/g, '\\"')}"` : s;
+}
+
 function run(cmd, args, opts = {}) {
-  const res = spawnSync(cmd, args, { cwd: ROOT, stdio: 'inherit', shell: true, ...opts });
+  const res = spawnSync(cmd, args.map(quoteArg), { cwd: ROOT, stdio: 'inherit', shell: true, ...opts });
   return res.status ?? 1;
 }
 

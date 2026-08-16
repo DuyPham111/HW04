@@ -28,11 +28,21 @@ if (!fs.existsSync(indexFile)) {
   process.exit(0);
 }
 
-/** Đếm kết quả từ JSON reporter của Playwright (đệ quy qua suites lồng nhau). */
+/**
+ * Đếm kết quả từ JSON reporter của Playwright (đệ quy qua suites lồng nhau).
+ *
+ * QUAN TRỌNG: `report.config.projects` liệt kê CẢ 3 project khai báo trong
+ * playwright.config.js (chromium/firefox/webkit), bất kể `--project=<x>` nào thực sự chạy —
+ * đây là danh sách CẤU HÌNH, không phải danh sách ĐÃ CHẠY. Đọc `projects[0].name` sẽ LUÔN ra
+ * "chromium" dù đang xử lý report của firefox/webkit (đã tự phát hiện lỗi này trên report
+ * thật của lượt a-firefox — dải "Run by" ghi nhầm "engine: chromium"). Tên engine THẬT SỰ đã
+ * chạy nằm ở `spec.tests[0].projectName` của TỪNG test case.
+ */
 function readStats(file) {
   if (!file || !fs.existsSync(file)) return null;
   const report = JSON.parse(fs.readFileSync(file, 'utf8'));
   const stats = { total: 0, passed: 0, failed: 0, flaky: 0, skipped: 0 };
+  let project = '';
   const walk = (suites = []) => {
     for (const s of suites) {
       for (const spec of s.specs ?? []) {
@@ -42,6 +52,7 @@ function readStats(file) {
         else if (status === 'unexpected') stats.failed++;
         else if (status === 'flaky') stats.flaky++;
         else if (status === 'skipped') stats.skipped++;
+        if (!project && spec.tests?.[0]?.projectName) project = spec.tests[0].projectName;
       }
       walk(s.suites);
     }
@@ -51,7 +62,7 @@ function readStats(file) {
     ...stats,
     startedAt: report.stats?.startTime ?? null,
     durationMs: Math.round(report.stats?.duration ?? 0),
-    project: report.config?.projects?.[0]?.name ?? '',
+    project,
   };
 }
 
