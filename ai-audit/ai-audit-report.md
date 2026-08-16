@@ -529,5 +529,41 @@ mà §6 của đề nhấn mạnh ("wherever a failing assertion reveals a genui
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-12 đã đầy đủ cho setup + 3 feature.
+---
+
+## [AI-12b] Xác nhận review Feature C từ sinh viên + gắn nhãn mức độ nghiêm trọng
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-16 18:49 (+07) |
+| Bước trong quy trình | Review lại Feature C sau AI-12 |
+
+**Prompt (nguyên văn):**
+
+> "D1 tôi thấy nên xem vào mức critical
+> D2 đồng ý
+> D3 có thuyết phục
+> D4 tôi nghĩ không quá cần thiết nhưng nếu quan trọng cũng có thể"
+
+**Xác nhận của sinh viên (2026-08-16):**
+- **D1** (mức độ nghiêm trọng bug FR-12) — chọn **Critical**. Đã tự đối chiếu
+  `backend/server.js` dòng 167/179/191 (thiếu `authenticateToken`) với dòng 249/257/269
+  (`/api/categories` cùng FR-12 nhưng CÓ middleware) để xác nhận đây là lỗi cục bộ ở
+  `/api/products`, không phải lỗi hệ thống toàn cục.
+- **D2** (loại bỏ TC "xóa không xác nhận", đối chiếu README.md FR-07 vs FR-15) — đồng ý.
+- **D3** (đọc report `demo/reports/html/c-chromium`, đặc biệt TC `DT-08`/B014) — xác nhận
+  thuyết phục.
+- **D4** (có cần ghi chú thêm về rủi ro dữ liệu thật trong 3 TC `SEC-*` không) — không bắt
+  buộc nhưng đồng ý nếu hợp lý. **Đã xử lý ở mức tối thiểu**: thêm annotation
+  `Mức độ nghiêm trọng: Critical` trực tiếp vào 3 TC `FR15-SEC-*` trong
+  `feature-c-product-admin.spec.js` (không sửa cấu trúc CSV/spec nào khác, giữ đúng tinh
+  thần "không quá cần thiết" của sinh viên). Đã chạy lại nhóm TC `-g "SEC"` xác nhận vẫn
+  đúng 3 Fail như trước, DB sạch sau khi chạy (5 sản phẩm seed).
+
+Feature C (`docs/05`) được coi là **hoàn thiện**, sẵn sàng sang `docs/06-MULTI-BROWSER-REPORT.md`.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-12b đã đầy đủ cho setup + 3 feature.
 AI-13 trở đi dành cho công cụ multi-browser report, ghi khi triển khai `docs/06`)*

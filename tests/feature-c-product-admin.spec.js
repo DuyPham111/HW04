@@ -57,6 +57,18 @@ test.describe('Feature C — FR-15 Quản lý Sản phẩm (admin)', () => {
 
       // ── mode = security: bỏ qua UI, gọi thẳng API bằng context KHÔNG có token ─────────
       if (row.mode === 'security') {
+        // 3 TC method !== POST (BV-R03 dùng POST nhưng CÓ token — không thuộc nhóm này) là
+        // lỗi kiểm soát truy cập: hậu quả không giới hạn ở 1 request mà là toàn bộ catalog
+        // sản phẩm bị phơi ra cho bất kỳ ai, không cần đăng nhập — đánh giá Critical, không
+        // cùng mức với các bug nghiệp vụ B009/B010/B014/B015. Sinh viên đã xác nhận mức độ
+        // này (xem AI Audit §AI-12b) trước khi đưa vào bug-report.md ở docs/07.
+        if (row.tcId.startsWith('FR15-SEC-')) {
+          testInfo.annotations.push({
+            type: 'Mức độ nghiêm trọng',
+            description: 'Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập',
+          });
+        }
+
         const noAuthApi = await playwright.request.newContext({ baseURL: API_URL });
 
         let targetId = null;
