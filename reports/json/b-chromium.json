@@ -1,0 +1,2099 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-b-coupon.spec.js",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\playwright.config.js",
+    "rootDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+      "Run at (ISO 8601)": "2026-08-16T12:00:18.351Z",
+      "Run label": "Feature B — FR-09 Mã giảm giá · chromium",
+      "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+      "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+      "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/b-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:00:18.351Z",
+          "Run label": "Feature B — FR-09 Mã giảm giá · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/b-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:00:18.351Z",
+          "Run label": "Feature B — FR-09 Mã giảm giá · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/b-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:00:18.351Z",
+          "Run label": "Feature B — FR-09 Mã giảm giá · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html/b-chromium"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json/b-chromium.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-b-coupon.spec.js",
+      "file": "feature-b-coupon.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature B — FR-09 Mã giảm giá",
+          "file": "feature-b-coupon.spec.js",
+          "line": 99,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR09-DT-01 — Ap ma percent hop le tren gio hang that (SAVE10)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:19.758Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B007"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 cong thuc percent"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "AirPods Pro 2 (san pham seed #4) = 6.000.000. Theo dac ta: giam 10% = 600.000, con 5.400.000. SUT dung cong thuc floor(total*(1-10)) nen ra so AM -54.000.000 va thanh tien 60.000.000. Vao gio bang nut 'Them vao gio' o trang chu (1 click) thay vi trang chi tiet (bi nuot click dau - bug cua FR-07, khong phai FR-09)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1970,
+                      "error": {
+                        "message": "Error: P4 số học · FR09-DT-01: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600000\u001b[39m\nReceived: \u001b[31m-54000000\u001b[39m",
+                        "stack": "Error: P4 số học · FR09-DT-01: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600000\u001b[39m\nReceived: \u001b[31m-54000000\u001b[39m\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 47,
+                          "line": 107
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:107\n\n\u001b[0m \u001b[90m 105 |\u001b[39m \u001b[90m/** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\u001b[39m\n \u001b[90m 106 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mfunction\u001b[39m expectSoftNumber(actual\u001b[33m,\u001b[39m expected\u001b[33m,\u001b[39m label \u001b[33m=\u001b[39m \u001b[32m'giá trị số'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 107 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(actual\u001b[33m,\u001b[39m \u001b[32m`P4 số học · ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 108 |\u001b[39m }\n \u001b[90m 109 |\u001b[39m\n \u001b[90m 110 |\u001b[39m \u001b[90m/**\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-DT-01: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600000\u001b[39m\nReceived: \u001b[31m-54000000\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-DT-01: thành tiền sau giảm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m5400000\u001b[39m\nReceived: \u001b[31m60000000\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:220:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:19.690Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:19.758Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B007"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 cong thuc percent"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "AirPods Pro 2 (san pham seed #4) = 6.000.000. Theo dac ta: giam 10% = 600.000, con 5.400.000. SUT dung cong thuc floor(total*(1-10)) nen ra so AM -54.000.000 va thanh tien 60.000.000. Vao gio bang nut 'Them vao gio' o trang chu (1 click) thay vi trang chi tiet (bi nuot click dau - bug cua FR-07, khong phai FR-09)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1615--tren-gio-hang-that-SAVE10--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1615--tren-gio-hang-that-SAVE10--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1615--tren-gio-hang-that-SAVE10--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 47,
+                        "line": 107
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-1ccf3e6c171e1f7e4b01",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-02 — Ap ma fixed hop le (BIGBUY tren don 550.000)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:24.301Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 cong thuc fixed"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Nhanh fixed tinh dung (discount_amount = discount_value), du kien Pass ca 3 assertion."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1312,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:24.205Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:24.301Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 cong thuc fixed"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Nhanh fixed tinh dung (discount_amount = discount_value), du kien Pass ca 3 assertion."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-ec75842aaaccb08d6afe",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-03 — Ma khong ton tai",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:26.001Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 ma khong hop le"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Chuoi kiem trong thong bao de khong dau de khong phu thuoc cach go dau tieng Viet; spec so khop bang chuan hoa bo dau o tang spec."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 933,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-DT-03: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 47
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:25.977Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:26.001Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 ma khong hop le"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Chuoi kiem trong thong bao de khong dau de khong phu thuoc cach go dau tieng Viet; spec so khop bang chuan hoa bo dau o tang spec."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-02e4613a54d739c09af4",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-04 — Ma da het han (EXPIRED)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:26.978Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 han su dung"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "EXPIRED co min_order 100.000 nen don 150.000 vuot nguong, dam bao request di toi nhanh kiem han su dung chu khong bi chan tu nguong toi thieu."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 991,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-DT-04: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 44
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:26.960Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:26.978Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 han su dung"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "EXPIRED co min_order 100.000 nen don 150.000 vuot nguong, dam bao request di toi nhanh kiem han su dung chu khong bi chan tu nguong toi thieu."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-5095e010e51fedad0aea",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-05 — Khong nhap ma - nut Ap dung phai bi vo hieu hoa",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:28.007Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-05"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung dac biet (rong)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 ma bat buoc"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "SUT dat disabled={applyingCoupon || !couponCode.trim()} nen khong the bam - day la cach chan hop le theo dac ta."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 868,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:27.990Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:28.007Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-05"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung dac biet (rong)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 ma bat buoc"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "SUT dat disabled={applyingCoupon || !couponCode.trim()} nen khong the bam - day la cach chan hop le theo dac ta."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-dcabc1cfc4e2df8093f9",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-06 — Don chua du gia tri toi thieu (250.000 < 300.000)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:28.918Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-06"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong don toi thieu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Nam ro duoi nguong nen ca spec lan SUT deu tu choi - du kien Pass."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1080,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-DT-06: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 45
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:28.903Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:28.918Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-06"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong don toi thieu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Nam ro duoi nguong nen ca spec lan SUT deu tu choi - du kien Pass."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-7d04a74903444622cd3a",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-07 — Khach chua dang nhap van ap duoc ma",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:30.057Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-07"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le (rang buoc C4)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B008"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 C4 phai dang nhap"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Khi user_id = null, backend BO QUA toan bo nhanh kiem gioi han luot dung -> khach vang lai ap ma khong gioi han. Dac ta khong quy dinh ma loi cu the nen chi doi 4xx."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1154,
+                      "error": {
+                        "message": "Error: FR09-DT-07: P5 · đặc tả đòi request bị TỪ CHỐI (4xx), thực tế server trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m",
+                        "stack": "Error: FR09-DT-07: P5 · đặc tả đòi request bị TỪ CHỐI (4xx), thực tế server trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:92:7)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                          "column": 7,
+                          "line": 92
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 90 |\u001b[39m       actual\u001b[33m,\u001b[39m\n \u001b[90m 91 |\u001b[39m       \u001b[32m`${tcId}: P5 · đặc tả đòi request bị TỪ CHỐI (4xx), thực tế server trả ${actual}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m   } \u001b[36melse\u001b[39m {\n \u001b[90m 95 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                            "column": 7,
+                            "line": 92
+                          },
+                          "message": "Error: FR09-DT-07: P5 · đặc tả đòi request bị TỪ CHỐI (4xx), thực tế server trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n\n  90 |       actual,\n  91 |       `${tcId}: P5 · đặc tả đòi request bị TỪ CHỐI (4xx), thực tế server trả ${actual}`,\n> 92 |     ).toBeGreaterThanOrEqual(400);\n     |       ^\n  93 |     expect(actual, `${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`).toBeLessThan(500);\n  94 |   } else {\n  95 |     expect(actual, `${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`).toBe(expected);\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:92:7)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:30.034Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:30.057Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-07"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le (rang buoc C4)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B008"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 C4 phai dang nhap"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Khi user_id = null, backend BO QUA toan bo nhanh kiem gioi han luot dung -> khach vang lai ap ma khong gioi han. Dac ta khong quy dinh ma loi cu the nen chi doi 4xx."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-b8f4e-ua-dang-nhap-van-ap-duoc-ma-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-b8f4e-ua-dang-nhap-van-ap-duoc-ma-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-b8f4e-ua-dang-nhap-van-ap-duoc-ma-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                        "column": 7,
+                        "line": 92
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-5e51147dddb12b849f7c",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-08 — Kiem chung cong thuc percent tren don lon (30.000.000)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:33.768Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-08"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le (gia tri lon)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B007"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 cong thuc percent"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "iPhone 15 Pro Max (seed #1) = 30.000.000. Vao gio qua TRANG CHI TIET de suite phu ca hai duong dan; page object tu xu ly viec trang chi tiet nuot click dau tien."
+                    },
+                    {
+                      "type": "Quan sát bug FR-07",
+                      "description": "Trang chi tiết nuốt click đầu tiên vào \"Thêm vào giỏ hàng\" — page object đã bấm bù"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3605,
+                      "error": {
+                        "message": "Error: P4 số học · FR09-DT-08: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3000000\u001b[39m\nReceived: \u001b[31m-270000000\u001b[39m",
+                        "stack": "Error: P4 số học · FR09-DT-08: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3000000\u001b[39m\nReceived: \u001b[31m-270000000\u001b[39m\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 47,
+                          "line": 107
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:107\n\n\u001b[0m \u001b[90m 105 |\u001b[39m \u001b[90m/** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\u001b[39m\n \u001b[90m 106 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mfunction\u001b[39m expectSoftNumber(actual\u001b[33m,\u001b[39m expected\u001b[33m,\u001b[39m label \u001b[33m=\u001b[39m \u001b[32m'giá trị số'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 107 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(actual\u001b[33m,\u001b[39m \u001b[32m`P4 số học · ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 108 |\u001b[39m }\n \u001b[90m 109 |\u001b[39m\n \u001b[90m 110 |\u001b[39m \u001b[90m/**\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-DT-08: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3000000\u001b[39m\nReceived: \u001b[31m-270000000\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-DT-08: thành tiền sau giảm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m27000000\u001b[39m\nReceived: \u001b[31m300000000\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:220:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:33.702Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:33.768Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-08"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le (gia tri lon)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B007"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 cong thuc percent"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "iPhone 15 Pro Max (seed #1) = 30.000.000. Vao gio qua TRANG CHI TIET de suite phu ca hai duong dan; page object tu xu ly viec trang chi tiet nuot click dau tien."
+                        },
+                        {
+                          "type": "Quan sát bug FR-07",
+                          "description": "Trang chi tiết nuốt click đầu tiên vào \"Thêm vào giỏ hàng\" — page object đã bấm bù"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-a097c-nt-tren-don-lon-30-000-000--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-a097c-nt-tren-don-lon-30-000-000--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-a097c-nt-tren-don-lon-30-000-000--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 47,
+                        "line": 107
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-559d3274155a695bb10e",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-09 — Het luot dung ma (VIP100 da dung 2/2)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:39.855Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-09"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le (gioi han luot)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 max_uses_per_user"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Dung USER MOI cho moi lan chay: bang coupon_usage khong co API xoa, neu tieu luot tren test@eshop.com thi luot chay firefox/webkit sau do se thay het luot va TC BV-06 Fail vi moi truong chu khong phai vi bug."
+                    },
+                    {
+                      "type": "Tiền đề đã dựng",
+                      "description": "user mới coupon09-260816185340@hw04.test đã tiêu 2/N lượt mã VIP100"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1332,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-DT-09: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 47
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:39.794Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:39.855Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-09"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le (gioi han luot)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 max_uses_per_user"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Dung USER MOI cho moi lan chay: bang coupon_usage khong co API xoa, neu tieu luot tren test@eshop.com thi luot chay firefox/webkit sau do se thay het luot va TC BV-06 Fail vi moi truong chu khong phai vi bug."
+                        },
+                        {
+                          "type": "Tiền đề đã dựng",
+                          "description": "user mới coupon09-260816185340@hw04.test đã tiêu 2/N lượt mã VIP100"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-1014b797553645516ee0",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-DT-10 — O Tong tien thanh toan khong duoc sua tu do",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:41.548Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-DT-10"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "quan sat UI / toan ven du lieu"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B013"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 tong tien tinh tu gio"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Tong tien phai duoc tinh tu gio hang, khong phai o nhap tu do. TC nay BAT BUOC phai ton tai vi cac TC total-set dang LOI DUNG chinh o nay lam cong cu - neu khong co no, suite vua dung bug vua che mat bug do."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1074,
+                      "error": {
+                        "message": "Error: P1 DOM · Tổng tiền phải do hệ thống tính từ giỏ hàng, người dùng KHÔNG được sửa (spec FR-09)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: P1 DOM · Tổng tiền phải do hệ thống tính từ giỏ hàng, người dùng KHÔNG được sửa (spec FR-09)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:164:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                          "column": 11,
+                          "line": 164
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 162 |\u001b[39m           editable\u001b[33m,\u001b[39m\n \u001b[90m 163 |\u001b[39m           \u001b[32m'P1 DOM · Tổng tiền phải do hệ thống tính từ giỏ hàng, người dùng KHÔNG được sửa (spec FR-09)'\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 164 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 165 |\u001b[39m\n \u001b[90m 166 |\u001b[39m         \u001b[36mif\u001b[39m (editable) {\n \u001b[90m 167 |\u001b[39m           \u001b[90m// Bằng chứng thứ hai: số sửa tay chảy thẳng vào số tiền phải trả, không chỉ là hiển thị.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                            "column": 11,
+                            "line": 164
+                          },
+                          "message": "Error: P1 DOM · Tổng tiền phải do hệ thống tính từ giỏ hàng, người dùng KHÔNG được sửa (spec FR-09)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  162 |           editable,\n  163 |           'P1 DOM · Tổng tiền phải do hệ thống tính từ giỏ hàng, người dùng KHÔNG được sửa (spec FR-09)',\n> 164 |         ).toBe(false);\n      |           ^\n  165 |\n  166 |         if (editable) {\n  167 |           // Bằng chứng thứ hai: số sửa tay chảy thẳng vào số tiền phải trả, không chỉ là hiển thị.\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:164:11"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                            "column": 17,
+                            "line": 173
+                          },
+                          "message": "Error: P1 DOM · số nhập tay không được trở thành số tiền phải thanh toán\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m999999999\u001b[39m\n\n  171 |             parseMoney(await checkout.grandTotal.textContent()),\n  172 |             'P1 DOM · số nhập tay không được trở thành số tiền phải thanh toán',\n> 173 |           ).not.toBe(injected);\n      |                 ^\n  174 |         }\n  175 |         return;\n  176 |       }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:173:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:41.531Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:41.548Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-DT-10"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "quan sat UI / toan ven du lieu"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B013"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 tong tien tinh tu gio"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Tong tien phai duoc tinh tu gio hang, khong phai o nhap tu do. TC nay BAT BUOC phai ton tai vi cac TC total-set dang LOI DUNG chinh o nay lam cong cu - neu khong co no, suite vua dung bug vua che mat bug do."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-6d388-h-toan-khong-duoc-sua-tu-do-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-6d388-h-toan-khong-duoc-sua-tu-do-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-6d388-h-toan-khong-duoc-sua-tu-do-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                        "column": 11,
+                        "line": 164
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-d34cbfac104d90f46e08",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-01 — BVA - duoi nguong 1 dong (299.999 < 300.000)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:44.703Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA off-point duoi (P-01)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong don toi thieu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Duoi nguong -> ca spec lan SUT deu tu choi."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1203,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-BV-01: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 39
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:44.630Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:44.703Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA off-point duoi (P-01)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong don toi thieu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Duoi nguong -> ca spec lan SUT deu tu choi."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-ef95b13e242610de1b50",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-02 — BVA - dung bang nguong toi thieu (300.000)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:46.228Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point (P-02)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B006"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong don toi thieu (>=)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Dac ta dung >= nen don dung bang nguong PHAI duoc chap nhan. SUT dung 'total_amount > min_order_amount' (thieu dau =) nen tu choi - loi off-by-one kinh dien, chi lo ra o dung moc nay."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1211,
+                      "error": {
+                        "message": "Error: FR09-BV-02: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: FR09-BV-02: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:95:82)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                          "column": 82,
+                          "line": 95
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 93 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m   } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 95 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 96 |\u001b[39m   }\n \u001b[90m 97 |\u001b[39m }\n \u001b[90m 98 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                            "column": 82,
+                            "line": 95
+                          },
+                          "message": "Error: FR09-BV-02: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  93 |     expect(actual, `${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`).toBeLessThan(500);\n  94 |   } else {\n> 95 |     expect(actual, `${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`).toBe(expected);\n     |                                                                                  ^\n  96 |   }\n  97 | }\n  98 |\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:95:82)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:46.212Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:46.228Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point (P-02)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B006"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong don toi thieu (>=)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Dac ta dung >= nen don dung bang nguong PHAI duoc chap nhan. SUT dung 'total_amount > min_order_amount' (thieu dau =) nen tu choi - loi off-by-one kinh dien, chi lo ra o dung moc nay."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1958-g-nguong-toi-thieu-300-000--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1958-g-nguong-toi-thieu-300-000--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-f1958-g-nguong-toi-thieu-300-000--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                        "column": 82,
+                        "line": 95
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-fc1b15085101637229ea",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-03 — BVA - tren nguong 1 dong (300.001)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:50.070Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA off-point tren (P-03)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B007"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong + cong thuc percent"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Quyet dinh accept/reject dung (200), nhung so tien sai vi B007: floor(300001*10/100)=30000 theo dac ta, SUT tra so am."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1851,
+                      "error": {
+                        "message": "Error: P4 số học · FR09-BV-03: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30000\u001b[39m\nReceived: \u001b[31m-2700009\u001b[39m",
+                        "stack": "Error: P4 số học · FR09-BV-03: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30000\u001b[39m\nReceived: \u001b[31m-2700009\u001b[39m\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 47,
+                          "line": 107
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:107\n\n\u001b[0m \u001b[90m 105 |\u001b[39m \u001b[90m/** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\u001b[39m\n \u001b[90m 106 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mfunction\u001b[39m expectSoftNumber(actual\u001b[33m,\u001b[39m expected\u001b[33m,\u001b[39m label \u001b[33m=\u001b[39m \u001b[32m'giá trị số'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 107 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(actual\u001b[33m,\u001b[39m \u001b[32m`P4 số học · ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 108 |\u001b[39m }\n \u001b[90m 109 |\u001b[39m\n \u001b[90m 110 |\u001b[39m \u001b[90m/**\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-BV-03: số tiền được giảm (công thức đặc tả)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30000\u001b[39m\nReceived: \u001b[31m-2700009\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:213:9"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 47,
+                            "line": 107
+                          },
+                          "message": "Error: P4 số học · FR09-BV-03: thành tiền sau giảm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m270001\u001b[39m\nReceived: \u001b[31m3000010\u001b[39m\n\n   at utils\\assertions.js:107\n\n  105 | /** P4 — Soft numeric: so số tiền/số lượng/thời gian, không chặn assertion sau trong cùng test. */\n  106 | export function expectSoftNumber(actual, expected, label = 'giá trị số') {\n> 107 |   expect.soft(actual, `P4 số học · ${label}`).toBe(expected);\n      |                                               ^\n  108 | }\n  109 |\n  110 | /**\n    at expectSoftNumber (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:107:47)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:220:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:49.974Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:50.070Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA off-point tren (P-03)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B007"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong + cong thuc percent"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Quyet dinh accept/reject dung (200), nhung so tien sai vi B007: floor(300001*10/100)=30000 theo dac ta, SUT tra so am."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-07074-tren-nguong-1-dong-300-001--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-07074-tren-nguong-1-dong-300-001--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-07074-tren-nguong-1-dong-300-001--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 47,
+                        "line": 107
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-ececc2fad45b08fef0c5",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-04 — BVA - duoi nguong BIGBUY 1 dong (499.999)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:54.474Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA off-point duoi (P-04)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong don toi thieu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Lap lai phep kiem bien tren mot coupon KHAC de chac chan B006 la loi he thong chu khong phai loi rieng cua SAVE10."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1204,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · FR09-BV-04: thông báo lỗi đúng nội dung đặc tả",
+                          "duration": 42
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:00:54.404Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:54.474Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA off-point duoi (P-04)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong don toi thieu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Lap lai phep kiem bien tren mot coupon KHAC de chac chan B006 la loi he thong chu khong phai loi rieng cua SAVE10."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-11517c5ef9394eb2d7eb",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-05 — BVA - dung bang nguong BIGBUY (500.000)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:56.027Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-05"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point (P-05)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B006"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 nguong don toi thieu (>=)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Cap doi cua BV-02 tren coupon fixed - xac nhan B006 xuat hien o CA HAI loai coupon, nen nguyen nhan nam o phep so sanh dung chung chu khong o nhanh tinh tien."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1263,
+                      "error": {
+                        "message": "Error: FR09-BV-05: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: FR09-BV-05: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:95:82)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                          "column": 82,
+                          "line": 95
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 93 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m   } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 95 |\u001b[39m     expect(actual\u001b[33m,\u001b[39m \u001b[32m`${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`\u001b[39m)\u001b[33m.\u001b[39mtoBe(expected)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 96 |\u001b[39m   }\n \u001b[90m 97 |\u001b[39m }\n \u001b[90m 98 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                            "column": 82,
+                            "line": 95
+                          },
+                          "message": "Error: FR09-BV-05: P5 · status phải là 200 theo đặc tả FR-09\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  93 |     expect(actual, `${tcId}: P5 · phải là lỗi phía client (4xx), không phải lỗi server`).toBeLessThan(500);\n  94 |   } else {\n> 95 |     expect(actual, `${tcId}: P5 · status phải là ${expected} theo đặc tả FR-09`).toBe(expected);\n     |                                                                                  ^\n  96 |   }\n  97 | }\n  98 |\n    at assertStatus (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:95:82)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js:196:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:56.014Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:56.027Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-05"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point (P-05)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B006"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 nguong don toi thieu (>=)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Cap doi cua BV-02 tren coupon fixed - xac nhan B006 xuat hien o CA HAI loai coupon, nen nguyen nhan nam o phep so sanh dung chung chu khong o nhanh tinh tien."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-eca77-bang-nguong-BIGBUY-500-000--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-eca77-bang-nguong-BIGBUY-500-000--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\b-chromium\\feature-b-coupon-Feature-B-eca77-bang-nguong-BIGBUY-500-000--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-b-coupon.spec.js",
+                        "column": 82,
+                        "line": 95
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-e072695bbe633b72f8c8",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-06 — BVA - con luot dung (VIP100 da dung 1/2)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:00:59.244Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-06"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point gioi han luot (P-06)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 max_uses_per_user"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Bien duoi cua gioi han: da dung 1 lan, con 1 luot -> phai chap nhan. Cap doi voi DT-09 (da dung 2 -> tu choi)."
+                    },
+                    {
+                      "type": "Tiền đề đã dựng",
+                      "description": "user mới coupon06-260816185340@hw04.test đã tiêu 1/N lượt mã VIP100"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:00:59.185Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:00:59.244Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-06"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point gioi han luot (P-06)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 max_uses_per_user"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Bien duoi cua gioi han: da dung 1 lan, con 1 luot -> phai chap nhan. Cap doi voi DT-09 (da dung 2 -> tu choi)."
+                        },
+                        {
+                          "type": "Tiền đề đã dựng",
+                          "description": "user mới coupon06-260816185340@hw04.test đã tiêu 1/N lượt mã VIP100"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-578bdf6e35fdbf016a6b",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-R02 — Robust - ma go chu thuong (save10)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:01:00.882Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-R02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust - chuan hoa dau vao"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 chuan hoa ma"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Client goi .toUpperCase() truoc khi gui. Khong kiem so tien o TC nay - xem _quy_uoc.vi_sao_mot_so_TC_khong_kiem_so_tien."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1103,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:01:00.871Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:01:00.882Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-R02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust - chuan hoa dau vao"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 chuan hoa ma"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Client goi .toUpperCase() truoc khi gui. Khong kiem so tien o TC nay - xem _quy_uoc.vi_sao_mot_so_TC_khong_kiem_so_tien."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-25141942b0abd98db238",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            },
+            {
+              "title": "FR09-BV-R03 — Robust - ma co khoang trang thua ('  SAVE10  ')",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:01:02.026Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR09-BV-R03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust - chuan hoa dau vao"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-09 chuan hoa ma"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Client goi .trim() truoc khi gui. Khong kiem so tien - ly do nhu R02."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 993,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:01:02.010Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:01:02.026Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR09-BV-R03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust - chuan hoa dau vao"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-09 chuan hoa ma"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Client goi .trim() truoc khi gui. Khong kiem so tien - ly do nhu R02."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f93989f16d5030921b2d-46a0937653ccf45c976e",
+              "file": "feature-b-coupon.spec.js",
+              "line": 101,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-16T12:00:18.360Z",
+    "duration": 45179.623,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  }
+}

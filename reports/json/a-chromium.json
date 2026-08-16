@@ -1,0 +1,2277 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-a-login.spec.js",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\playwright.config.js",
+    "rootDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+      "Run at (ISO 8601)": "2026-08-16T11:53:43.367Z",
+      "Run label": "Feature A — FR-02 Đăng nhập & Khóa tài khoản · chromium",
+      "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+      "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+      "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/a-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T11:53:43.367Z",
+          "Run label": "Feature A — FR-02 Đăng nhập & Khóa tài khoản · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/a-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T11:53:43.367Z",
+          "Run label": "Feature A — FR-02 Đăng nhập & Khóa tài khoản · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/a-chromium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T11:53:43.367Z",
+          "Run label": "Feature A — FR-02 Đăng nhập & Khóa tài khoản · chromium",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html/a-chromium"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json/a-chromium.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-a-login.spec.js",
+      "file": "feature-a-login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature A — FR-02 Đăng nhập & Khóa tài khoản",
+          "file": "feature-a-login.spec.js",
+          "line": 44,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR02-DT-01 — Đăng nhập thành công (happy path)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:53:44.347Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vùng hợp lệ"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R4"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Tài khoản seed, luôn chạy đầu tiên trong file; sau đăng nhập đúng bộ đếm phải là 0 (R4)"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "0"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1091,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · rời trang đăng nhập sau khi đăng nhập thành công → /\\/(?!login)/",
+                          "duration": 58
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:53:44.308Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:53:44.347Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vùng hợp lệ"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R4"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Tài khoản seed, luôn chạy đầu tiên trong file; sau đăng nhập đúng bộ đếm phải là 0 (R4)"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "0"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-7e16f94818d78c5859aa",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-02 — Email chưa đăng ký (đúng định dạng)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:53:45.674Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vùng không hợp lệ"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R3"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Server phải từ chối bằng câu chung, không lộ lý do chi tiết"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7630,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 10
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:53:45.667Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:53:45.674Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vùng không hợp lệ"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R3"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Server phải từ chối bằng câu chung, không lộ lý do chi tiết"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-50f56bb4dc76991ba0f3",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-03 — Email sai định dạng (thiếu @)",
+              "ok": false,
+              "tags": [
+                ")"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:53:53.319Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP biên định dạng"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B005"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R5"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec đòi type=email để HTML5 chặn; SUT dùng type=text nên không chặn"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 669,
+                      "error": {
+                        "message": "Error: FR02-DT-03: form phải chặn ngay ở client, không được gọi API\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: FR02-DT-03: form phải chặn ngay ở client, không được gọi API\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:76:96",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 96,
+                          "line": 76
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 74 |\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mrejectVia \u001b[33m===\u001b[39m \u001b[32m'client'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 76 |\u001b[39m           expect\u001b[33m.\u001b[39msoft(called\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: form phải chặn ngay ở client, không được gọi API`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 77 |\u001b[39m         } \u001b[36melse\u001b[39m \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mrejectVia \u001b[33m===\u001b[39m \u001b[32m'server'\u001b[39m) {\n \u001b[90m 78 |\u001b[39m           expect\u001b[33m.\u001b[39msoft(called\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: dữ liệu này phải đi tới server để server từ chối`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m           expect\u001b[33m.\u001b[39msoft(status\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: server phải trả mã lỗi (4xx), không phải 2xx/5xx`\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 96,
+                            "line": 76
+                          },
+                          "message": "Error: FR02-DT-03: form phải chặn ngay ở client, không được gọi API\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  74 |\n  75 |         if (row.rejectVia === 'client') {\n> 76 |           expect.soft(called, `${row.tcId}: form phải chặn ngay ở client, không được gọi API`).toBe(false);\n     |                                                                                                ^\n  77 |         } else if (row.rejectVia === 'server') {\n  78 |           expect.soft(called, `${row.tcId}: dữ liệu này phải đi tới server để server từ chối`).toBe(true);\n  79 |           expect.soft(status, `${row.tcId}: server phải trả mã lỗi (4xx), không phải 2xx/5xx`).toBeGreaterThanOrEqual(400);\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:76:96"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 13
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:53:53.313Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:53:53.319Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP biên định dạng"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B005"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R5"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec đòi type=email để HTML5 chặn; SUT dùng type=text nên không chặn"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--21b55--Email-sai-định-dạng-thiếu--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--21b55--Email-sai-định-dạng-thiếu--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--21b55--Email-sai-định-dạng-thiếu--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 96,
+                        "line": 76
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-2293716fced0a1a7c3ac",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-04 — Email bỏ trống",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:53:55.754Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vùng không hợp lệ"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 (required)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Ô email có required, trình duyệt phải chặn"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5569,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 20
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:53:55.707Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:53:55.754Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vùng không hợp lệ"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 (required)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Ô email có required, trình duyệt phải chặn"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-acb4e7241513726d87dc",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-06 — Mật khẩu bỏ trống",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:01.533Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-06"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vùng không hợp lệ"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 (required)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Ô mật khẩu có required, trình duyệt phải chặn"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5476,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 24
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:54:01.526Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:01.533Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-06"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vùng không hợp lệ"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 (required)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Ô mật khẩu có required, trình duyệt phải chặn"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-5398369ca2bd9aa51f8e",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-09 — Ô mật khẩu phải che ký tự (type=password)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:07.027Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-09"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "quan sát UI"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B004"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-22"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "SUT để type=text nên ký tự hiện rõ khi gõ"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 495,
+                      "error": {
+                        "message": "Error: P1 DOM · ô mật khẩu phải type=\"password\" (spec FR-22)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"password\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m",
+                        "stack": "Error: P1 DOM · ô mật khẩu phải type=\"password\" (spec FR-22)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"password\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:58:88",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 88,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mtcId \u001b[33m===\u001b[39m \u001b[32m'FR02-DT-09'\u001b[39m) {\n \u001b[90m 57 |\u001b[39m           \u001b[36mconst\u001b[39m pwType \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39mpasswordInputType()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m           expect\u001b[33m.\u001b[39msoft(pwType\u001b[33m,\u001b[39m \u001b[32m'P1 DOM · ô mật khẩu phải type=\"password\" (spec FR-22)'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m'password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m         }\n \u001b[90m 60 |\u001b[39m\n \u001b[90m 61 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mtcId \u001b[33m===\u001b[39m \u001b[32m'FR02-DT-10'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 88,
+                            "line": 58
+                          },
+                          "message": "Error: P1 DOM · ô mật khẩu phải type=\"password\" (spec FR-22)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"password\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m\n\n  56 |         if (row.tcId === 'FR02-DT-09') {\n  57 |           const pwType = await login.passwordInputType();\n> 58 |           expect.soft(pwType, 'P1 DOM · ô mật khẩu phải type=\"password\" (spec FR-22)').toBe('password');\n     |                                                                                        ^\n  59 |         }\n  60 |\n  61 |         if (row.tcId === 'FR02-DT-10') {\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:58:88"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T11:54:07.022Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:07.027Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-09"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "quan sát UI"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B004"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-22"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "SUT để type=text nên ký tự hiện rõ khi gõ"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--db0a5-ải-che-ký-tự-type-password--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--db0a5-ải-che-ký-tự-type-password--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--db0a5-ải-che-ký-tự-type-password--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 88,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-af36adb7248a1113f9b9",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-10 — Tiêu đề/nhãn trang đăng nhập đúng tiếng Việt",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:09.339Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-10"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "quan sát UI"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B012"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-21"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "SUT hiện Đăng Ký / Username / Sign In thay vì Đăng Nhập / Email / Đăng Nhập"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14697,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2')\nExpected substring: \u001b[32m\"Đăng \u001b[7mNhập\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng \u001b[7mKý\u001b[27m\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n\u001b[2m    17 × locator resolved to <h2 class=\"text-2xl font-bold mb-6 text-center\">Đăng Ký</h2>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng Ký\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2')\nExpected substring: \u001b[32m\"Đăng \u001b[7mNhập\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng \u001b[7mKý\u001b[27m\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n\u001b[2m    17 × locator resolved to <h2 class=\"text-2xl font-bold mb-6 text-center\">Đăng Ký</h2>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng Ký\"\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:62:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 51,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`P1 DOM · ${label}`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (expectedSubstring) \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoContainText(expectedSubstring)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m }\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 51,
+                            "line": 35
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2')\nExpected substring: \u001b[32m\"Đăng \u001b[7mNhập\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng \u001b[7mKý\u001b[27m\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n\u001b[2m    17 × locator resolved to <h2 class=\"text-2xl font-bold mb-6 text-center\">Đăng Ký</h2>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng Ký\"\u001b[22m\n\n\n   at utils\\assertions.js:35\n\n  33 |   await test.step(`P1 DOM · ${label}`, async () => {\n  34 |     await E(soft)(locator).toBeVisible();\n> 35 |     if (expectedSubstring) await E(soft)(locator).toContainText(expectedSubstring);\n     |                                                   ^\n  36 |   });\n  37 | }\n  38 |\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:62:11"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 112,
+                            "line": 64
+                          },
+                          "message": "Error: P1 DOM · nhãn ô đăng nhập phải là \"Email\", không phải \"Username\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  62 |           await expectVisibleText(login.heading, 'Đăng Nhập', 'tiêu đề trang phải là \"Đăng Nhập\"', { soft: true });\n  63 |           const label = page.locator('label', { hasText: 'Email' });\n> 64 |           expect.soft(await label.count(), 'P1 DOM · nhãn ô đăng nhập phải là \"Email\", không phải \"Username\"').toBeGreaterThan(0);\n     |                                                                                                                ^\n  65 |           await expectVisibleText(login.submitButton, 'Đăng Nhập', 'nút submit phải ghi \"Đăng Nhập\", không phải \"Sign In\"', { soft: true });\n  66 |         }\n  67 |         return;\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:64:112"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 51,
+                            "line": 35
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Sign In' })\nExpected substring: \u001b[32m\"Đăng Nhập\"\u001b[39m\nReceived string:    \u001b[31m\"Sign In\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign In' })\u001b[22m\n\u001b[2m    18 × locator resolved to <button tabindex=\"1\" type=\"submit\" class=\"w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"Sign In\"\u001b[22m\n\n\n   at utils\\assertions.js:35\n\n  33 |   await test.step(`P1 DOM · ${label}`, async () => {\n  34 |     await E(soft)(locator).toBeVisible();\n> 35 |     if (expectedSubstring) await E(soft)(locator).toContainText(expectedSubstring);\n     |                                                   ^\n  36 |   });\n  37 | }\n  38 |\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:65:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · tiêu đề trang phải là \"Đăng Nhập\"",
+                          "duration": 7047,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2')\nExpected substring: \u001b[32m\"Đăng \u001b[7mNhập\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng \u001b[7mKý\u001b[27m\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n\u001b[2m    17 × locator resolved to <h2 class=\"text-2xl font-bold mb-6 text-center\">Đăng Ký</h2>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng Ký\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2')\nExpected substring: \u001b[32m\"Đăng \u001b[7mNhập\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng \u001b[7mKý\u001b[27m\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n\u001b[2m    17 × locator resolved to <h2 class=\"text-2xl font-bold mb-6 text-center\">Đăng Ký</h2>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng Ký\"\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:62:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 51,
+                              "line": 35
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`P1 DOM · ${label}`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (expectedSubstring) \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoContainText(expectedSubstring)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m }\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                          }
+                        },
+                        {
+                          "title": "P1 DOM · nút submit phải ghi \"Đăng Nhập\", không phải \"Sign In\"",
+                          "duration": 7033,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Sign In' })\nExpected substring: \u001b[32m\"Đăng Nhập\"\u001b[39m\nReceived string:    \u001b[31m\"Sign In\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign In' })\u001b[22m\n\u001b[2m    18 × locator resolved to <button tabindex=\"1\" type=\"submit\" class=\"w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"Sign In\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Sign In' })\nExpected substring: \u001b[32m\"Đăng Nhập\"\u001b[39m\nReceived string:    \u001b[31m\"Sign In\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign In' })\u001b[22m\n\u001b[2m    18 × locator resolved to <button tabindex=\"1\" type=\"submit\" class=\"w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"Sign In\"\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:65:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 51,
+                              "line": 35
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`P1 DOM · ${label}`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (expectedSubstring) \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoContainText(expectedSubstring)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m }\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:54:09.295Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:09.339Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-10"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "quan sát UI"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B012"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-21"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "SUT hiện Đăng Ký / Username / Sign In thay vì Đăng Nhập / Email / Đăng Nhập"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--d8fdc-g-đăng-nhập-đúng-tiếng-Việt-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--d8fdc-g-đăng-nhập-đúng-tiếng-Việt-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--d8fdc-g-đăng-nhập-đúng-tiếng-Việt-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 51,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-6801c33aace4e202ca4f",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-01 — BVA - sai mật khẩu lần thứ 1 (biên dưới)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:26.107Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA biên dưới (P-01)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B001"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R1"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec +1/lần; SUT thật +2/lần nên login_attempts thật sẽ là 2"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "2"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 972,
+                      "error": {
+                        "message": "Error: FR02-BV-01: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: FR02-BV-01: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 122,
+                          "line": 179
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 177 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedAttempts \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 178 |\u001b[39m     testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'DB login_attempts thật'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mString\u001b[39m(state\u001b[33m.\u001b[39mattempts) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 179 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(state\u001b[33m.\u001b[39mattempts\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[33mNumber\u001b[39m(row\u001b[33m.\u001b[39mexpectedAttempts))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 180 |\u001b[39m   }\n \u001b[90m 181 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 182 |\u001b[39m     \u001b[36mconst\u001b[39m expectedLocked \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m===\u001b[39m \u001b[32m'TRUE'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-BV-01: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T11:54:26.064Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:26.107Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA biên dưới (P-01)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B001"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R1"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec +1/lần; SUT thật +2/lần nên login_attempts thật sẽ là 2"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "2"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "null"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--4e43d-t-khẩu-lần-thứ-1-biên-dưới--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--4e43d-t-khẩu-lần-thứ-1-biên-dưới--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--4e43d-t-khẩu-lần-thứ-1-biên-dưới--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 122,
+                        "line": 179
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-320eed383b2b3a7f422f",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-02 — BVA - sai mật khẩu lần thứ 2 (giữa vùng hợp lệ)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:29.028Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA in (P-02)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B001"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R1, R2a"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Theo spec 2 lần sai chưa đủ ngưỡng khóa (>=3)"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "4"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "đã set"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 932,
+                      "error": {
+                        "message": "Error: FR02-BV-02: P3 · login_attempts phải = 2 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m4\u001b[39m",
+                        "stack": "Error: FR02-BV-02: P3 · login_attempts phải = 2 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 122,
+                          "line": 179
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 177 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedAttempts \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 178 |\u001b[39m     testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'DB login_attempts thật'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mString\u001b[39m(state\u001b[33m.\u001b[39mattempts) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 179 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(state\u001b[33m.\u001b[39mattempts\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[33mNumber\u001b[39m(row\u001b[33m.\u001b[39mexpectedAttempts))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 180 |\u001b[39m   }\n \u001b[90m 181 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 182 |\u001b[39m     \u001b[36mconst\u001b[39m expectedLocked \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m===\u001b[39m \u001b[32m'TRUE'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-BV-02: P3 · login_attempts phải = 2 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 133,
+                            "line": 184
+                          },
+                          "message": "Error: FR02-BV-02: P3 · locked_until phải còn null theo spec R2a\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n  183 |     testInfo.annotations.push({ type: 'DB locked_until thật', description: state.locked ? 'đã set' : 'null' });\n> 184 |     expect.soft(state.locked, `${row.tcId}: P3 · locked_until ${expectedLocked ? 'phải được SET' : 'phải còn null'} theo spec R2a`).toBe(expectedLocked);\n      |                                                                                                                                     ^\n  185 |   }\n  186 | }\n  187 |\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:184:133)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T11:54:28.966Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:29.028Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA in (P-02)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B001"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R1, R2a"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Theo spec 2 lần sai chưa đủ ngưỡng khóa (>=3)"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "4"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "đã set"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--ee388-lần-thứ-2-giữa-vùng-hợp-lệ--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--ee388-lần-thứ-2-giữa-vùng-hợp-lệ--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--ee388-lần-thứ-2-giữa-vùng-hợp-lệ--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 122,
+                        "line": 179
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-b53fd0efeefea727aad9",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-03 — BVA - sai mật khẩu lần thứ 3 (on-point ngưỡng khóa)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:31.596Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point (P-03)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B001"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R2a"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Đúng thiết kế: khóa mới SET ở lần 3, enforce từ lần 4 nên response lần 3 vẫn 401"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "4"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "đã set"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1245,
+                      "error": {
+                        "message": "Error: FR02-BV-03: P5 status · lần sai cuối cùng (thứ 3) phải trả 401 theo đúng thứ tự xử lý của spec\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m403\u001b[39m",
+                        "stack": "Error: FR02-BV-03: P5 status · lần sai cuối cùng (thứ 3) phải trả 401 theo đúng thứ tự xử lý của spec\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:131:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 13,
+                          "line": 131
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 129 |\u001b[39m             lastFailStatus\u001b[33m,\u001b[39m\n \u001b[90m 130 |\u001b[39m             \u001b[32m`${row.tcId}: P5 status · lần sai cuối cùng (thứ ${failCount}) phải trả ${row.expectedLastFailStatus} theo đúng thứ tự xử lý của spec`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 131 |\u001b[39m           )\u001b[33m.\u001b[39mtoBe(\u001b[33mNumber\u001b[39m(row\u001b[33m.\u001b[39mexpectedLastFailStatus))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 132 |\u001b[39m         }\n \u001b[90m 133 |\u001b[39m\n \u001b[90m 134 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mmode \u001b[33m===\u001b[39m \u001b[32m'lockout-wait'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 13,
+                            "line": 131
+                          },
+                          "message": "Error: FR02-BV-03: P5 status · lần sai cuối cùng (thứ 3) phải trả 401 theo đúng thứ tự xử lý của spec\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n\n  129 |             lastFailStatus,\n  130 |             `${row.tcId}: P5 status · lần sai cuối cùng (thứ ${failCount}) phải trả ${row.expectedLastFailStatus} theo đúng thứ tự xử lý của spec`,\n> 131 |           ).toBe(Number(row.expectedLastFailStatus));\n      |             ^\n  132 |         }\n  133 |\n  134 |         if (row.mode === 'lockout-wait') {\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:131:13"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-BV-03: P3 · login_attempts phải = 3 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T11:54:31.555Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:31.596Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point (P-03)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B001"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R2a"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Đúng thiết kế: khóa mới SET ở lần 3, enforce từ lần 4 nên response lần 3 vẫn 401"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "4"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "đã set"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--43cbb-thứ-3-on-point-ngưỡng-khóa--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--43cbb-thứ-3-on-point-ngưỡng-khóa--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--43cbb-thứ-3-on-point-ngưỡng-khóa--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 13,
+                        "line": 131
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-76334c216c254b1d14f2",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-05 — Mới sai 1 lần, xác nhận chưa bị khóa",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:34.420Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-05"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP hợp lệ (login_attempts)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B001"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R2a"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Nhấn mạnh riêng locked_until phải null sau 1 lần sai"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "2"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 718,
+                      "error": {
+                        "message": "Error: FR02-DT-05: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: FR02-DT-05: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 122,
+                          "line": 179
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 177 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedAttempts \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 178 |\u001b[39m     testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'DB login_attempts thật'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mString\u001b[39m(state\u001b[33m.\u001b[39mattempts) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 179 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(state\u001b[33m.\u001b[39mattempts\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[33mNumber\u001b[39m(row\u001b[33m.\u001b[39mexpectedAttempts))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 180 |\u001b[39m   }\n \u001b[90m 181 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 182 |\u001b[39m     \u001b[36mconst\u001b[39m expectedLocked \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m===\u001b[39m \u001b[32m'TRUE'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-DT-05: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T11:54:34.384Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:34.420Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-05"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP hợp lệ (login_attempts)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B001"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R2a"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Nhấn mạnh riêng locked_until phải null sau 1 lần sai"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "2"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "null"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--77662-1-lần-xác-nhận-chưa-bị-khóa-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--77662-1-lần-xác-nhận-chưa-bị-khóa-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--77662-1-lần-xác-nhận-chưa-bị-khóa-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 122,
+                        "line": 179
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-0b9006253463c5181847",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-08 — Đăng nhập đúng sau khi sai 1 lần - bộ đếm phải reset",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:36.900Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-08"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "dependency C-FR02-01"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R4"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Sau khi đăng nhập đúng, login_attempts phải reset về 0"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "0"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 820,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · đăng nhập đúng sau khi hết khóa/sau khi sửa sai phải rời trang login → /\\/(?!login)/",
+                          "duration": 64
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:54:36.859Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:36.900Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-08"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "dependency C-FR02-01"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R4"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Sau khi đăng nhập đúng, login_attempts phải reset về 0"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "0"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-9dfcc336828e3e019cb1",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-DT-07 — Nhập đúng mật khẩu khi tài khoản đang bị khóa",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:37.918Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-DT-07"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "dependency C-FR02-06"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B003"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R3, R2a"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Thông báo phải nói rõ đang khóa, khác câu sai mật khẩu"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "đã set"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8132,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.bg-red-100')\nExpected substring: \u001b[32m\"khóa\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.bg-red-100')\u001b[22m\n\u001b[2m    18 × locator resolved to <div class=\"bg-red-100 text-red-700 p-3 mt-4 rounded\">Đăng nhập thất bại. Vui lòng kiểm tra lại.</div>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.bg-red-100')\nExpected substring: \u001b[32m\"khóa\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.bg-red-100')\u001b[22m\n\u001b[2m    18 × locator resolved to <div class=\"bg-red-100 text-red-700 p-3 mt-4 rounded\">Đăng nhập thất bại. Vui lòng kiểm tra lại.</div>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:152:15",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 51,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`P1 DOM · ${label}`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (expectedSubstring) \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoContainText(expectedSubstring)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m }\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 51,
+                            "line": 35
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.bg-red-100')\nExpected substring: \u001b[32m\"khóa\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.bg-red-100')\u001b[22m\n\u001b[2m    18 × locator resolved to <div class=\"bg-red-100 text-red-700 p-3 mt-4 rounded\">Đăng nhập thất bại. Vui lòng kiểm tra lại.</div>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[22m\n\n\n   at utils\\assertions.js:35\n\n  33 |   await test.step(`P1 DOM · ${label}`, async () => {\n  34 |     await E(soft)(locator).toBeVisible();\n> 35 |     if (expectedSubstring) await E(soft)(locator).toContainText(expectedSubstring);\n     |                                                   ^\n  36 |   });\n  37 | }\n  38 |\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:152:15"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P1 DOM · thông báo phải nói rõ lý do (đang khóa), khác câu sai mật khẩu",
+                          "duration": 7047,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.bg-red-100')\nExpected substring: \u001b[32m\"khóa\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.bg-red-100')\u001b[22m\n\u001b[2m    18 × locator resolved to <div class=\"bg-red-100 text-red-700 p-3 mt-4 rounded\">Đăng nhập thất bại. Vui lòng kiểm tra lại.</div>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.bg-red-100')\nExpected substring: \u001b[32m\"khóa\"\u001b[39m\nReceived string:    \u001b[31m\"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[39m\nTimeout: 7000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toContainText\" with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.bg-red-100')\u001b[22m\n\u001b[2m    18 × locator resolved to <div class=\"bg-red-100 text-red-700 p-3 mt-4 rounded\">Đăng nhập thất bại. Vui lòng kiểm tra lại.</div>\u001b[22m\n\u001b[2m       - unexpected value \"Đăng nhập thất bại. Vui lòng kiểm tra lại.\"\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:35:51\n    at expectVisibleText (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:33:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:152:15",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 51,
+                              "line": 35
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`P1 DOM · ${label}`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (expectedSubstring) \u001b[36mawait\u001b[39m \u001b[33mE\u001b[39m(soft)(locator)\u001b[33m.\u001b[39mtoContainText(expectedSubstring)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m }\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                          }
+                        },
+                        {
+                          "title": "P2 URL · vẫn bị khóa thì phải còn ở lại trang đăng nhập → /\\/login$/",
+                          "duration": 14
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:54:37.910Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:37.918Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-DT-07"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "dependency C-FR02-06"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B003"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R3, R2a"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Thông báo phải nói rõ đang khóa, khác câu sai mật khẩu"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "đã set"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--42179--khi-tài-khoản-đang-bị-khóa-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--42179--khi-tài-khoản-đang-bị-khóa-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--42179--khi-tài-khoản-đang-bị-khóa-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 51,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-bea206ebf3ad6a26154c",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-06 — Đợi hết hạn khóa (31s > 30s spec) rồi đăng nhập đúng",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:54:47.821Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-06"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point thời gian khóa (P-06)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B002"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 R2b"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec khóa 30s (demo); SUT thật khóa 180s nên vẫn còn bị từ chối ở mốc 31s"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "4"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "đã set"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32350,
+                      "error": {
+                        "message": "Error: FR02-BV-06: P5 status · hành động cuối phải trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m",
+                        "stack": "Error: FR02-BV-06: P5 status · hành động cuối phải trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:146:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 13,
+                          "line": 146
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 144 |\u001b[39m             finalStatus\u001b[33m,\u001b[39m\n \u001b[90m 145 |\u001b[39m             \u001b[32m`${row.tcId}: P5 status · hành động cuối phải trả ${expectedFinalStatus}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 146 |\u001b[39m           )\u001b[33m.\u001b[39mtoBe(expectedFinalStatus)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 147 |\u001b[39m\n \u001b[90m 148 |\u001b[39m           \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpect \u001b[33m===\u001b[39m \u001b[32m'accept'\u001b[39m) {\n \u001b[90m 149 |\u001b[39m             \u001b[36mawait\u001b[39m expectRoute(page\u001b[33m,\u001b[39m \u001b[35m/\\/(?!login)/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'đăng nhập đúng sau khi hết khóa/sau khi sửa sai phải rời trang login'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 13,
+                            "line": 146
+                          },
+                          "message": "Error: FR02-BV-06: P5 status · hành động cuối phải trả 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n\n  144 |             finalStatus,\n  145 |             `${row.tcId}: P5 status · hành động cuối phải trả ${expectedFinalStatus}`,\n> 146 |           ).toBe(expectedFinalStatus);\n      |             ^\n  147 |\n  148 |           if (row.expect === 'accept') {\n  149 |             await expectRoute(page, /\\/(?!login)/, 'đăng nhập đúng sau khi hết khóa/sau khi sửa sai phải rời trang login');\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:146:13"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-BV-06: P3 · login_attempts phải = 0 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 133,
+                            "line": 184
+                          },
+                          "message": "Error: FR02-BV-06: P3 · locked_until phải còn null theo spec R2a\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n  183 |     testInfo.annotations.push({ type: 'DB locked_until thật', description: state.locked ? 'đã set' : 'null' });\n> 184 |     expect.soft(state.locked, `${row.tcId}: P3 · locked_until ${expectedLocked ? 'phải được SET' : 'phải còn null'} theo spec R2a`).toBe(expectedLocked);\n      |                                                                                                                                     ^\n  185 |   }\n  186 | }\n  187 |\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:184:133)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:162:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Chờ 31s (spec khóa 30s, mốc này phải đã hết hạn)",
+                          "duration": 31016
+                        },
+                        {
+                          "title": "P2 URL · đăng nhập đúng sau khi hết khóa/sau khi sửa sai phải rời trang login → /\\/(?!login)/",
+                          "duration": 14
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:54:47.784Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:54:47.821Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-06"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point thời gian khóa (P-06)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B002"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 R2b"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec khóa 30s (demo); SUT thật khóa 180s nên vẫn còn bị từ chối ở mốc 31s"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "4"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "đã set"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--b1d62-30s-spec-rồi-đăng-nhập-đúng-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--b1d62-30s-spec-rồi-đăng-nhập-đúng-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--b1d62-30s-spec-rồi-đăng-nhập-đúng-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 13,
+                        "line": 146
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-1d210d479882dd2484ce",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-R03 — SQL injection ở ô email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:55:22.170Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-R03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 (an toàn dữ liệu)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Phải bị từ chối an toàn, không lỗi 500, không bypass"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 710,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 17
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:55:22.126Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:55:22.170Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-R03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 (an toàn dữ liệu)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Phải bị từ chối an toàn, không lỗi 500, không bypass"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-0028d1d559de97b3d61c",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "FR02-BV-R04 — Mật khẩu rất dài (500 ký tự)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T11:55:23.092Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR02-BV-R04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B001"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-02 (an toàn dữ liệu)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Kiểm không treo/crash; đồng thời là 1 lần sai đơn lẻ trên tài khoản seed - spec +1 thì attempts=1"
+                    },
+                    {
+                      "type": "DB login_attempts thật",
+                      "description": "2"
+                    },
+                    {
+                      "type": "DB locked_until thật",
+                      "description": "null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 672,
+                      "error": {
+                        "message": "Error: FR02-BV-R04: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: FR02-BV-R04: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:99:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                          "column": 122,
+                          "line": 179
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 177 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedAttempts \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 178 |\u001b[39m     testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'DB login_attempts thật'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mString\u001b[39m(state\u001b[33m.\u001b[39mattempts) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 179 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(state\u001b[33m.\u001b[39mattempts\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[33mNumber\u001b[39m(row\u001b[33m.\u001b[39mexpectedAttempts))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 180 |\u001b[39m   }\n \u001b[90m 181 |\u001b[39m   \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m!==\u001b[39m \u001b[32m'-'\u001b[39m) {\n \u001b[90m 182 |\u001b[39m     \u001b[36mconst\u001b[39m expectedLocked \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedLocked \u001b[33m===\u001b[39m \u001b[32m'TRUE'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                            "column": 122,
+                            "line": 179
+                          },
+                          "message": "Error: FR02-BV-R04: P3 · login_attempts phải = 1 theo spec R1 (+1/lần)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  177 |   if (row.expectedAttempts !== '-') {\n  178 |     testInfo.annotations.push({ type: 'DB login_attempts thật', description: String(state.attempts) });\n> 179 |     expect.soft(state.attempts, `${row.tcId}: P3 · login_attempts phải = ${row.expectedAttempts} theo spec R1 (+1/lần)`).toBe(Number(row.expectedAttempts));\n      |                                                                                                                          ^\n  180 |   }\n  181 |   if (row.expectedLocked !== '-') {\n  182 |     const expectedLocked = row.expectedLocked === 'TRUE';\n    at expectBackendStateSync (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:179:122)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js:99:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "P2 URL · ở lại trang đăng nhập khi bị từ chối → /\\/login$/",
+                          "duration": 13
+                        }
+                      ],
+                      "startTime": "2026-08-16T11:55:23.087Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T11:55:23.092Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR02-BV-R04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B001"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-02 (an toàn dữ liệu)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Kiểm không treo/crash; đồng thời là 1 lần sai đơn lẻ trên tài khoản seed - spec +1 thì attempts=1"
+                        },
+                        {
+                          "type": "DB login_attempts thật",
+                          "description": "2"
+                        },
+                        {
+                          "type": "DB locked_until thật",
+                          "description": "null"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--02acd-Mật-khẩu-rất-dài-500-ký-tự--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--02acd-Mật-khẩu-rất-dài-500-ký-tự--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\a-chromium\\feature-a-login-Feature-A--02acd-Mật-khẩu-rất-dài-500-ký-tự--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-a-login.spec.js",
+                        "column": 122,
+                        "line": 179
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "55f3b95fc40c9c1e0623-b82570decf6246c5f8c2",
+              "file": "feature-a-login.spec.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-16T11:53:43.373Z",
+    "duration": 100852.914,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  }
+}

@@ -10,3 +10,9 @@ reports/artifacts/
 # khong phai file du lieu chinh thuc, khong duoc dua vao ban nop.
 tests/data/*.xlsx
 tests/data/~$*
+
+# Trace viewer (app xem trace do Playwright nhung san vao moi report, ~1.4MB x 9 luot).
+# Loai vi chinh cac file trace.zip da bi luat "*.zip" o tren loai roi -> viewer khong con gi
+# de xem. index.html + data/*.png (anh chup luc Fail) + data/*.md van giu nguyen, nen report
+# mo ra van day du bang chung. Trung voi ke hoach dong goi o docs/13.
+reports/html/*/trace/

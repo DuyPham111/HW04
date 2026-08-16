@@ -1,0 +1,2459 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/feature-c-product-admin.spec.js",
+      "--project=firefox"
+    ],
+    "configFile": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\playwright.config.js",
+    "rootDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+      "Run at (ISO 8601)": "2026-08-16T12:05:58.963Z",
+      "Run label": "Feature C — FR-15 Quản lý Sản phẩm (admin) · firefox",
+      "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+      "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+      "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/c-firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:05:58.963Z",
+          "Run label": "Feature C — FR-15 Quản lý Sản phẩm (admin) · firefox",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/c-firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:05:58.963Z",
+          "Run label": "Feature C — FR-15 Quản lý Sản phẩm (admin) · firefox",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/reports/artifacts/c-firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127183 — Phạm Vũ Ngọc Duy",
+          "Run at (ISO 8601)": "2026-08-16T12:05:58.963Z",
+          "Run label": "Feature C — FR-15 Quản lý Sản phẩm (admin) · firefox",
+          "Course": "Kiểm thử phần mềm — HW04 Automation Testing",
+          "SUT": "EShop — web http://localhost:5173 · admin http://localhost:5174 · api http://localhost:3000",
+          "Features": "A: FR-02 Đăng nhập & khóa tài khoản · B: FR-09 Mã giảm giá · C: FR-15 Quản lý sản phẩm (admin)",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Nam3/HK3/Kiểm thử phần mềm/HW04/HW04-Automation-Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "reports/html/c-firefox"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json/c-firefox.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "feature-c-product-admin.spec.js",
+      "file": "feature-c-product-admin.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Feature C — FR-15 Quản lý Sản phẩm (admin)",
+          "file": "feature-c-product-admin.spec.js",
+          "line": 52,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR15-DT-01 — San pham hop le (happy path)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:00.808Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 rang buoc dau vao"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Danh muc chon tu du lieu seed co san (Phu kien)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10497,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 29
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"HW04-Tai nghe-260816185340…\"",
+                          "duration": 43
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:00.725Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:00.808Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 rang buoc dau vao"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Danh muc chon tu du lieu seed co san (Phu kien)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-723ac7e5d00b83730e06",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-02 — Ten rong",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:13.108Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 ten bat buoc"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "O ten co thuoc tinh required, trinh duyet phai chan truoc khi goi API"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 48
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"(rỗng)\"",
+                          "duration": 20
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:13.075Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:13.108Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 ten bat buoc"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "O ten co thuoc tinh required, trinh duyet phai chan truoc khi goi API"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-9c85f9fd7eedabc6f963",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-03 — Ten chi gom khoang trang",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:22.383Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le (rong ve ngu nghia)"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B010"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 ten bat buoc"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "required chi chan chuoi RONG, khong chan chuoi toan khoang trang - phai server tu choi sau khi trim"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4325,
+                      "error": {
+                        "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"   \"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"   \"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 70,
+                          "line": 100
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 70,
+                            "line": 100
+                          },
+                          "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"   \"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   at utils\\assertions.js:100\n\n   98 |     if (predicate) {\n   99 |       const body = await res.json();\n> 100 |       E(soft)(predicate(body), `State backend không khớp: ${label}`).toBe(true);\n      |                                                                      ^\n  101 |     }\n  102 |   });\n  103 | }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 19
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"   \"",
+                          "duration": 35,
+                          "error": {
+                            "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"   \"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"   \"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 70,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:22.363Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:22.383Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le (rong ve ngu nghia)"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B010"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 ten bat buoc"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "required chi chan chuoi RONG, khong chan chuoi toan khoang trang - phai server tu choi sau khi trim"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3d180--—-Ten-chi-gom-khoang-trang-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3d180--—-Ten-chi-gom-khoang-trang-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3d180--—-Ten-chi-gom-khoang-trang-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 70,
+                        "line": 100
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-8fdbe040c861b7fb0f58",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-04 — Ten chua the HTML (nguy co XSS)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:29.147Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le (an toan du lieu)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 (an toan)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "React render {p.name} bang JSX thuan (khong dangerouslySetInnerHTML) nen tu dong escape - du kien AN TOAN, khac voi Header dung dangerouslySetInnerHTML da ghi o HW02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7273,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 33
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"<b>HW04-260816185340</b>…\"",
+                          "duration": 45
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:29.087Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:29.147Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le (an toan du lieu)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 (an toan)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "React render {p.name} bang JSX thuan (khong dangerouslySetInnerHTML) nen tu dong escape - du kien AN TOAN, khac voi Header dung dangerouslySetInnerHTML da ghi o HW02"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-7202588096379ca2c95b",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-05 — Gia bang 0",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:37.581Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-05"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP bien duoi khong hop le"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B009"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 gia phai duong (>0)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec doi gia > 0; SUT khong validate nen chap nhan gia 0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4870,
+                      "error": {
+                        "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 70,
+                          "line": 100
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 70,
+                            "line": 100
+                          },
+                          "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   at utils\\assertions.js:100\n\n   98 |     if (predicate) {\n   99 |       const body = await res.json();\n> 100 |       E(soft)(predicate(body), `State backend không khớp: ${label}`).toBe(true);\n      |                                                                      ^\n  101 |     }\n  102 |   });\n  103 | }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 28
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"",
+                          "duration": 49,
+                          "error": {
+                            "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaKhong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 70,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:37.560Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:37.581Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-05"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP bien duoi khong hop le"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B009"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 gia phai duong (>0)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec doi gia > 0; SUT khong validate nen chap nhan gia 0"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-625cf-min-FR15-DT-05-—-Gia-bang-0-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-625cf-min-FR15-DT-05-—-Gia-bang-0-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-625cf-min-FR15-DT-05-—-Gia-bang-0-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 70,
+                        "line": 100
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-04745df6550a5e877ec8",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-06 — Gia am",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:45.194Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-06"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B009"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 gia phai duong (>0)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Cung nguyen nhan voi DT-05, gia tri khac de xac nhan khong phai truong hop rieng le"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8162,
+                      "error": {
+                        "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 70,
+                          "line": 100
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 70,
+                            "line": 100
+                          },
+                          "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   at utils\\assertions.js:100\n\n   98 |     if (predicate) {\n   99 |       const body = await res.json();\n> 100 |       E(soft)(predicate(body), `State backend không khớp: ${label}`).toBe(true);\n      |                                                                      ^\n  101 |     }\n  102 |   });\n  103 | }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 25
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"",
+                          "duration": 55,
+                          "error": {
+                            "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaAm-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 70,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:45.137Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:45.194Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-06"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B009"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 gia phai duong (>0)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Cung nguyen nhan voi DT-05, gia tri khac de xac nhan khong phai truong hop rieng le"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-81dd4-m-admin-FR15-DT-06-—-Gia-am-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-81dd4-m-admin-FR15-DT-06-—-Gia-am-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-81dd4-m-admin-FR15-DT-06-—-Gia-am-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 70,
+                        "line": 100
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-6ed0ebc4b91b4feccfdb",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-07 — Gia rong",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:06:57.064Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-07"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung khong hop le"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B009"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 gia bat buoc"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "O gia KHONG co required (khac o ten) nen client khong chan; server cung khong validate"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7923,
+                      "error": {
+                        "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 70,
+                          "line": 100
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 70,
+                            "line": 100
+                          },
+                          "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   at utils\\assertions.js:100\n\n   98 |     if (predicate) {\n   99 |       const body = await res.json();\n> 100 |       E(soft)(predicate(body), `State backend không khớp: ${label}`).toBe(true);\n      |                                                                      ^\n  101 |     }\n  102 |   });\n  103 | }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 51
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"",
+                          "duration": 49,
+                          "error": {
+                            "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HW04-GiaRong-260816185340\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 70,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:06:57.005Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:06:57.064Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-07"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung khong hop le"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B009"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 gia bat buoc"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "O gia KHONG co required (khac o ten) nen client khong chan; server cung khong validate"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-2d581-admin-FR15-DT-07-—-Gia-rong-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-2d581-admin-FR15-DT-07-—-Gia-rong-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-2d581-admin-FR15-DT-07-—-Gia-rong-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 70,
+                        "line": 100
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-839eecdb72d82feee041",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-02 — BVA - gia duong nho nhat (1)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:09.095Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point bien duoi hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 gia phai duong (>0)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Bien duoi CHINH XAC cua vung hop le, phai duoc chap nhan"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7809,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 26
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"HW04-Gia1-260816185340…\"",
+                          "duration": 56
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:09.034Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:09.095Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point bien duoi hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 gia phai duong (>0)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Bien duoi CHINH XAC cua vung hop le, phai duoc chap nhan"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-6e068c0e7f01970c984c",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-03 — BVA - ten dai dung 1 ky tu",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:18.153Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point do dai ten = 1"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 ten toi da 255 ky tu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec khong dinh do dai toi thieu, 1 ky tu la hop le - luu y: KHONG co 260816185340 vi TC nay chi kiem do dai, don deu qua 260816185340 lam mat y nghia bien"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4125,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 19
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"A…\"",
+                          "duration": 41
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:18.124Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:18.153Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point do dai ten = 1"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 ten toi da 255 ky tu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec khong dinh do dai toi thieu, 1 ky tu la hop le - luu y: KHONG co 260816185340 vi TC nay chi kiem do dai, don deu qua 260816185340 lam mat y nghia bien"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-1861358ddafb1c15df91",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-04 — BVA - ten dai dung 255 ky tu (bien tren)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:22.332Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-04"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA on-point bien tren"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 ten toi da 255 ky tu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Dung bang gioi han toi da, phai duoc chap nhan"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4084,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 19
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH…\"",
+                          "duration": 35
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:22.307Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:22.332Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-04"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA on-point bien tren"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 ten toi da 255 ky tu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Dung bang gioi han toi da, phai duoc chap nhan"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-c52885a6f3e66dae08c4",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-05 — BVA - ten dai 256 ky tu (vuot bien tren + 1)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:26.478Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-05"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "BVA off-point bien tren + 1"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B015"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 ten toi da 255 ky tu"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Spec gioi han 255; SUT khong cat/tu choi, luu nguyen 256 ky tu"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4646,
+                      "error": {
+                        "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                          "column": 70,
+                          "line": 100
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                            "column": 70,
+                            "line": 100
+                          },
+                          "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n   at utils\\assertions.js:100\n\n   98 |     if (predicate) {\n   99 |       const body = await res.json();\n> 100 |       E(soft)(predicate(body), `State backend không khớp: ${label}`).toBe(true);\n      |                                                                      ^\n  101 |     }\n  102 |   });\n  103 | }\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 22
+                        },
+                        {
+                          "title": "P3 API · DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"",
+                          "duration": 44,
+                          "error": {
+                            "message": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: State backend không khớp: DB không phát sinh sản phẩm tên \"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:100:70\n    at expectBackendState (D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js:95:3)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:186:11",
+                            "location": {
+                              "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                              "column": 70,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mutils\\assertions.js:100\n\n\u001b[0m \u001b[90m  98 |\u001b[39m     \u001b[36mif\u001b[39m (predicate) {\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m res\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m       \u001b[33mE\u001b[39m(soft)(predicate(body)\u001b[33m,\u001b[39m \u001b[32m`State backend không khớp: ${label}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m     }\n \u001b[90m 102 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:26.461Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:26.478Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-05"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "BVA off-point bien tren + 1"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B015"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 ten toi da 255 ky tu"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Spec gioi han 255; SUT khong cat/tu choi, luu nguyen 256 ky tu"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-73f58-256-ky-tu-vuot-bien-tren-1--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-73f58-256-ky-tu-vuot-bien-tren-1--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-73f58-256-ky-tu-vuot-bien-tren-1--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\utils\\assertions.js",
+                        "column": 70,
+                        "line": 100
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-65d9241ef1806a6b5a9d",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-R01 — Robust - gia tran INTEGER 32-bit (2147483648)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:33.782Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-R01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 (an toan du lieu)"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "SQLite INTEGER khong gioi han that theo 32-bit nhu ten goi - khong duoc tran/am"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7540,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 29
+                        },
+                        {
+                          "title": "P3 API · DB có đúng 1 sản phẩm tên \"HW04-GiaTran-260816185340…\"",
+                          "duration": 51
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:33.726Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:33.782Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-R01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 (an toan du lieu)"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "SQLite INTEGER khong gioi han that theo 32-bit nhu ten goi - khong duoc tran/am"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-f019872fed3ecbd1245e",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-R02 — Robust - go chu vao o gia (type=number chan)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:42.839Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-R02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust - kiem soat dau vao trinh duyet"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 gia phai la so"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "O input type=number: trinh duyet KHONG cho go ky tu chu vao duoc, gia tri o van la rong sau khi go - kiem o muc DOM, khong submit"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3510,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 15
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:42.812Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:42.839Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-R02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust - kiem soat dau vao trinh duyet"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 gia phai la so"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "O input type=number: trinh duyet KHONG cho go ky tu chu vao duoc, gia tri o van la rong sau khi go - kiem o muc DOM, khong submit"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-fffe509343f5aba693f1",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-BV-R03 — Robust - category_id khong ton tai (9999) qua API",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:46.371Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-BV-R03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "robust - toan ven tham chieu"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 danh muc phai chon tu danh sach co san"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Select tren UI chi liet ke 3 danh muc seed nen KHONG nhap duoc category_id=9999 qua giao dien - ha xuong tang API voi TOKEN HOP LE (khac SEC-01..03 la khong co token). Da xac nhan bang curl: SUT chap nhan (bug), spec doi phai tu choi vi khong ton tai FK"
+                    },
+                    {
+                      "type": "HTTP status thật",
+                      "description": "200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 682,
+                      "error": {
+                        "message": "Error: FR15-BV-R03: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m",
+                        "stack": "Error: FR15-BV-R03: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:135:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                          "column": 13,
+                          "line": 135
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 133 |\u001b[39m             res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m\n \u001b[90m 134 |\u001b[39m             \u001b[32m`${row.tcId}: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế ${res.status()}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m           )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m           expect(res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: phải là lỗi client (4xx), không phải lỗi server (5xx)`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 137 |\u001b[39m         }\n \u001b[90m 138 |\u001b[39m         \u001b[36mreturn\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                            "column": 13,
+                            "line": 135
+                          },
+                          "message": "Error: FR15-BV-R03: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n\n  133 |             res.status(),\n  134 |             `${row.tcId}: category_id=9999 không tồn tại, spec đòi từ chối (4xx), thực tế ${res.status()}`,\n> 135 |           ).toBeGreaterThanOrEqual(400);\n      |             ^\n  136 |           expect(res.status(), `${row.tcId}: phải là lỗi client (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);\n  137 |         }\n  138 |         return;\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:135:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:07:46.362Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:46.371Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-BV-R03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "robust - toan ven tham chieu"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 danh muc phai chon tu danh sach co san"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Select tren UI chi liet ke 3 danh muc seed nen KHONG nhap duoc category_id=9999 qua giao dien - ha xuong tang API voi TOKEN HOP LE (khac SEC-01..03 la khong co token). Da xac nhan bang curl: SUT chap nhan (bug), spec doi phai tu choi vi khong ton tai FK"
+                        },
+                        {
+                          "type": "HTTP status thật",
+                          "description": "200"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-160db--khong-ton-tai-9999-qua-API-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-160db--khong-ton-tai-9999-qua-API-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-160db--khong-ton-tai-9999-qua-API-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                        "column": 13,
+                        "line": 135
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-80126e2c6d8a974b59ae",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-08 — Sua 1 san pham, kiem san pham khac khong doi",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:48.867Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-08"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "dependency - toan ven du lieu khi sua"
+                    },
+                    {
+                      "type": "Bug đã biết (HW02)",
+                      "description": "B014"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 sua 1 san pham chi doi dung san pham do"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Tao 2 san pham tien de qua API, sua TEN san pham thu nhat qua UI, kiem CA hai tang: UI (dong cua san pham thu hai) va DB (GET /api/products)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5116,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' }) resolved to 2 elements:\n    1) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka getByRole('button', { name: 'Sửa' }).nth(5)\n    2) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka locator('tr:nth-child(7) > .p-3.flex > .bg-yellow-500')\n\nCall log:\n\u001b[2m  - waiting for locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' })\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' }) resolved to 2 elements:\n    1) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka getByRole('button', { name: 'Sửa' }).nth(5)\n    2) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka locator('tr:nth-child(7) > .p-3.flex > .bg-yellow-500')\n\nCall log:\n\u001b[2m  - waiting for locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' })\u001b[22m\n\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:205:53",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                          "column": 53,
+                          "line": 205
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 203 |\u001b[39m\n \u001b[90m 204 |\u001b[39m         \u001b[36mawait\u001b[39m adminPage\u001b[33m.\u001b[39mgotoProductsTab()\u001b[33m;\u001b[39m \u001b[90m// nạp lại danh sách để thấy 2 sản phẩm vừa tạo\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 205 |\u001b[39m         \u001b[36mawait\u001b[39m adminPage\u001b[33m.\u001b[39meditButtonInRow(targetName)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 206 |\u001b[39m         \u001b[36mawait\u001b[39m adminPage\u001b[33m.\u001b[39mnameInput\u001b[33m.\u001b[39mfill(row\u001b[33m.\u001b[39meditNewName)\u001b[33m;\u001b[39m\n \u001b[90m 207 |\u001b[39m         \u001b[36mawait\u001b[39m adminPage\u001b[33m.\u001b[39msave()\u001b[33m;\u001b[39m\n \u001b[90m 208 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// chờ setProducts(...) chạy xong (không có response để chờ — đây là bug B014: PUT xong không fetchData lại)\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                            "column": 53,
+                            "line": 205
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' }) resolved to 2 elements:\n    1) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka getByRole('button', { name: 'Sửa' }).nth(5)\n    2) <button class=\"bg-yellow-500 text-white px-2 py-1 rounded text-sm\">Sửa</button> aka locator('tr:nth-child(7) > .p-3.flex > .bg-yellow-500')\n\nCall log:\n\u001b[2m  - waiting for locator('tbody tr').filter({ hasText: 'HW04-Goc1-260816185340' }).getByRole('button', { name: 'Sửa' })\u001b[22m\n\n\n  203 |\n  204 |         await adminPage.gotoProductsTab(); // nạp lại danh sách để thấy 2 sản phẩm vừa tạo\n> 205 |         await adminPage.editButtonInRow(targetName).click();\n      |                                                     ^\n  206 |         await adminPage.nameInput.fill(row.editNewName);\n  207 |         await adminPage.save();\n  208 |         await page.waitForTimeout(500); // chờ setProducts(...) chạy xong (không có response để chờ — đây là bug B014: PUT xong không fetchData lại)\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:205:53"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 17
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:48.826Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:48.867Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-08"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "dependency - toan ven du lieu khi sua"
+                        },
+                        {
+                          "type": "Bug đã biết (HW02)",
+                          "description": "B014"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 sua 1 san pham chi doi dung san pham do"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Tao 2 san pham tien de qua API, sua TEN san pham thu nhat qua UI, kiem CA hai tang: UI (dong cua san pham thu hai) va DB (GET /api/products)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-45626-iem-san-pham-khac-khong-doi-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-45626-iem-san-pham-khac-khong-doi-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-45626-iem-san-pham-khac-khong-doi-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                        "column": 53,
+                        "line": 205
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-014c7e07e6ee6f106482",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-DT-09 — Xoa san pham hop le (co token qua UI)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:07:56.446Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-DT-09"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "EP vung hop le"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-15 xoa san pham"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Dung de doi chung voi 3 TC SEC ben duoi - xoa CO token phai thanh cong binh thuong, chi xoa KHONG token moi la bug"
+                    },
+                    {
+                      "type": "Quan sát UX (không phải bug)",
+                      "description": "dialogSeen=false — README.md không yêu cầu xác nhận cho admin (chỉ yêu cầu ở giỏ hàng FR-07)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4999,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lấy token admin",
+                          "duration": 15
+                        },
+                        {
+                          "title": "P3 API · DB không còn sản phẩm \"HW04-XoaOk-260816185340…\"",
+                          "duration": 20
+                        }
+                      ],
+                      "startTime": "2026-08-16T12:07:56.407Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:07:56.446Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-DT-09"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "EP vung hop le"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-15 xoa san pham"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Dung de doi chung voi 3 TC SEC ben duoi - xoa CO token phai thanh cong binh thuong, chi xoa KHONG token moi la bug"
+                        },
+                        {
+                          "type": "Quan sát UX (không phải bug)",
+                          "description": "dialogSeen=false — README.md không yêu cầu xác nhận cho admin (chỉ yêu cầu ở giỏ hàng FR-07)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-f1618a252eeee882ec38",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-SEC-01 — BUG MOI - Tao san pham KHONG kem token (vi pham FR-12)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:08:02.332Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-SEC-01"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "security - kiem soat truy cap (broken access control)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "HW02 da nghi ngo qua doc code nhung khong tu dong hoa duoc vi UI admin chan truoc; day la TC dau tien thuc su goi API de xac nhan"
+                    },
+                    {
+                      "type": "Mức độ nghiêm trọng",
+                      "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                    },
+                    {
+                      "type": "HTTP status thật",
+                      "description": "200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 516,
+                      "error": {
+                        "message": "Error: FR15-SEC-01: FR-12 đòi POST /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m",
+                        "stack": "Error: FR15-SEC-01: FR-12 đòi POST /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                          "column": 13,
+                          "line": 127
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 125 |\u001b[39m             res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m\n \u001b[90m 126 |\u001b[39m             \u001b[32m`${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 127 |\u001b[39m           )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 128 |\u001b[39m           expect(res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 129 |\u001b[39m         } \u001b[36melse\u001b[39m {\n \u001b[90m 130 |\u001b[39m           \u001b[90m// P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                            "column": 13,
+                            "line": 127
+                          },
+                          "message": "Error: FR15-SEC-01: FR-12 đòi POST /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n\n  125 |             res.status(),\n  126 |             `${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`,\n> 127 |           ).toBeGreaterThanOrEqual(400);\n      |             ^\n  128 |           expect(res.status(), `${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);\n  129 |         } else {\n  130 |           // P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:08:02.324Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:08:02.332Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-SEC-01"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "security - kiem soat truy cap (broken access control)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "HW02 da nghi ngo qua doc code nhung khong tu dong hoa duoc vi UI admin chan truoc; day la TC dau tien thuc su goi API de xac nhan"
+                        },
+                        {
+                          "type": "Mức độ nghiêm trọng",
+                          "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                        },
+                        {
+                          "type": "HTTP status thật",
+                          "description": "200"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3837d-NG-kem-token-vi-pham-FR-12--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3837d-NG-kem-token-vi-pham-FR-12--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-3837d-NG-kem-token-vi-pham-FR-12--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                        "column": 13,
+                        "line": 127
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-7a25347879d867bdab8b",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-SEC-02 — BUG MOI - Sua san pham KHONG kem token (vi pham FR-12)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:08:04.366Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-SEC-02"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "security - kiem soat truy cap (broken access control)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Can san pham tien de (tao qua API CO token trong buoc setup, khong tinh la phan bug); attempt PUT bang context KHONG co Authorization header"
+                    },
+                    {
+                      "type": "Mức độ nghiêm trọng",
+                      "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                    },
+                    {
+                      "type": "HTTP status thật",
+                      "description": "200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2303,
+                      "error": {
+                        "message": "Error: FR15-SEC-02: FR-12 đòi PUT /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m",
+                        "stack": "Error: FR15-SEC-02: FR-12 đòi PUT /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                          "column": 13,
+                          "line": 127
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 125 |\u001b[39m             res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m\n \u001b[90m 126 |\u001b[39m             \u001b[32m`${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 127 |\u001b[39m           )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 128 |\u001b[39m           expect(res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 129 |\u001b[39m         } \u001b[36melse\u001b[39m {\n \u001b[90m 130 |\u001b[39m           \u001b[90m// P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                            "column": 13,
+                            "line": 127
+                          },
+                          "message": "Error: FR15-SEC-02: FR-12 đòi PUT /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n\n  125 |             res.status(),\n  126 |             `${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`,\n> 127 |           ).toBeGreaterThanOrEqual(400);\n      |             ^\n  128 |           expect(res.status(), `${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);\n  129 |         } else {\n  130 |           // P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:08:04.327Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:08:04.366Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-SEC-02"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "security - kiem soat truy cap (broken access control)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Can san pham tien de (tao qua API CO token trong buoc setup, khong tinh la phan bug); attempt PUT bang context KHONG co Authorization header"
+                        },
+                        {
+                          "type": "Mức độ nghiêm trọng",
+                          "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                        },
+                        {
+                          "type": "HTTP status thật",
+                          "description": "200"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-f6136-NG-kem-token-vi-pham-FR-12--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-f6136-NG-kem-token-vi-pham-FR-12--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-f6136-NG-kem-token-vi-pham-FR-12--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                        "column": 13,
+                        "line": 127
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-8f9e3397ee6826ac9cac",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            },
+            {
+              "title": "FR15-SEC-03 — BUG MOI - Xoa san pham KHONG kem token (vi pham FR-12)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23127183 — Phạm Vũ Ngọc Duy"
+                    },
+                    {
+                      "type": "Started at (ISO)",
+                      "description": "2026-08-16T12:08:09.370Z"
+                    },
+                    {
+                      "type": "Test case",
+                      "description": "FR15-SEC-03"
+                    },
+                    {
+                      "type": "Technique",
+                      "description": "security - kiem soat truy cap (broken access control)"
+                    },
+                    {
+                      "type": "Spec",
+                      "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                    },
+                    {
+                      "type": "Ghi chú thiết kế",
+                      "description": "Tuong tu SEC-02 nhung voi DELETE; day la bug nghiem trong nhat trong 3 TC SEC vi hau qua khong the hoan tac (mat du lieu that)"
+                    },
+                    {
+                      "type": "Mức độ nghiêm trọng",
+                      "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                    },
+                    {
+                      "type": "HTTP status thật",
+                      "description": "200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2105,
+                      "error": {
+                        "message": "Error: FR15-SEC-03: FR-12 đòi DELETE /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m",
+                        "stack": "Error: FR15-SEC-03: FR-12 đòi DELETE /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13",
+                        "location": {
+                          "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                          "column": 13,
+                          "line": 127
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 125 |\u001b[39m             res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m\n \u001b[90m 126 |\u001b[39m             \u001b[32m`${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 127 |\u001b[39m           )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 128 |\u001b[39m           expect(res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 129 |\u001b[39m         } \u001b[36melse\u001b[39m {\n \u001b[90m 130 |\u001b[39m           \u001b[90m// P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                            "column": 13,
+                            "line": 127
+                          },
+                          "message": "Error: FR15-SEC-03: FR-12 đòi DELETE /api/products không token phải trả 401/403, thực tế 200\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m400\u001b[39m\nReceived:    \u001b[31m200\u001b[39m\n\n  125 |             res.status(),\n  126 |             `${row.tcId}: FR-12 đòi ${row.method} /api/products không token phải trả 401/403, thực tế ${res.status()}`,\n> 127 |           ).toBeGreaterThanOrEqual(400);\n      |             ^\n  128 |           expect(res.status(), `${row.tcId}: phải là lỗi xác thực (4xx), không phải lỗi server (5xx)`).toBeLessThan(500);\n  129 |         } else {\n  130 |           // P5 (quyết định) — category_id không tồn tại, spec đòi \"phải chọn từ danh sách có\n    at D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js:127:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T12:08:09.331Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23127183 — Phạm Vũ Ngọc Duy"
+                        },
+                        {
+                          "type": "Started at (ISO)",
+                          "description": "2026-08-16T12:08:09.370Z"
+                        },
+                        {
+                          "type": "Test case",
+                          "description": "FR15-SEC-03"
+                        },
+                        {
+                          "type": "Technique",
+                          "description": "security - kiem soat truy cap (broken access control)"
+                        },
+                        {
+                          "type": "Spec",
+                          "description": "FR-12 POST/PUT/DELETE /api/products phai yeu cau token+role admin"
+                        },
+                        {
+                          "type": "Ghi chú thiết kế",
+                          "description": "Tuong tu SEC-02 nhung voi DELETE; day la bug nghiem trong nhat trong 3 TC SEC vi hau qua khong the hoan tac (mat du lieu that)"
+                        },
+                        {
+                          "type": "Mức độ nghiêm trọng",
+                          "description": "Critical — broken access control, ảnh hưởng toàn bộ catalog sản phẩm, không cần đăng nhập"
+                        },
+                        {
+                          "type": "HTTP status thật",
+                          "description": "200"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-6fcef-NG-kem-token-vi-pham-FR-12--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-6fcef-NG-kem-token-vi-pham-FR-12--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\reports\\artifacts\\c-firefox\\feature-c-product-admin-Fe-6fcef-NG-kem-token-vi-pham-FR-12--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Nam3\\HK3\\Kiểm thử phần mềm\\HW04\\HW04-Automation-Testing\\tests\\feature-c-product-admin.spec.js",
+                        "column": 13,
+                        "line": 127
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19991356313ba7947d0f-2df33a7e1107f6f82420",
+              "file": "feature-c-product-admin.spec.js",
+              "line": 54,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-16T12:05:58.974Z",
+    "duration": 134002.269,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  }
+}
