@@ -102,6 +102,39 @@ html = html.replace('</body>', `${banner}</body>`);
 const pageTitle = `HW04 — Run by: ${STUDENT_ID}${runLabel ? ` — ${runLabel}` : ''} — ${runAt}`;
 html = html.replace(/<title>[^<]*<\/title>/, `<title>${pageTitle}</title>`);
 
+// QUAN TRỌNG: report của Playwright là app React — sau khi trang tải xong, chính bundle JS của
+// nó tự chạy `document.title = "Playwright Test Report"` trong một useEffect, GHI ĐÈ thẻ <title>
+// vừa sửa ở trên. Phát hiện bằng cách chụp thử: banner chân trang hiện đúng nhưng tab vẫn hiện
+// "Playwright Test Report". Phải khoá lại document.title bằng script chạy SAU khi trang tải
+// (đặt cạnh banner, trước </body>) thì mới thắng được useEffect chạy sau khi mount.
+const titleLockScript = `
+<script>
+(function(){
+  var desired = ${JSON.stringify(pageTitle)};
+  var titleEl = document.querySelector('title');
+  function apply(){ if (titleEl && titleEl.textContent !== desired) titleEl.textContent = desired; }
+  apply();
+  try {
+    Object.defineProperty(document, 'title', {
+      get: function(){ return desired; },
+      set: function(){ apply(); },
+      configurable: true
+    });
+  } catch (e) {}
+  if (titleEl && window.MutationObserver) {
+    new MutationObserver(apply).observe(titleEl, { childList: true, characterData: true, subtree: true });
+  }
+})();
+</script>
+`;
+if (html.includes('id="hw04-title-lock"')) {
+  html = html.replace(/\n?<script id="hw04-title-lock">[\s\S]*?<\/script>\n?/, '\n');
+}
+html = html.replace(
+  '</body>',
+  `${titleLockScript.replace('<script>', '<script id="hw04-title-lock">')}</body>`
+);
+
 fs.writeFileSync(indexFile, html);
 
 console.log(`  Đã chèn dải Run by vào ${indexFile}  (${numbers})`);
