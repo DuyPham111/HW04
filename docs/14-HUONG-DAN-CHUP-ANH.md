@@ -96,6 +96,56 @@ bug-report/screenshots/    ← ảnh về BUG và GitHub Issues (bạn tự ch�
 ## 5. Checklist
 
 - [x] 19 ảnh report — AI đã chụp, đã commit
-- [ ] `tab-title-manual.png` — bạn chụp (mục 3.1)
-- [ ] Ảnh GitHub Issues — bạn chụp ở `docs/07` (mục 3.2)
-- [ ] Video có `whoami`/`hostname` — bạn quay ở `docs/09` (mục 3.3)
+- [x] Ảnh GitHub Issues — đã chụp `issue-1.png`, `issue-2.png` (có URL + tên tài khoản ✅)
+- [ ] `tab-title-manual.png` — **đã chụp nhưng CHƯA ĐẠT, cần chụp lại** (xem §6)
+- [ ] Video có `whoami`/`hostname` — quay ở `docs/09` (mục 3.3)
+
+---
+
+## 6. ⚠️ `tab-title-manual.png` — cần chụp lại
+
+**Ảnh hiện tại chưa đạt mục đích.** Ảnh đã chụp đúng nội dung trang report (thấy
+`All 16 / Passed 6 / Failed 10 / Flaky 0`, `Project: chromium`, và dải `Run by` ở chân trang) —
+nhưng **thiếu đúng thứ cần chụp: thanh tab của trình duyệt**.
+
+Vì thiếu thanh tab, ảnh này đang **trùng nội dung** với `report-a-chromium.png` mà AI đã chụp,
+nên chưa bổ sung thêm bằng chứng nào.
+
+### Vì sao cần thanh tab
+
+Thẻ `<title>` là **chỗ thứ tư** mang MSSV mà Playwright **không chụp được** (Playwright chỉ chụp
+được nội dung trang, không chụp được giao diện trình duyệt). Đây chính là lý do ảnh này phải do
+người chụp tay.
+
+### Cách chụp lại cho đúng
+
+1. Mở report: `npx playwright show-report reports/html/a-chromium`
+2. **Nhìn lên thanh tab** — phải đọc được:
+   `HW04 — Run by: 23127183 — Feature A — FR-02 … · chromium — 2026-08-16T…`
+   *(nếu tab quá hẹp làm chữ bị cắt: thu hẹp bớt các tab khác, hoặc hover chuột lên tab để hiện
+   tooltip đầy đủ rồi chụp cả tooltip)*
+3. `Win + Shift + S` → chọn vùng **BẮT ĐẦU TỪ THANH TAB** trở xuống, gồm cả phần đầu trang
+4. Lưu đè `reports/evidence/tab-title-manual.png`
+
+### Khung cần chụp — so sánh
+
+```
+❌ ẢNH HIỆN TẠI — bắt đầu từ đây (thiếu tab):
+┌──────────────────────────────────────────────────────────────┐
+│  🔍 Search tests   All 16 | ✓ Passed 6 | ✕ Failed 10         │
+│  Project: chromium                                            │
+└──────────────────────────────────────────────────────────────┘
+
+✅ CẦN CHỤP — bắt đầu từ thanh tab:
+┌──────────────────────────────────────────────────────────────┐
+│ ⬤ HW04 — Run by: 23127183 — Feature A … 2026-08-16T…  ✕     │ ← DÒNG NÀY
+├──────────────────────────────────────────────────────────────┤
+│ ← → ⟳  ⓘ file:///D:/.../reports/html/a-chromium/index.html   │ ← có thêm càng tốt
+├──────────────────────────────────────────────────────────────┤
+│  🔍 Search tests   All 16 | ✓ Passed 6 | ✕ Failed 10         │
+│  Project: chromium                                            │
+└──────────────────────────────────────────────────────────────┘
+```
+
+> **Mẹo:** ảnh Issue bạn vừa chụp (`issue-1.png`) là ví dụ mẫu rất tốt — nó có cả thanh địa chỉ
+> URL. Chụp ảnh tab theo đúng kiểu đó là đạt.

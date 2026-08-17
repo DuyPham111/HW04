@@ -45,7 +45,7 @@ Chênh lệch **83 lần Fail → 29 test case → 16 defect** là lý do bảng
 | **Assertion pattern** | P5 — HTTP status (gọi thẳng API bằng context không có `Authorization` header) |
 | **Mức độ** | 🔴 **Critical** |
 | **Trạng thái** | **Mới phát hiện ở HW04** |
-| **GitHub Issue** | `#<ĐIỀN SAU KHI TẠO>` |
+| **GitHub Issue** | [#1](https://github.com/DuyPham111/HW04/issues/1) — ảnh chụp: `screenshots/issue-1.png` |
 
 **Đặc tả nói gì** — `eshop-sut/README.md`, mục FR-12 (dòng 177):
 
@@ -113,7 +113,7 @@ rào cản UI đó. **Đây là giá trị rõ ràng nhất của automation so 
 | **Assertion pattern** | P5 — HTTP status (gọi API **có token hợp lệ**, để tách khỏi BUG-NEW-01) |
 | **Mức độ** | 🟠 High |
 | **Trạng thái** | **Mới phát hiện ở HW04** |
-| **GitHub Issue** | `#<ĐIỀN SAU KHI TẠO>` |
+| **GitHub Issue** | [#2](https://github.com/DuyPham111/HW04/issues/2) — ảnh chụp: `screenshots/issue-2.png` |
 
 **Đặc tả nói gì** — `README.md` mục FR-15:
 
@@ -218,10 +218,36 @@ Chạy riêng → Pass. Chạy trong cả suite → Fail ở bước dọn dẹp
 
 ---
 
-## 5. Việc còn phải làm (sinh viên)
+## 5. GitHub Issues — đã tạo (§6, §14)
 
-- [ ] Tạo **2 GitHub Issue** cho `BUG-NEW-01` và `BUG-NEW-02` (nội dung soạn sẵn ở
-      `bug-report/issue-new-01.md` và `issue-new-02.md`)
-- [ ] Điền số Issue vào cột "GitHub Issue" ở §1
-- [ ] Chụp màn hình trang Issue → `bug-report/screenshots/issue-*.png` (§14 bắt buộc)
-- [ ] Cập nhật số defect vào `README.md`
+§6 đòi: *"Log such bugs both in the Markdown report and on your GitHub Issues page, attaching a
+screenshot to each issue."* · §14 đòi: *"Bug report, with screenshots of the bugs on the GitHub
+Issues page."*
+
+| Bug | Issue | Tiêu đề | Ảnh chụp trang Issue |
+|---|---|---|---|
+| BUG-NEW-01 | [#1](https://github.com/DuyPham111/HW04/issues/1) | `[HW04][FR-12] POST/PUT/DELETE /api/products không yêu cầu token — broken access control` | `screenshots/issue-1.png` |
+| BUG-NEW-02 | [#2](https://github.com/DuyPham111/HW04/issues/2) | `[HW04][FR-15] Chấp nhận category_id không tồn tại — vi phạm toàn vẹn tham chiếu` | `screenshots/issue-2.png` |
+
+Cả hai Issue đều do tài khoản **`DuyPham111`** (chủ repo) tạo, có nhúng ảnh bằng chứng bên trong
+phần mô tả. Ảnh chụp trang Issue lấy cả **thanh địa chỉ URL** và **tên tài khoản** để truy được
+nguồn gốc.
+
+### Ảnh chụp trang GitHub Issues
+
+**Issue #1 — BUG-NEW-01 (Critical):**
+
+![Issue #1](screenshots/issue-1.png)
+
+**Issue #2 — BUG-NEW-02 (High):**
+
+![Issue #2](screenshots/issue-2.png)
+
+---
+
+## 6. Việc còn phải làm (sinh viên)
+
+- [x] Tạo 2 GitHub Issue cho `BUG-NEW-01` và `BUG-NEW-02`
+- [x] Điền số Issue vào cột "GitHub Issue" ở §1
+- [x] Chụp màn hình trang Issue → `screenshots/issue-1.png`, `screenshots/issue-2.png`
+- [ ] Cập nhật số defect vào `README.md` (làm ở `docs/13`)

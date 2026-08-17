@@ -351,10 +351,13 @@ Chi tiết đầy đủ ở [`bug-report/bug-report.md`](../bug-report/bug-repor
 
 ### Hai bug mới
 
-| Bug | Mức độ | TC phát hiện | Vì sao kiểm thủ công không thấy |
-|---|---|---|---|
-| **BUG-NEW-01** — `POST/PUT/DELETE /api/products` không yêu cầu token (vi phạm FR-12) | 🔴 **Critical** | `FR15-SEC-01/02/03` | Admin UI chặn user thường **trước khi** chạm tới API. HW02 **đã nghi ngờ** khi đọc code (`Main_Report.md` dòng 468) nhưng ghi rõ *"KHÔNG test được từ UI → không tạo TC"* |
-| **BUG-NEW-02** — chấp nhận `category_id` không tồn tại | 🟠 High | `FR15-BV-R03` | `<select>` chỉ có 3 danh mục seed, không nhập được giá trị ngoài danh sách qua UI |
+| Bug | Mức độ | TC phát hiện | GitHub Issue | Vì sao kiểm thủ công không thấy |
+|---|---|---|---|---|
+| **BUG-NEW-01** — `POST/PUT/DELETE /api/products` không yêu cầu token (vi phạm FR-12) | 🔴 **Critical** | `FR15-SEC-01/02/03` | [#1](https://github.com/DuyPham111/HW04/issues/1) | Admin UI chặn user thường **trước khi** chạm tới API. HW02 **đã nghi ngờ** khi đọc code (`Main_Report.md` dòng 468) nhưng ghi rõ *"KHÔNG test được từ UI → không tạo TC"* |
+| **BUG-NEW-02** — chấp nhận `category_id` không tồn tại | 🟠 High | `FR15-BV-R03` | [#2](https://github.com/DuyPham111/HW04/issues/2) | `<select>` chỉ có 3 danh mục seed, không nhập được giá trị ngoài danh sách qua UI |
+
+Cả hai Issue đã tạo trên repo bài làm, kèm ảnh bằng chứng nhúng trong phần mô tả; ảnh chụp trang
+Issue lưu ở `bug-report/screenshots/issue-1.png` và `issue-2.png` (§14).
 
 ### Hai kết luận **chặt hơn HW02** nhờ automation
 
