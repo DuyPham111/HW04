@@ -102,50 +102,59 @@ bug-report/screenshots/    ← ảnh về BUG và GitHub Issues (bạn tự ch�
 
 ---
 
-## 6. ⚠️ `tab-title-manual.png` — cần chụp lại
+## 6. ⚠️ `tab-title-manual.png` — cần chụp lại LẦN 3 (đã sửa xong lỗi gốc)
 
-**Ảnh hiện tại chưa đạt mục đích.** Ảnh đã chụp đúng nội dung trang report (thấy
-`All 16 / Passed 6 / Failed 10 / Flaky 0`, `Project: chromium`, và dải `Run by` ở chân trang) —
-nhưng **thiếu đúng thứ cần chụp: thanh tab của trình duyệt**.
+**Lần chụp thứ 2 đã đúng khung hình** — thấy cả thanh tab, thanh địa chỉ (`localhost:9323`), lẫn
+nội dung trang. Nhưng khi AI kiểm thì phát hiện **tab hiện sai chữ**: `Playwright Test Report`
+thay vì title đã stamp. Đây **không phải lỗi chụp ảnh của bạn** — là bug thật trong script AI viết.
 
-Vì thiếu thanh tab, ảnh này đang **trùng nội dung** với `report-a-chromium.png` mà AI đã chụp,
-nên chưa bổ sung thêm bằng chứng nào.
+### Nguyên nhân thật (đã tìm ra và đã sửa)
 
-### Vì sao cần thanh tab
+Report của Playwright là một app React. Sau khi trang tải xong, chính bundle JS của report **tự
+chạy** `document.title = "Playwright Test Report"` trong một `useEffect` — lệnh này chạy **sau**
+và **ghi đè** thẻ `<title>` mà `stamp-report.mjs` đã sửa bằng regex vào file HTML tĩnh. Ảnh chụp
+lần 2 của bạn chính là bằng chứng phát hiện ra bug này (dải chân trang đúng vì đó là DOM tĩnh
+không bị JS đụng vào, nhưng tab thì sai vì tab đọc theo `document.title` lúc runtime).
 
-Thẻ `<title>` là **chỗ thứ tư** mang MSSV mà Playwright **không chụp được** (Playwright chỉ chụp
-được nội dung trang, không chụp được giao diện trình duyệt). Đây chính là lý do ảnh này phải do
-người chụp tay.
+**Đã sửa** trong `tools/stamp-report.mjs`: thêm một script nhỏ khoá `document.title` (chặn mọi
+lần ghi đè bằng `Object.defineProperty` + `MutationObserver`), rồi **re-stamp lại cả 9 report**
+(không chạy lại test — số liệu JSON không đổi, chỉ file HTML được vá lại). Đã tự kiểm bằng
+browser thật: `document.title` và tiêu đề tab đều giữ đúng
+`HW04 — Run by: 23127183 — Feature A — FR-02 … · chromium — 2026-08-16T…` sau khi trang tải xong.
 
-### Cách chụp lại cho đúng
+### Cách chụp lại lần 3 cho đúng
 
-1. Mở report: `npx playwright show-report reports/html/a-chromium`
-2. **Nhìn lên thanh tab** — phải đọc được:
+1. **Đóng hẳn tab report cũ đang mở** (report cũ trong bộ nhớ trình duyệt vẫn là bản trước khi
+   sửa) — hoặc mở tab **ẩn danh (Incognito/InPrivate)** để chắc chắn không dùng cache.
+2. Mở lại: `npx playwright show-report reports/html/a-chromium`
+3. **Nhìn lên thanh tab** — lần này phải đọc được đúng:
    `HW04 — Run by: 23127183 — Feature A — FR-02 … · chromium — 2026-08-16T…`
-   *(nếu tab quá hẹp làm chữ bị cắt: thu hẹp bớt các tab khác, hoặc hover chuột lên tab để hiện
-   tooltip đầy đủ rồi chụp cả tooltip)*
-3. `Win + Shift + S` → chọn vùng **BẮT ĐẦU TỪ THANH TAB** trở xuống, gồm cả phần đầu trang
-4. Lưu đè `reports/evidence/tab-title-manual.png`
+   *(nếu tab quá hẹp bị cắt chữ: hover chuột lên tab để hiện tooltip đầy đủ rồi chụp cả tooltip)*
+4. `Win + Shift + S` → chọn vùng bắt đầu từ thanh tab trở xuống (giữ nguyên khung như lần 2, chỉ
+   cần tab hiện đúng chữ)
+5. Lưu đè `reports/evidence/tab-title-manual.png`
 
 ### Khung cần chụp — so sánh
 
 ```
-❌ ẢNH HIỆN TẠI — bắt đầu từ đây (thiếu tab):
+❌ LẦN 2 — khung đúng nhưng tab sai chữ (bug script, đã sửa):
 ┌──────────────────────────────────────────────────────────────┐
+│ 🌐 Playwright Test Report                              ✕     │ ← SAI, do bug đã sửa
+├──────────────────────────────────────────────────────────────┤
 │  🔍 Search tests   All 16 | ✓ Passed 6 | ✕ Failed 10         │
 │  Project: chromium                                            │
 └──────────────────────────────────────────────────────────────┘
 
-✅ CẦN CHỤP — bắt đầu từ thanh tab:
+✅ LẦN 3 — cần thấy đúng chữ trên tab:
 ┌──────────────────────────────────────────────────────────────┐
-│ ⬤ HW04 — Run by: 23127183 — Feature A … 2026-08-16T…  ✕     │ ← DÒNG NÀY
-├──────────────────────────────────────────────────────────────┤
-│ ← → ⟳  ⓘ file:///D:/.../reports/html/a-chromium/index.html   │ ← có thêm càng tốt
+│ ⬤ HW04 — Run by: 23127183 — Feature A … 2026-08-16T…  ✕     │ ← DÒNG NÀY phải đúng
 ├──────────────────────────────────────────────────────────────┤
 │  🔍 Search tests   All 16 | ✓ Passed 6 | ✕ Failed 10         │
 │  Project: chromium                                            │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-> **Mẹo:** ảnh Issue bạn vừa chụp (`issue-1.png`) là ví dụ mẫu rất tốt — nó có cả thanh địa chỉ
-> URL. Chụp ảnh tab theo đúng kiểu đó là đạt.
+> **Mẹo:** ảnh Issue bạn đã chụp (`issue-1.png`) là ví dụ mẫu rất tốt — nó có cả thanh địa chỉ
+> URL. Chụp ảnh tab theo đúng kiểu đó là đạt. Đây cũng là một tình tiết đáng ghi vào AI Audit
+> Report: chính ảnh bạn chụp phát hiện ra một bug trong script của AI mà đọc code không thấy được
+> — nên đã thêm mục AI-15 vào `ai-audit/ai-audit-report.md` (xem bên dưới).

@@ -703,6 +703,49 @@ Mọi con số trong hai tài liệu **copy từ `reports/summary.md`**, đã đ
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-14 đã đầy đủ cho setup + 3 feature +
-multi-browser report + bug report + main report. Còn lại: video Task 2 (`docs/09`), Agent Skills
-(`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
+## [AI-15] Sửa bug `document.title` bị report React ghi đè — phát hiện từ ảnh chụp tay của sinh viên
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-17 (+07) |
+| Bước trong quy trình | Kiểm ảnh `tab-title-manual.png` lần chụp thứ 2 (`docs/14` §3.1, §6) |
+
+**Prompt (nguyên văn):**
+
+> "tôi vừa chụp ảnh lại tab-title-manual.png check xem được chưa"
+
+**Output của AI:** Đọc `reports/evidence/tab-title-manual.png` bằng công cụ đọc ảnh. Khung hình
+lần này đúng (có thanh tab + thanh địa chỉ `localhost:9323` + nội dung trang), nhưng chữ trên tab
+đọc là `Playwright Test Report` thay vì title đã stamp `HW04 — Run by: 23127183 — Feature A …`.
+
+**Human review:** Đây thực chất là **sinh viên phát hiện ra bug**, không phải AI tự tìm — đúng
+nguyên tắc "ghi cả lỗi do người dùng phát hiện" của skill `ai-audit-logger`. AI kiểm bằng cách
+grep trực tiếp bundle JS trong `reports/html/a-chromium/index.html`, tìm thấy dòng
+`document.title=h:document.title="Playwright Test Report"` — chứng minh bằng **đọc mã nguồn thật**
+chứ không suy đoán.
+
+**Vì sao AI sót:** Đặc thù feature/công cụ — `stamp-report.mjs` chỉ sửa `<title>` bằng regex trên
+file HTML **tĩnh**, không tính đến việc report Playwright là **app React phía client** tự chạy
+`document.title = "Playwright Test Report"` trong `useEffect` sau khi hydrate, ghi đè ngay giá trị
+vừa sửa. Lỗi này **không thể thấy được nếu chỉ đọc file HTML tĩnh** (đọc code sẽ thấy `<title>` có
+đúng chữ) — chỉ lộ ra khi mở report bằng trình duyệt thật rồi nhìn tab, đúng loại "khoảng cách giữa
+ý định và hành vi thật của code" mà `ai-audit-logger` SKILL.md từng cảnh báo ở mục ghi chú riêng.
+
+**Tôi đã sửa:** Thêm script khoá `document.title` vào `tools/stamp-report.mjs` (đặt cạnh banner,
+trước `</body>` để chạy **sau** bundle JS của Playwright) — dùng `Object.defineProperty` chặn ghi,
+cộng `MutationObserver` phòng trường hợp thẻ `<title>` bị sửa trực tiếp bằng cách khác. Re-stamp
+lại cả 9 report bằng script trong scratchpad (không chạy lại test — số liệu JSON 9 lượt không đổi,
+đã đối chiếu số `pass/fail` từng report khớp 100% với `reports/summary.md` trước khi sửa).
+
+**Kết quả sau khi sửa:** Mở lại report `a-chromium` trong trình duyệt thật (qua
+`npx playwright show-report`), kiểm trực tiếp bằng `document.title` sau khi trang tải xong (JS
+DevTools) — kết quả đúng
+`HW04 — Run by: 23127183 — Feature A — FR-02 Đăng nhập & Khóa tài khoản · chromium — 2026-08-16T11:53:43.373Z`,
+không còn bị ghi đè. Đã báo sinh viên chụp lại `tab-title-manual.png` lần 3.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-15 đã đầy đủ cho setup + 3 feature +
+multi-browser report + bug report + main report + sửa bug title. Còn lại: video Task 2 (`docs/09`),
+Agent Skills (`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
