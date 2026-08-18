@@ -97,7 +97,8 @@ bug-report/screenshots/    ← ảnh về BUG và GitHub Issues (bạn tự ch�
 
 - [x] 19 ảnh report — AI đã chụp, đã commit
 - [x] Ảnh GitHub Issues — đã chụp `issue-1.png`, `issue-2.png` (có URL + tên tài khoản ✅)
-- [ ] `tab-title-manual.png` — **đã chụp nhưng CHƯA ĐẠT, cần chụp lại** (xem §6)
+- [x] `tab-title-manual.png` — chụp lại lần 3 sau khi sửa bug `document.title`, tab hiện đúng
+      `HW04 — Run by: 23127183` (xem §6)
 - [ ] Video có `whoami`/`hostname` — quay ở `docs/09` (mục 3.3)
 
 ---
