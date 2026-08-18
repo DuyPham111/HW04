@@ -1,8 +1,5 @@
 # HW04 — Automation Testing on EShop
 
-> ⚠️ **ĐÂY LÀ BẢN MẪU.** Mọi chỗ `<…>` phải thay bằng số liệu **thật** lấy từ `reports/summary.md`.
-> Không điền số bằng tay khi chưa chạy đủ 9 lượt. Xóa dòng cảnh báo này trước khi nộp.
-
 - **Sinh viên:** Phạm Vũ Ngọc Duy — **MSSV:** 23127183
 - **Môn:** Kiểm thử phần mềm — **Bài:** HW04-AI Automation Testing
 - **SUT:** EShop — https://github.com/ttbhanh/eshop-sut
@@ -11,10 +8,10 @@
 
 | | |
 |---|---|
-| Repo bài làm (public) | `<link>` |
-| Video demo Task 2 (unlisted, ≥5 phút) | `<link>` |
-| Video demo Agent Skill (§7) | `<link>` |
-| GitHub Issues (bug mới) | `<link>` |
+| Repo bài làm (public) | https://github.com/DuyPham111/HW04 |
+| Video demo Task 2 (unlisted, ≥5 phút) | https://youtu.be/YoSvR0AmFMs (18:01) |
+| Video demo Agent Skill (§7) | https://youtu.be/0fjWAO-hutc (15:26) |
+| GitHub Issues (bug mới) | https://github.com/DuyPham111/HW04/issues |
 | Báo cáo chính | [report/main-report.md](report/main-report.md) |
 | Test summary sinh tự động | [reports/summary.md](reports/summary.md) |
 
@@ -26,9 +23,9 @@ Lấy lại đúng 3 feature web đã chọn ở HW02, mỗi Pool một feature.
 
 | | Feature | FR | App / route | File dữ liệu | Spec file |
 |---|---|---|---|---|---|
-| **A** | Đăng nhập & Khóa tài khoản | FR-02 | web :5173 `/login` | `tests/data/feature-a-login.csv` — `<n>` TC | `tests/feature-a-login.spec.js` |
-| **B** | Mã giảm giá (Coupon) | FR-09 | web :5173 `/checkout` | `tests/data/feature-b-coupon.json` — `<n>` TC | `tests/feature-b-coupon.spec.js` |
-| **C** | Quản lý Sản phẩm (CRUD) | FR-15 | admin :5174 tab Sản phẩm | `tests/data/feature-c-product-admin.csv` — `<n>` TC | `tests/feature-c-product-admin.spec.js` |
+| **A** | Đăng nhập & Khóa tài khoản | FR-02 | web :5173 `/login` | `tests/data/feature-a-login.csv` — 16 TC | `tests/feature-a-login.spec.js` |
+| **B** | Mã giảm giá (Coupon) | FR-09 | web :5173 `/checkout` | `tests/data/feature-b-coupon.json` — 18 TC | `tests/feature-b-coupon.spec.js` |
+| **C** | Quản lý Sản phẩm (CRUD) | FR-15 | admin :5174 tab Sản phẩm | `tests/data/feature-c-product-admin.csv` — 19 TC | `tests/feature-c-product-admin.spec.js` |
 
 Không trùng feature trong nhóm: ba feature không đổi so với HW02 nên thỏa thuận phân công của HW02 vẫn còn hiệu lực.
 
@@ -38,41 +35,44 @@ Không trùng feature trong nhóm: ba feature không đổi so với HW02 nên t
 
 | Chỉ số | Giá trị |
 |---|---|
-| Số feature automation | `<3>` |
-| Số test case automation | `<n>` (A: `<n>` · B: `<n>` · C: `<n>`) |
-| Số lượt chạy browser | `<9>` (3 feature × chromium/firefox/webkit) |
-| Số lần thực thi (TC × engine) | `<n>` |
-| Pass | `<n>` |
-| Fail | `<n>` |
-| Flaky | `<n>` |
-| Skipped | `<n>` |
-| Test case Fail ở ≥1 engine | `<n>` |
-| Số defect truy được từ các Fail | `<n>` (`<n>` mới + `<n>` đã có từ HW02) |
-| Tổng thời gian chạy | `<n>`s |
-| Link video demo Task 2 | `<link>` |
+| Số feature automation | 3 |
+| Số test case automation | 53 (A: 16 · B: 18 · C: 19) |
+| Số lượt chạy browser | 9 (3 feature × chromium/firefox/webkit) |
+| Số lần thực thi (TC × engine) | 159 |
+| Pass | 76 |
+| Fail | 83 |
+| Flaky | 0 |
+| Skipped | 0 |
+| Test case Fail ở ≥1 engine | 29 |
+| Số defect truy được từ các Fail | 16 (2 mới + 14 đã có từ HW02) |
+| Tổng thời gian chạy | 881.1s |
+| Link video demo Task 2 | https://youtu.be/YoSvR0AmFMs |
 
 ### Theo feature
 
+> Cột Positive/Negative/Edge-BVA phân theo trường `technique` ghi sẵn trong từng file dữ liệu
+> (`tests/data/*`), gộp `robust`/`security` vào Negative vì đều là kiểm dữ liệu bất thường/đối kháng.
+
 | Feature | TC | Positive | Negative | Edge/BVA | Lượt | Pass | Fail | Defect |
 |---|---|---|---|---|---|---|---|---|
-| A — FR-02 | | | | | 3 | | | |
-| B — FR-09 | | | | | 3 | | | |
-| C — FR-15 | | | | | 3 | | | |
-| **Tổng** | | | | | **9** | | | |
+| A — FR-02 | 16 | 5 | 7 | 4 | 3 | 18 | 30 | 6 |
+| B — FR-09 | 18 | 4 | 8 | 6 | 3 | 31 | 23 | 4 |
+| C — FR-15 | 19 | 4 | 11 | 4 | 3 | 27 | 30 | 6 |
+| **Tổng** | **53** | **13** | **26** | **14** | **9** | **76** | **83** | **16** |
 
 ### 9 lượt chạy — mỗi lượt một HTML report
 
 | # | Feature | Engine | Test | Pass | Fail | Report |
 |---|---|---|---|---|---|---|
-| 1 | A | chromium | | | | [`a-chromium`](reports/html/a-chromium/index.html) |
-| 2 | A | firefox | | | | [`a-firefox`](reports/html/a-firefox/index.html) |
-| 3 | A | webkit | | | | [`a-webkit`](reports/html/a-webkit/index.html) |
-| 4 | B | chromium | | | | [`b-chromium`](reports/html/b-chromium/index.html) |
-| 5 | B | firefox | | | | [`b-firefox`](reports/html/b-firefox/index.html) |
-| 6 | B | webkit | | | | [`b-webkit`](reports/html/b-webkit/index.html) |
-| 7 | C | chromium | | | | [`c-chromium`](reports/html/c-chromium/index.html) |
-| 8 | C | firefox | | | | [`c-firefox`](reports/html/c-firefox/index.html) |
-| 9 | C | webkit | | | | [`c-webkit`](reports/html/c-webkit/index.html) |
+| 1 | A | chromium | 16 | 6 | 10 | [`a-chromium`](reports/html/a-chromium/index.html) |
+| 2 | A | firefox | 16 | 6 | 10 | [`a-firefox`](reports/html/a-firefox/index.html) |
+| 3 | A | webkit | 16 | 6 | 10 | [`a-webkit`](reports/html/a-webkit/index.html) |
+| 4 | B | chromium | 18 | 11 | 7 | [`b-chromium`](reports/html/b-chromium/index.html) |
+| 5 | B | firefox | 18 | 9 | 9 | [`b-firefox`](reports/html/b-firefox/index.html) |
+| 6 | B | webkit | 18 | 11 | 7 | [`b-webkit`](reports/html/b-webkit/index.html) |
+| 7 | C | chromium | 19 | 9 | 10 | [`c-chromium`](reports/html/c-chromium/index.html) |
+| 8 | C | firefox | 19 | 9 | 10 | [`c-firefox`](reports/html/c-firefox/index.html) |
+| 9 | C | webkit | 19 | 9 | 10 | [`c-webkit`](reports/html/c-webkit/index.html) |
 
 Mỗi report hiển thị `Run by: 23127183` + timestamp ISO 8601 (§6, §11).
 
@@ -122,11 +122,11 @@ npm run summary
 
 | No. | Tiêu chí | Điểm tối đa | Tự chấm | Căn cứ |
 |---|---|---|---|---|
-| 1 | Task 1 — Feature A (FR-02) | 25 | | |
-| 1 | Task 1 — Feature B (FR-09) | 25 | | |
-| 1 | Task 1 — Feature C (FR-15) | 25 | | |
-| 2 | Task 2 — Video demo | 15 | | |
-| 3 | Agent Skills | 10 | | |
-| | **Tổng** | **100** | | |
+| 1 | Task 1 — Feature A (FR-02) | 25 | **25** | 16 TC, dữ liệu ngoài, ≥3 assertion pattern, 9/16 TC Fail truy về 6 bug đã biết |
+| 1 | Task 1 — Feature B (FR-09) | 25 | **25** | 18 TC, phát hiện & sửa 1 Pass giả (§3.3 main report), P3 chứng minh B007 ở tầng API |
+| 1 | Task 1 — Feature C (FR-15) | 25 | **25** | 19 TC, tìm ra 2 bug mới (1 Critical broken access control), assert 2 tầng UI+DB |
+| 2 | Task 2 — Video demo | 15 | **15** | https://youtu.be/YoSvR0AmFMs — 18:01, Unlisted, mở đầu `whoami`/`hostname` |
+| 3 | Agent Skills | 10 | **10** | https://youtu.be/0fjWAO-hutc — 15:26, Unlisted, 4 skill dùng thật end-to-end Feature C |
+| | **Tổng** | **100** | **100** | |
 
-**Tên file nộp:** `23127183_HW04_AI_Automation_<điểm>.zip`
+**Tên file nộp:** `23127183_HW04_AI_Automation_100.zip`

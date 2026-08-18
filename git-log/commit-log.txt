@@ -1,0 +1,456 @@
+* 6504efc 2026-08-18 12:06:44 +0700 Pham Duy
+|     docs(ai-audit): them muc AI-16 - loi prompt slash-command trong docs10| 
+|  ai-audit/ai-audit-report.md | 45 ++++++++++++++++++++++++++++++++++++++++---
+|  1 file changed, 42 insertions(+), 3 deletions(-)
+
+* 21d0700 2026-08-18 12:05:58 +0700 Pham Duy
+|     fix(docs10): sua prompt goi skill bi loi Unknown command + rut gon noi dung| 
+|  docs/10-AGENT-SKILLS.md               |  95 ++++++++++++++++++--------------
+|  docs/14-HUONG-DAN-CHUP-ANH.md         |   3 +-
+|  reports/evidence/tab-title-manual.png | Bin 160357 -> 202421 bytes
+|  3 files changed, 57 insertions(+), 41 deletions(-)
+
+* b599e12 2026-08-17 19:29:33 +0700 Pham Duy
+|     docs: cap nhat huong dan chup lai tab-title lan 3 + ghi AI-15 vao audit| 
+|  ai-audit/ai-audit-report.md   | 49 ++++++++++++++++++++++++++++++++---
+|  docs/14-HUONG-DAN-CHUP-ANH.md | 57 ++++++++++++++++++++++++-----------------
+|  2 files changed, 79 insertions(+), 27 deletions(-)
+
+* 79b0f51 2026-08-17 19:27:59 +0700 Pham Duy
+|     fix(reports): khoa document.title chong bi React app cua Playwright ghi de| 
+|  reports/html/a-chromium/index.html | 20 ++++++++++++++++++++
+|  reports/html/a-firefox/index.html  | 20 ++++++++++++++++++++
+|  reports/html/a-webkit/index.html   | 20 ++++++++++++++++++++
+|  reports/html/b-chromium/index.html | 20 ++++++++++++++++++++
+|  reports/html/b-firefox/index.html  | 20 ++++++++++++++++++++
+|  reports/html/b-webkit/index.html   | 20 ++++++++++++++++++++
+|  reports/html/c-chromium/index.html | 20 ++++++++++++++++++++
+|  reports/html/c-firefox/index.html  | 20 ++++++++++++++++++++
+|  reports/html/c-webkit/index.html   | 20 ++++++++++++++++++++
+|  tools/stamp-report.mjs             | 33 +++++++++++++++++++++++++++++++++
+|  10 files changed, 213 insertions(+)
+
+* 8e8235d 2026-08-17 18:33:25 +0700 Pham Duy
+|     feat(skills): 4 Agent Skill (§7) + viet lai kich ban video docs/09 va docs/10| 
+|  .claude/skills/ai-audit-logger/.gitkeep      |   0
+|  .claude/skills/ai-audit-logger/SKILL.md      | 111 +++++++++++++
+|  .claude/skills/automation-suite/.gitkeep     |   0
+|  .claude/skills/automation-suite/SKILL.md     | 116 ++++++++++++++
+|  .claude/skills/data-driven-tests/.gitkeep    |   0
+|  .claude/skills/data-driven-tests/SKILL.md    | 125 +++++++++++++++
+|  .claude/skills/multi-browser-report/.gitkeep |   0
+|  .claude/skills/multi-browser-report/SKILL.md | 120 ++++++++++++++
+|  docs/09-VIDEO-TASK2.md                       | 212 ++++++++++++++++++++-----
+|  docs/10-AGENT-SKILLS.md                      | 187 +++++++++++++++++-----
+|  10 files changed, 789 insertions(+), 82 deletions(-)
+
+* 4fc273a 2026-08-17 18:23:26 +0700 Pham Duy
+|     docs: dien so GitHub Issue #1 #2 + anh chup trang Issue| 
+|  bug-report/bug-report.md              |  42 +++++++++++++++++++-----
+|  bug-report/bug-report.pdf             | Bin 535943 -> 798189 bytes
+|  bug-report/screenshots/issue-1.png    | Bin 0 -> 179236 bytes
+|  bug-report/screenshots/issue-2.png    | Bin 0 -> 178168 bytes
+|  docs/14-HUONG-DAN-CHUP-ANH.md         |  56 ++++++++++++++++++++++++++++++--
+|  report/main-report.md                 |  11 ++++---
+|  report/main-report.pdf                | Bin 617010 -> 620216 bytes
+|  reports/evidence/tab-title-manual.png | Bin 0 -> 160357 bytes
+|  8 files changed, 94 insertions(+), 15 deletions(-)
+
+* bc36fe1 2026-08-16 19:57:56 +0700 Pham Duy
+|     docs(report): main report + gap analysis 12 loi that (docs/08)| 
+|  ai-audit/ai-audit-report.md |  73 +++++++-
+|  bug-report/bug-report.pdf   | Bin 0 -> 535943 bytes
+|  report/main-report.md       | 419 +++++++++++++++++++++++++++++++++++++-----
+|  report/main-report.pdf      | Bin 0 -> 617010 bytes
+|  4 files changed, 445 insertions(+), 47 deletions(-)
+
+* 9941474 2026-08-16 19:39:24 +0700 Pham Duy
+|     docs(bug-report): bug report day du + 4 anh bang chung + noi dung 2 GitHub Issue| 
+|  bug-report/bug-report.md                          | 243 ++++++++++++++++----
+|  bug-report/issue-new-01.md                        |  74 ++++++
+|  bug-report/issue-new-02.md                        |  84 +++++++
+|  .../bug-new-01-fr12-delete-khong-token.png        | Bin 0 -> 39724 bytes
+|  .../bug-new-01-fr12-post-khong-token.png          | Bin 0 -> 44774 bytes
+|  .../bug-new-01-fr12-put-khong-token.png           | Bin 0 -> 42805 bytes
+|  .../bug-new-02-category-khong-ton-tai.png         | Bin 0 -> 45753 bytes
+|  tools/capture-bug-evidence.mjs                    | 172 ++++++++++++++
+|  8 files changed, 533 insertions(+), 40 deletions(-)
+
+* 360ab7b 2026-08-16 19:33:12 +0700 Pham Duy
+|     docs: huong dan chup anh - ranh gioi AI lam duoc vs sinh vien tu lam| 
+|  docs/14-HUONG-DAN-CHUP-ANH.md | 101 ++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 101 insertions(+)
+
+* 9762967 2026-08-16 19:32:13 +0700 Pham Duy
+|     test(reports): 19 anh bang chung Run by tu 9 report that (docs/06 §5)| 
+|  reports/evidence/report-a-chromium.png       | Bin 0 -> 138013 bytes
+|  reports/evidence/report-a-firefox.png        | Bin 0 -> 148140 bytes
+|  reports/evidence/report-a-webkit.png         | Bin 0 -> 148998 bytes
+|  reports/evidence/report-b-chromium.png       | Bin 0 -> 151127 bytes
+|  reports/evidence/report-b-firefox.png        | Bin 0 -> 151955 bytes
+|  reports/evidence/report-b-webkit.png         | Bin 0 -> 151404 bytes
+|  reports/evidence/report-c-chromium.png       | Bin 0 -> 141084 bytes
+|  reports/evidence/report-c-firefox.png        | Bin 0 -> 140462 bytes
+|  reports/evidence/report-c-webkit.png         | Bin 0 -> 140984 bytes
+|  reports/evidence/runby-a-chromium.png        | Bin 0 -> 5849 bytes
+|  reports/evidence/runby-a-firefox.png         | Bin 0 -> 5888 bytes
+|  reports/evidence/runby-a-webkit.png          | Bin 0 -> 5831 bytes
+|  reports/evidence/runby-b-chromium.png        | Bin 0 -> 5406 bytes
+|  reports/evidence/runby-b-firefox.png         | Bin 0 -> 5671 bytes
+|  reports/evidence/runby-b-webkit.png          | Bin 0 -> 5651 bytes
+|  reports/evidence/runby-c-chromium.png        | Bin 0 -> 5795 bytes
+|  reports/evidence/runby-c-firefox.png         | Bin 0 -> 5872 bytes
+|  reports/evidence/runby-c-webkit.png          | Bin 0 -> 5661 bytes
+|  reports/evidence/test-detail-FR15-SEC-01.png | Bin 0 -> 226265 bytes
+|  tools/capture-report-evidence.mjs            |  96 +++++++++++++++++++++++++
+|  20 files changed, 96 insertions(+)
+
+* 8c84290 2026-08-16 19:19:20 +0700 Pham Duy
+|     docs(ai-audit): AI-13 cho docs/06 - cong cu multi-browser + 9 luot chinh thuc| 
+|  ai-audit/ai-audit-report.md | 80 +++++++++++++++++++++++++++++++++++++++++--
+|  1 file changed, 77 insertions(+), 3 deletions(-)
+
+* 18470e6 2026-08-16 19:18:05 +0700 Pham Duy
+|     test(reports): 9 luot browser chinh thuc + HTML report co Run by 23127183| 
+|  .gitignore                                        |    6 +
+|  .../018f6f17ce94f36bbed97e5b978aba47742d4aad.md   |  180 ++
+|  .../029ddea890663e962876f92fcc57f4e5775c5a19.md   |  175 ++
+|  .../1619ceae1a327715a058aea16a1e2e7853409073.md   |  171 ++
+|  .../2069fd852957081e09191f087a7fa398a1575f88.md   |  171 ++
+|  .../28d87759450b98baff6e0ecff176f37a920175f5.png  |  Bin 0 -> 23022 bytes
+|  .../30c68790f68edac0cc3a0c53251d42e74e7c640a.md   |  184 ++
+|  .../3a29863caabd43fc6ce48f4fc12ecba28b3b282f.png  |  Bin 0 -> 22054 bytes
+|  .../7ed2758bf5e20369de5ee2513bcdce9878d8e5c8.png  |  Bin 0 -> 22978 bytes
+|  .../87821e645b4762d68a1eaa765d8f211b207b020b.md   |  202 ++
+|  .../87d5f1e33646026d57ebd51be1140f7b199a03ac.md   |  238 ++
+|  .../99466027deb8e5c253da0dc1cecf42621dc1abb4.png  |  Bin 0 -> 18011 bytes
+|  .../a0a19f3aad76bd4cd7764f514ce1406817d4304d.md   |  219 ++
+|  .../a912419448cc8dd12b1ae502f8edd50e4f368552.md   |  171 ++
+|  .../abf36b8d14f330858d5edcee052e96b479d466b2.png  |  Bin 0 -> 22817 bytes
+|  .../befad942a92eb95a9805514a610638e27ac94db9.png  |  Bin 0 -> 22991 bytes
+|  .../bfe3f4cedfcaa4801c25b06b74fa8cf9cf399721.png  |  Bin 0 -> 22840 bytes
+|  .../d9bc6a528c60ead8e3c9e814767ef3ecda81391b.md   |  173 ++
+|  .../eb2219ed791e1d1b2bc8ae79db5c0005e94434f2.png  |  Bin 0 -> 22129 bytes
+|  .../ee5d9799a9a5ce0e300d63c8c35239df89ce152c.png  |  Bin 0 -> 22973 bytes
+|  reports/html/a-chromium/index.html                |   62 +
+|  .../018f6f17ce94f36bbed97e5b978aba47742d4aad.md   |  180 ++
+|  .../029ddea890663e962876f92fcc57f4e5775c5a19.md   |  175 ++
+|  .../1619ceae1a327715a058aea16a1e2e7853409073.md   |  171 ++
+|  .../2069fd852957081e09191f087a7fa398a1575f88.md   |  171 ++
+|  .../2cfaedc23d0ae4744d06efa4abd658b04c9611a2.png  |  Bin 0 -> 24572 bytes
+|  .../30c68790f68edac0cc3a0c53251d42e74e7c640a.md   |  184 ++
+|  .../364d02e54384f3d6a64d9f10dbd10276aa7dcffd.md   |  202 ++
+|  .../5258890a881a4b8b24a5f3f3e61ad5d2442f51b6.png  |  Bin 0 -> 24341 bytes
+|  .../5a73db6a9ccad93a0ecd1cb0fc95399d6f35a279.png  |  Bin 0 -> 23659 bytes
+|  .../5f11e9372cede769ece9708088a9f7c60d7445f2.png  |  Bin 0 -> 24366 bytes
+|  .../7368a1a4bc89590aafbd579d042a7dc5abca2d8b.png  |  Bin 0 -> 24572 bytes
+|  .../8031ef5c410229a4e5ffc91fda2d9c69e888d704.png  |  Bin 0 -> 19443 bytes
+|  .../87d5f1e33646026d57ebd51be1140f7b199a03ac.md   |  238 ++
+|  .../a0a19f3aad76bd4cd7764f514ce1406817d4304d.md   |  219 ++
+|  .../a912419448cc8dd12b1ae502f8edd50e4f368552.md   |  171 ++
+|  .../a96c570bb2745f55a06e9723c4256c6b2b80ac01.png  |  Bin 0 -> 24004 bytes
+|  .../acee631bdb6eb75c916351b7b5a8695e6c32e790.png  |  Bin 0 -> 24544 bytes
+|  .../af689bb9519c264831c1fb9ea1c8aa17d521ab82.md   |  173 ++
+|  .../e0b1aa64c0d1ef91c0c88098fdc7b2b2fad8ada8.png  |  Bin 0 -> 24541 bytes
+|  reports/html/a-firefox/index.html                 |   62 +
+|  .../0db63ba13eea628236aa6e7f5256e797dbcb0edf.png  |  Bin 0 -> 66897 bytes
+|  .../100f871a0081a1c7dc7f1325640b201aea4186e2.md   |  202 ++
+|  .../133fc36225644fd0116406dcc654a62250c5b7e3.png  |  Bin 0 -> 52660 bytes
+|  .../37383f9d0149f1accd41d277f5eaf1ff74981c0a.png  |  Bin 0 -> 63726 bytes
+|  .../3ba10c78c6644ae5352dc5f3dd67aad48c2a74bb.md   |  219 ++
+|  .../43acd521e9544180b663246dedf2ee9fe648cb11.png  |  Bin 0 -> 67334 bytes
+|  .../47ef24c774ab489f20e563275f3a12db63bef87b.md   |  238 ++
+|  .../5b5ca26827e4da0baa9cc221c5ce54f92546efe0.md   |  171 ++
+|  .../5e88152bc67ec71e666fc5ac0d23429308462dee.png  |  Bin 0 -> 67339 bytes
+|  .../7e3caa936062db23803ce7b731e54711ba52ca7c.md   |  175 ++
+|  .../91bf8016a780791c842d3fd75d2d4fd582c6deb3.png  |  Bin 0 -> 67215 bytes
+|  .../9b1e0156b059288fe332deab2c38f85314d1e2b2.md   |  184 ++
+|  .../9ea1d0534c878ff49486f7871cd696b7520e750c.png  |  Bin 0 -> 64298 bytes
+|  .../af689bb9519c264831c1fb9ea1c8aa17d521ab82.md   |  173 ++
+|  .../b80aa28f35aa9c19ab56de13ea4a9f8ea2d74e58.png  |  Bin 0 -> 67332 bytes
+|  .../b8bfb775ecedbc78eec9f7f2ed5948fc108cae84.md   |  180 ++
+|  .../c09dbf7e2d1fcb5aa42f347e0acb33d9fe9c24f0.md   |  171 ++
+|  .../f66976f82a2d3dfe61960ba1b856830bded3f0b5.md   |  171 ++
+|  .../ff793d70fb63a012b84a25d11f23e5df12796d7b.png  |  Bin 0 -> 66776 bytes
+|  reports/html/a-webkit/index.html                  |   62 +
+|  .../0e9da0f1dd9f9a6da5f6980642186193689ec492.md   |  230 ++
+|  .../362878750a89c9a088871a06802c0d7ddef4719f.md   |  260 ++
+|  .../4217044db3880cb303a041bf27a48f8286999ab1.png  |  Bin 0 -> 29234 bytes
+|  .../4c1c38cd10c4bc8e1cdb7086bc00e05fb4bc5c11.png  |  Bin 0 -> 30826 bytes
+|  .../6fb21dc3872c06f906f30e030b30a59185b90664.md   |  256 ++
+|  .../785aa8a91fa6125fd44881fdde039da32e715e1f.png  |  Bin 0 -> 30100 bytes
+|  .../7b98e22f0ef11fa346939eab2aa8571325b4bd7d.md   |  238 ++
+|  .../b2a4fdc907beacbe019d69f7fb82d42c8e638c30.png  |  Bin 0 -> 30628 bytes
+|  .../ba6e21434c3f620faecfad1e7cb0d4513a5894e7.png  |  Bin 0 -> 30491 bytes
+|  .../c225dce5b82d7794b6c0e2e22312c5eac4c60a9e.md   |  231 ++
+|  .../d746e6c8671124aaeb1fd5978dd7fc12b412d8a6.md   |  256 ++
+|  .../ddbc2cee3a0301efe88ad50e11dc3183787b7549.png  |  Bin 0 -> 27920 bytes
+|  .../f0cd2f4c82c2420ef308cb2b01115b2a0d293921.md   |  231 ++
+|  .../fde38a2e9e106a6ee45551afe54d14c238d57870.png  |  Bin 0 -> 29143 bytes
+|  reports/html/b-chromium/index.html                |   62 +
+|  .../056d2c58f5363a25e86595a73e84abb8b2a40401.png  |  Bin 0 -> 30387 bytes
+|  .../0e9da0f1dd9f9a6da5f6980642186193689ec492.md   |  230 ++
+|  .../235987411ecad27381046e5197e544e0a75a7f2d.png  |  Bin 0 -> 32304 bytes
+|  .../30be44157a9b183ad261f0346641424f2f85ac6c.png  |  Bin 0 -> 30202 bytes
+|  .../362878750a89c9a088871a06802c0d7ddef4719f.md   |  260 ++
+|  .../434e3a3176b634cc45e1d497b108615f354ca8c7.md   |   76 +
+|  .../5a9d318c6101c02b5a7096f649e9fde3ed2bd4fe.md   |   57 +
+|  .../6cf2d3716349a4bebce476fd9e7c297cf1a74af7.png  |  Bin 0 -> 29163 bytes
+|  .../6fb21dc3872c06f906f30e030b30a59185b90664.md   |  256 ++
+|  .../7351489949d63546b7704ca4206b44652e84f998.png  |  Bin 0 -> 31038 bytes
+|  .../7b98e22f0ef11fa346939eab2aa8571325b4bd7d.md   |  238 ++
+|  .../7e9aaba0b83f1f6ec83ebf07c3bc863dd5867cc9.md   |   50 +
+|  .../86d9c66bbd466d59d99b78fa8223e7551188d23a.png  |  Bin 0 -> 31893 bytes
+|  .../8dc6b819e2eb7299dd2865daed1cc2ed88852c3b.png  |  Bin 0 -> 32544 bytes
+|  .../c225dce5b82d7794b6c0e2e22312c5eac4c60a9e.md   |  231 ++
+|  .../d746e6c8671124aaeb1fd5978dd7fc12b412d8a6.md   |  256 ++
+|  .../e8e8bbc5f9c68a6f7df3576a081262e147890b9a.png  |  Bin 0 -> 30470 bytes
+|  .../eb09cc4dd0970ab3455d51653bfab4b48d175977.png  |  Bin 0 -> 31635 bytes
+|  reports/html/b-firefox/index.html                 |   62 +
+|  .../03669dfe846a54235c8a628340793e631539c0a7.png  |  Bin 0 -> 77299 bytes
+|  .../22527a91e64a114e9f7323917fdfb82dfced00f3.png  |  Bin 0 -> 68330 bytes
+|  .../34f139e704193f9e43f65bfb86020318360e251f.md   |  230 ++
+|  .../4090d6b8162f4d02165a5cad2f71d1f9cd0cbadd.png  |  Bin 0 -> 76347 bytes
+|  .../526594639ea05916c79c86bc14f8ea9981764328.png  |  Bin 0 -> 73456 bytes
+|  .../6bf5aba84de4e2b6de9ad99b09db9fdab9bb0157.md   |  231 ++
+|  .../6f4e2b6dd19d5fc8b956d5be4e3dc72769b6f529.png  |  Bin 0 -> 75260 bytes
+|  .../8aeebed904c3d5a3efcd9d56f1ec511185c59fec.md   |  238 ++
+|  .../9b7125f5ccc3d56e39ca24b9d681a3d89ee2852f.md   |  260 ++
+|  .../a7bf502969c6a77c0310bceabd434bcea52d680c.md   |  256 ++
+|  .../c4430077a432f3a858e3e0a5d724cd5b4c3d4e8c.png  |  Bin 0 -> 73087 bytes
+|  .../ce9412ddb6bd02f49b164186b58d8d08a4080b8c.md   |  231 ++
+|  .../dab1a64ee7036f451773c05ec804a4d5d94eca88.md   |  256 ++
+|  .../f03d50af4120c11cb6d0956a63d9903405201a62.png  |  Bin 0 -> 77505 bytes
+|  reports/html/b-webkit/index.html                  |   62 +
+|  .../3397757598296fba37c3a3a6f3f9c7b7d3f7b037.md   |  234 ++
+|  .../3b3b240d9e5073e89eeef1f34d75924b0a466c61.png  |  Bin 0 -> 34686 bytes
+|  .../46b70332de02f9f52d538b87e4a28b5bcfd21991.md   |  280 +++
+|  .../4a23d768c11cfd71fd3346a7daa4dd5e23aedeed.png  |  Bin 0 -> 29608 bytes
+|  .../5184c323c48c563cf591cde31e143072310ed294.md   |  234 ++
+|  .../55e1b94dfff4cef763b35b5bf67c5ce6716ec0c5.md   |  280 +++
+|  .../5b70a4423356c763b6a547ef6f5b23e4320c87ff.png  |  Bin 0 -> 34751 bytes
+|  .../7be7e922a70d7f2e2395218dcbe5d1560a5fff95.md   |  234 ++
+|  .../84fc389a1f5fc84bbc8c00a2ec2123390e1c7cda.md   |  234 ++
+|  .../8794eedfea80c4d042de86a29c3e90c4bf8e6978.png  |  Bin 0 -> 34784 bytes
+|  .../c8672ae9b7e44a1cd35b7ce5e21a737bbeb735dd.md   |  280 +++
+|  .../ce4a546726a0d57f905d99cf99b39ba2e32c03b9.png  |  Bin 0 -> 29604 bytes
+|  .../d3df8b052df0eee8bca02c09fad780921d86065d.md   |  280 +++
+|  .../d41cab2ab49854732e583bbff25a37ccd63c2781.md   |  279 +++
+|  .../d68473ef0ec5567b2e10b9738d354e49f054da6e.png  |  Bin 0 -> 32223 bytes
+|  .../e604a26126c4c55ba8d2f95dce0802a7bff76a38.png  |  Bin 0 -> 26537 bytes
+|  .../e95a67d3256aa9e1ab5a1ff1741b2b345a08a9b2.png  |  Bin 0 -> 34839 bytes
+|  .../f3bf9fb685ea878f29cbfb05286c4ddf40a835e1.png  |  Bin 0 -> 29088 bytes
+|  .../fd79ec2b7d1e0a5825a6d25e5ef5a704a2418ab2.md   |  280 +++
+|  .../fe501f318e966ee0b983766af6104127be741341.png  |  Bin 0 -> 34688 bytes
+|  reports/html/c-chromium/index.html                |   62 +
+|  .../17cfffb34c4635e217081ce39bcc70d9df35de1d.png  |  Bin 0 -> 35848 bytes
+|  .../34eaa7c86cb309c28914255fed67ee28bb647f50.md   |  234 ++
+|  .../410f620684dd36e9c111b8b82e55e82875024d7c.md   |  234 ++
+|  .../45696eb372eddd86c7fd097981551eeb22dc6c6c.png  |  Bin 0 -> 35796 bytes
+|  .../46b70332de02f9f52d538b87e4a28b5bcfd21991.md   |  280 +++
+|  .../4783a235087b020e7a9ad69ed43d98829670c008.png  |  Bin 0 -> 33289 bytes
+|  .../55e1b94dfff4cef763b35b5bf67c5ce6716ec0c5.md   |  280 +++
+|  .../6444c5623024c8ebb0b5d5579c5c04b98a0daecc.png  |  Bin 0 -> 31118 bytes
+|  .../84fc389a1f5fc84bbc8c00a2ec2123390e1c7cda.md   |  234 ++
+|  .../acc5a586e33f27f33c51708c9e4d11614aed8afe.png  |  Bin 0 -> 35629 bytes
+|  .../c26228c22c3653bb33842f3d746622d8f89da7f8.png  |  Bin 0 -> 33046 bytes
+|  .../c3c3e8634eb5525e0df4fd9c8f096f64bcab7c65.png  |  Bin 0 -> 35866 bytes
+|  .../c6059600ced24ef855762e14f7a8e86680923c31.png  |  Bin 0 -> 32964 bytes
+|  .../c8672ae9b7e44a1cd35b7ce5e21a737bbeb735dd.md   |  280 +++
+|  .../d3df8b052df0eee8bca02c09fad780921d86065d.md   |  280 +++
+|  .../d41cab2ab49854732e583bbff25a37ccd63c2781.md   |  279 +++
+|  .../f6a175fe8236a5958779ce9a35ebcfe33466b235.png  |  Bin 0 -> 33274 bytes
+|  .../f7daf36d473d72093558969a1bbefd6c1f16d713.md   |  234 ++
+|  .../fa0bd1abaf881c76b13faaa59d515752662d44e0.png  |  Bin 0 -> 35751 bytes
+|  .../fd79ec2b7d1e0a5825a6d25e5ef5a704a2418ab2.md   |  280 +++
+|  reports/html/c-firefox/index.html                 |   62 +
+|  .../10429bc01534168b89aa8a5e943f00cf49cd17c1.md   |  279 +++
+|  .../109a92ab4d02008f9862dfa0a506747db1405689.png  |  Bin 0 -> 90847 bytes
+|  .../202637a3a4e15133903e8f15ad0e44eb8d02fd72.png  |  Bin 0 -> 84347 bytes
+|  .../21d49c85dbd62e7f1e3e1a3a7ba9f8e7a48af7f0.md   |  234 ++
+|  .../26d7ed99344073aa8e57bd8ec01878947b37ec19.png  |  Bin 0 -> 84605 bytes
+|  .../2d1f3e7461f3e7fd3b3cd0cabe27d52bf8a5621b.png  |  Bin 0 -> 90749 bytes
+|  .../3ee8552733f2687d557c6543f3415a4a417902e0.png  |  Bin 0 -> 91005 bytes
+|  .../45de7d68f14229f2741322c85108f02b86d6e67a.md   |  280 +++
+|  .../5bb3c773402f507909e1709a95aa34da774b3f31.md   |  234 ++
+|  .../6ae4e29c2eed6bde7f353c5e1c55499347b0fccc.png  |  Bin 0 -> 90971 bytes
+|  .../8345e805c92e1c4e45aafc045eaf6bd507e7931a.md   |  234 ++
+|  .../84fc389a1f5fc84bbc8c00a2ec2123390e1c7cda.md   |  234 ++
+|  .../94137431ac553d16224302318e423b8e836c023f.md   |  280 +++
+|  .../b77db52227bd2700a8e39784369b6c3ecaa15179.md   |  280 +++
+|  .../c71a8e3060f00b5c262313dc53cd8ab4b1871d16.md   |  280 +++
+|  .../cd58b1841b63273dff57637def3094b6788907ae.md   |  280 +++
+|  .../d988bf04bbcca92a1687f55b599138868c9d9206.png  |  Bin 0 -> 84668 bytes
+|  .../e146995970cbf08eb42cc740affbdb85c1dc153f.png  |  Bin 0 -> 77934 bytes
+|  .../e2214869542628167eab2740a08f511d046980e5.png  |  Bin 0 -> 90984 bytes
+|  .../fbf976cf070e3d9aa33c0da004daffd0a849b961.png  |  Bin 0 -> 83281 bytes
+|  reports/html/c-webkit/index.html                  |   62 +
+|  reports/json/a-chromium.json                      | 2277 +++++++++++++++++
+|  reports/json/a-firefox.json                       | 2277 +++++++++++++++++
+|  reports/json/a-webkit.json                        | 2277 +++++++++++++++++
+|  reports/json/b-chromium.json                      | 2099 ++++++++++++++++
+|  reports/json/b-firefox.json                       | 2150 ++++++++++++++++
+|  reports/json/b-webkit.json                        | 2099 ++++++++++++++++
+|  reports/json/c-chromium.json                      | 2459 +++++++++++++++++++
+|  reports/json/c-firefox.json                       | 2459 +++++++++++++++++++
+|  reports/json/c-webkit.json                        | 2459 +++++++++++++++++++
+|  reports/summary.md                                |   75 +
+|  183 files changed, 39750 insertions(+)
+
+* 0284d16 2026-08-16 19:15:16 +0700 Pham Duy
+|     fix(tools): sua 2 loi phat hien khi chay chinh thuc 9 luot| 
+|  tools/run-all-browsers.mjs | 15 ++++++++++++++-
+|  tools/stamp-report.mjs     | 15 +++++++++++++--
+|  tools/summarize.mjs        | 17 +++++++++++------
+|  3 files changed, 38 insertions(+), 9 deletions(-)
+
+* 5151741 2026-08-16 18:59:55 +0700 Pham Duy
+|     fix(feature-c): tach BV-R03 khoi bug FR-12 + sua anh chup Fail trang cho 3 TC SEC| 
+|  tests/feature-c-product-admin.spec.js | 70 ++++++++++++++++++++++-----------
+|  1 file changed, 48 insertions(+), 22 deletions(-)
+
+* 0de9520 2026-08-16 18:59:34 +0700 Pham Duy
+|     chore(tools): run-all-browsers.mjs + stamp-report.mjs + summarize.mjs| 
+|  tools/run-all-browsers.mjs | 126 ++++++++++++++++++++++++++++++++++++
+|  tools/stamp-report.mjs     |  96 ++++++++++++++++++++++++++++
+|  tools/summarize.mjs        | 149 +++++++++++++++++++++++++++++++++++++++++++
+|  3 files changed, 371 insertions(+)
+
+* b45aac8 2026-08-16 18:50:12 +0700 Pham Duy
+|     test(feature-c): gan nhan Critical cho 3 TC SEC + xac nhan review D1-D4| 
+|  ai-audit/ai-audit-report.md           | 38 ++++++++++++++++++++++++++++++++-
+|  tests/feature-c-product-admin.spec.js | 12 +++++++++++
+|  2 files changed, 49 insertions(+), 1 deletion(-)
+
+* 6dc2174 2026-08-16 18:23:29 +0700 Pham Duy
+|     docs(ai-audit): AI-10..AI-12 cho Feature C - phat hien bug FR-12 + 3 loi script da sua| 
+|  ai-audit/ai-audit-report.md | 81 ++++++++++++++++++++++++++++++++++++++++---
+|  1 file changed, 76 insertions(+), 5 deletions(-)
+
+* 9c5c9db 2026-08-16 18:22:04 +0700 Pham Duy
+|     test(feature-c): page object + spec FR-15, chay that 9/19 Fail = 4 bug (2 moi)| 
+|  tests/feature-c-product-admin.spec.js | 215 ++++++++++++++++++++++++++++++++
+|  tests/pages/admin-products.page.js    | 134 ++++++++++++++++++++
+|  2 files changed, 349 insertions(+)
+
+* a01ddb4 2026-08-16 18:21:38 +0700 Pham Duy
+|     test(feature-c): data file 19 TC cho FR-15 admin CRUD| 
+|  tests/data/feature-c-product-admin.csv | 47 ++++++++++++++++++++++++++++++++
+|  1 file changed, 47 insertions(+)
+
+* f06d5ef 2026-08-16 17:50:16 +0700 Pham Duy
+|     docs(ai-audit): AI-09b (sua loi mat report Feature B) + xac nhan review C1-C5| 
+|  ai-audit/ai-audit-report.md | 73 ++++++++++++++++++++++++++++++++++++++++++-
+|  1 file changed, 72 insertions(+), 1 deletion(-)
+
+* d3348e4 2026-08-15 21:18:09 +0700 Pham Duy
+|     docs(ai-audit): them AI-07..AI-09 cho Feature B (FR-09)| 
+|  ai-audit/ai-audit-report.md | 72 ++++++++++++++++++++++++++++++++++++++++---
+|  1 file changed, 67 insertions(+), 5 deletions(-)
+
+* 0015dae 2026-08-15 21:16:56 +0700 Pham Duy
+|     test(feature-b): page object + spec FR-09, chay that 7/18 Fail = 4 bug| 
+|  tests/feature-b-coupon.spec.js | 241 +++++++++++++++++++++++++++++++++++++++
+|  tests/pages/cart.page.js       |  89 +++++++++++++++
+|  tests/pages/checkout.page.js   |  95 +++++++++++++++
+|  3 files changed, 425 insertions(+)
+
+* de89564 2026-08-15 21:16:33 +0700 Pham Duy
+|     test(feature-b): data file JSON 18 TC cho FR-09 coupon| 
+|  tests/data/feature-b-coupon.json | 355 +++++++++++++++++++++++++++++++++++++
+|  1 file changed, 355 insertions(+)
+
+* 593e2a8 2026-08-15 21:16:17 +0700 Pham Duy
+|     fix(utils): parseMoney giu dau am, loadJson khong trim, them normalizeVi| 
+|  tests/utils/assertions.js  | 56 ++++++++++++++++++++++++++++++++++++++------
+|  tests/utils/data-loader.js | 24 +++++++++++++++----
+|  2 files changed, 68 insertions(+), 12 deletions(-)
+
+* 303f586 2026-08-15 20:38:47 +0700 Pham Duy
+|     docs(ai-audit): backfill AI-00..AI-04 (setup phase) + xac nhan sinh vien da duyet| 
+|  ai-audit/ai-audit-report.md | 182 +++++++++++++++++++++++++++++++++++++++---
+|  1 file changed, 169 insertions(+), 13 deletions(-)
+
+* 82fddf5 2026-08-15 19:51:12 +0700 Pham Duy
+|     fix(data-loader): xu ly dong comment bi Excel tu quote sau khi resave| 
+|  .gitignore                     |  5 +++
+|  ai-audit/ai-audit-report.md    | 55 +++++++++++++++++++++++++
+|  docs/01-SETUP.md               | 16 ++++++--
+|  tests/data/feature-a-login.csv | 88 ++++++++++++++++++++--------------------
+|  tests/utils/data-loader.js     | 11 ++++-
+|  5 files changed, 126 insertions(+), 49 deletions(-)
+
+* b77a3da 2026-08-15 18:52:27 +0700 Pham Duy
+|     fix(feature-a): them BOM UTF-8 + quote nhat quan cho feature-a-login.csv| 
+|  ai-audit/ai-audit-report.md    | 93 ++++++++++++++++++++++++++++++++++------
+|  tests/data/feature-a-login.csv | 75 +++++++++++++++++---------------
+|  tests/utils/data-loader.js     | 17 +++++++-
+|  3 files changed, 135 insertions(+), 50 deletions(-)
+
+* 7972932 2026-08-15 17:28:45 +0700 Pham Duy
+|     test(feature-a): page object + spec FR-02, chay that xac nhan 10/16 Fail = 6 bug da biet| 
+|  tests/feature-a-login.spec.js | 186 ++++++++++++++++++++++++++++++++++++++++
+|  tests/pages/login.page.js     |  83 ++++++++++++++++++
+|  2 files changed, 269 insertions(+)
+
+* 2c01a77 2026-08-15 17:28:33 +0700 Pham Duy
+|     test(feature-a): data file 16 TC cho FR-02 tu HW02| 
+|  tests/data/feature-a-login.csv | 39 +++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 39 insertions(+)
+
+* b84c3fa 2026-08-15 16:30:30 +0700 Pham Duy
+|     test(utils): data-loader doc csv/json + 5 assertion pattern| 
+|  tests/utils/assertions.js  | 116 ++++++++++++++++++++++++++++++++++++++
+|  tests/utils/data-loader.js | 129 +++++++++++++++++++++++++++++++++++++++++++
+|  2 files changed, 245 insertions(+)
+
+* ad1f3d2 2026-08-15 15:51:32 +0700 Pham Duy
+|     chore(setup): package.json, playwright.config.js, preflight, env, base fixture| 
+|  package-lock.json       | 79 +++++++++++++++++++++++++++++++++++++++
+|  package.json            | 33 +++++++++++++++++
+|  playwright.config.js    | 94 +++++++++++++++++++++++++++++++++++++++++++++++
+|  tests/fixtures/.gitkeep |  0
+|  tests/fixtures/base.js  | 77 ++++++++++++++++++++++++++++++++++++++
+|  tests/utils/.gitkeep    |  0
+|  tests/utils/env.js      | 29 +++++++++++++++
+|  tools/.gitkeep          |  0
+|  tools/preflight.mjs     | 84 ++++++++++++++++++++++++++++++++++++++++++
+|  9 files changed, 396 insertions(+)
+
+* 190a9fb 2026-08-15 15:29:52 +0700 Pham Duy
+      chore: khoi tao repo HW04 - cau truc bai lam + huong dan docs  
+   .claude/skills/ai-audit-logger/.gitkeep      |   0
+   .claude/skills/automation-suite/.gitkeep     |   0
+   .claude/skills/data-driven-tests/.gitkeep    |   0
+   .claude/skills/multi-browser-report/.gitkeep |   0
+   .gitignore                                   |   7 +
+   README.md                                    | 132 +++++++++++++++++
+   ai-audit/ai-audit-report.md                  |  51 +++++++
+   ai-audit/ai-critique.md                      |  19 +++
+   bug-report/bug-report.md                     |  64 +++++++++
+   bug-report/screenshots/.gitkeep              |   0
+   docs/00-ROADMAP.md                           | 112 +++++++++++++++
+   docs/01-SETUP.md                             | 154 ++++++++++++++++++++
+   docs/02-DATA-DRIVEN-VA-ASSERTION.md          | 109 ++++++++++++++
+   docs/03-FEATURE-A-FR02.md                    | 189 +++++++++++++++++++++++++
+   docs/04-FEATURE-B-FR09.md                    | 163 +++++++++++++++++++++
+   docs/05-FEATURE-C-FR15.md                    | 137 ++++++++++++++++++
+   docs/06-MULTI-BROWSER-REPORT.md              | 120 ++++++++++++++++
+   docs/07-BUG-REPORT-GITHUB-ISSUES.md          | 105 ++++++++++++++
+   docs/08-MAIN-REPORT-GAP-ANALYSIS.md          | 137 ++++++++++++++++++
+   docs/09-VIDEO-TASK2.md                       |  65 +++++++++
+   docs/10-AGENT-SKILLS.md                      |  76 ++++++++++
+   docs/11-AI-AUDIT-CRITIQUE.md                 |  95 +++++++++++++
+   docs/12-GIT-COMMIT-LOG.md                    | 103 ++++++++++++++
+   docs/13-DONG-GOI-CHECKLIST.md                | 102 +++++++++++++
+   git-log/.gitkeep                             |   0
+   report/main-report.md                        |  93 ++++++++++++
+   reports/html/.gitkeep                        |   0
+   reports/json/.gitkeep                        |   0
+   tests/README.md                              |  19 +++
+   tests/data/.gitkeep                          |   0
+   tests/fixtures/.gitkeep                      |   0
+   tests/pages/.gitkeep                         |   0
+   tests/utils/.gitkeep                         |   0
+   tools/.gitkeep                               |   0
+   34 files changed, 2052 insertions(+)

@@ -6,7 +6,8 @@
 **Công cụ:** Playwright 1.62.1 + Playwright HTML reporter · Node v22.16.0 · Windows 11
 **AI:** Claude Code (Sonnet 5 / Opus 5) — log đầy đủ ở [`ai-audit/ai-audit-report.md`](../ai-audit/ai-audit-report.md)
 **Ngày chạy chính thức:** 2026-08-16
-**Video demo Task 2:** `<ĐIỀN SAU KHI QUAY>`
+**Video demo Task 2:** https://youtu.be/YoSvR0AmFMs (18:01, Unlisted)
+**Video demo Agent Skills:** https://youtu.be/0fjWAO-hutc (15:26, Unlisted)
 
 ---
 
@@ -410,9 +411,9 @@ Bài này cho ba bằng chứng cụ thể, không phải nhận định chung c
 | 1 | Task 1 — Feature A (FR-02) | 25 | **25** | 16 TC (yêu cầu ≥12) · dữ liệu ở `.csv` ngoài · dùng P1/P2/P3/P5 · cô lập bằng user dùng-một-lần nên 3 engine cho kết quả giống hệt · 10 TC Fail truy về đúng 6 bug đã biết |
 | 1 | Task 1 — Feature B (FR-09) | 25 | **25** | 18 TC · dữ liệu `.json` · **phát hiện & siết 1 Pass giả** (§3.3) · 2 TC đi luồng giỏ hàng thật · P3 chứng minh B007 ở tầng API |
 | 1 | Task 1 — Feature C (FR-15) | 25 | **25** | 19 TC · **tìm ra 2 bug MỚI**, trong đó 1 Critical (broken access control) mà HW02 xác nhận không test được từ UI · assert 2 tầng UI+DB cho kết luận chặt hơn HW02 |
-| 2 | Task 2 — Video demo | 15 | `<ĐIỀN>` | `<ĐIỀN SAU KHI QUAY>` |
-| 3 | Agent Skills | 10 | `<ĐIỀN>` | `<ĐIỀN SAU KHI LÀM docs/10>` |
-| | **Tổng** | **100** | `<ĐIỀN>` | |
+| 2 | Task 2 — Video demo | 15 | **15** | 18:01 (≥5 phút) · Unlisted · mở đầu `whoami`/`hostname` xác thực danh tính · https://youtu.be/YoSvR0AmFMs |
+| 3 | Agent Skills | 10 | **10** | 15:26 · Unlisted · 4 skill, mỗi skill 1 cảnh đủ 3 nhịp (đọc SKILL.md → gọi prompt thật → mở thành quả) end-to-end trên Feature C · https://youtu.be/0fjWAO-hutc |
+| | **Tổng** | **100** | **100** | |
 
 ---
 
