@@ -746,6 +746,45 @@ không còn bị ghi đè. Đã báo sinh viên chụp lại `tab-title-manual.p
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-15 đã đầy đủ cho setup + 3 feature +
-multi-browser report + bug report + main report + sửa bug title. Còn lại: video Task 2 (`docs/09`),
-Agent Skills (`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
+## [AI-16] Sửa prompt gọi skill bị lỗi `Unknown command` trong kịch bản `docs/10`
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-17 (+07) |
+| Bước trong quy trình | Thử quay theo `docs/10-AGENT-SKILLS.md` — prompt [2] |
+
+**Prompt (nguyên văn):**
+
+> "2. sửa lại giúp tôi nội dung của file docs10 rút gọn bớt những phần thừa và những phần nào dùng
+> prompt thì nhấn mạnh đọc dòng này thì dùng prompt và sửa lại các prompt tôi dùng prompt 2 bị báo
+> lỗi sau Unknown command: /automation-suite"
+
+**Output của AI:** Trước đó (phiên viết `docs/10`), AI đã viết 4 prompt mẫu theo cú pháp
+`/tên-skill <yêu cầu>` — mô phỏng đúng cách môi trường của chính AI (harness đang chạy) hiển thị
+gợi ý "khi người dùng gõ `/<skill-name>`, gọi qua công cụ Skill". AI **suy diễn nhầm** rằng cú pháp
+này cũng đúng cho Claude Code CLI thông thường của sinh viên.
+
+**Human review:** Sinh viên **tự phát hiện** bằng cách chạy thật prompt [2] trong Claude Code CLI
+của mình → nhận lỗi `Unknown command: /automation-suite`. Đây lại là một lỗi do **người dùng chạy
+thử và báo lại**, không phải AI tự kiểm ra.
+
+**Vì sao AI sót:** Giới hạn mô hình — AI khái quát hoá quy ước riêng của **môi trường mình đang
+chạy** (nơi `/<skill-name>` được harness diễn giải thành lệnh gọi Skill) sang một sản phẩm khác
+(Claude Code CLI tiêu chuẩn) mà không có căn cứ xác nhận hai môi trường giống nhau — một dạng lỗi
+"lấy mẫu phổ biến của chính mình" thay vì kiểm tra hệ thống đích thật sự.
+
+**Tôi đã sửa:** Đổi cả 4 prompt `[2]`, `[3]`, `[4]`, `[6]` trong `docs/10-AGENT-SKILLS.md` từ cú
+pháp `/tên-skill ...` sang câu văn thường có nhắc tên skill + đường dẫn `SKILL.md` (ví dụ "Dùng
+skill automation-suite (đọc `.claude/skills/automation-suite/SKILL.md` trước khi làm)..."), để
+Claude Code tự nhận diện qua mô tả trong frontmatter thay vì tra slash-command. Đồng thời rút gọn
+phần lời thoại lặp lại trong bảng 6 cảnh và thêm nhãn `📋 PROMPT [N]` rõ ràng trước mỗi khối lệnh.
+
+**Kết quả sau khi sửa:** Chưa có xác nhận chạy lại từ sinh viên trong `docs/10` (việc tiếp theo
+trước khi quay video); ghi vào đây trước để không bịa kết quả.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-16 đã đầy đủ cho setup + 3 feature +
+multi-browser report + bug report + main report + sửa bug title + sửa prompt skill. Còn lại: video
+Task 2 (`docs/09`), quay video Agent Skills (`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
