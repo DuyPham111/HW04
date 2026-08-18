@@ -26,6 +26,11 @@
 | AI-12 | Claude Code (Sonnet 5) | 2026-08-16 18:05 → 18:22 (+07) | Sinh `admin-products.page.js` + spec, tìm & sửa 3 lỗi script, chạy thật |
 | AI-13 | Claude Code (Sonnet 5) | 2026-08-16 18:40 → 19:18 (+07) | Sinh `run-all-browsers.mjs` + `stamp-report.mjs` + `summarize.mjs`, chạy 9 lượt chính thức, sửa 2 lỗi công cụ |
 | AI-14 | Claude Code (Sonnet 5) | 2026-08-16 19:30 → 19:55 (+07) | Chụp ảnh bằng chứng · viết `bug-report.md` (docs/07) · viết `main-report.md` + gap analysis (docs/08) |
+| AI-15 | Claude Code (Sonnet 5) | 2026-08-17 (+07) | Sửa bug `document.title` bị report React ghi đè |
+| AI-16 | Claude Code (Sonnet 5) | 2026-08-17 (+07) | Sửa prompt `docs/10-AGENT-SKILLS.md` khỏi cú pháp `/tên-skill` |
+| AI-17 | Claude Code (Sonnet 5) | 2026-08-18 ~10:05 (+07) | Quay demo `docs/10`: Bước 1 automation-suite cho Feature C — đọc UI thật + đối chiếu FR-15/FR-12 |
+| AI-18 | Claude Code (Sonnet 5) | 2026-08-18 ~10:20 (+07) | Quay demo `docs/10`: Bước 2+4 data-driven-tests — sinh `demo/feature-c.demo.csv` + kiểm loader |
+| AI-19 | Claude Code (Sonnet 5) | 2026-08-18 ~10:35 (+07) | Quay demo `docs/10`: hướng dẫn lệnh multi-browser-report cho Feature C, ghi vào `demo/` |
 
 ---
 
@@ -785,6 +790,155 @@ trước khi quay video); ghi vào đây trước để không bịa kết quả
 
 ---
 
-*(lặp block trên cho từng lượt tương tác — AI-01..AI-16 đã đầy đủ cho setup + 3 feature +
-multi-browser report + bug report + main report + sửa bug title + sửa prompt skill. Còn lại: video
-Task 2 (`docs/09`), quay video Agent Skills (`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
+---
+
+## [AI-17] Quay demo `docs/10`: Bước 1 automation-suite cho Feature C
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-18 ~10:05 (+07) |
+| Bước trong quy trình | Bước 1 skill `automation-suite`, theo kịch bản quay video `docs/10-AGENT-SKILLS.md` — dùng đúng cú pháp câu văn thường đã sửa ở AI-16 (không còn `/automation-suite`) |
+
+**Prompt (nguyên văn):**
+
+> "Dùng skill automation-suite (đọc .claude/skills/automation-suite/SKILL.md trước khi làm) để thực
+> hiện Bước 1 cho Feature C (FR-15 Quản lý Sản phẩm) của EShop.
+> Đọc mã nguồn thật: frontend-admin/src/App.jsx (phần activeTab products, handleProductSubmit, deleteProduct)
+> và backend/server.js các route /api/products.
+> Cho biết: selector nào dùng được, state của feature nằm ở đâu, URL có đổi khi chuyển tab không,
+> và đối chiếu với đặc tả FR-15 + FR-12 trong eshop-sut/README.md xem có chỗ nào code không làm đúng đặc tả.
+> Chỉ phân tích, chưa viết test, không sửa file nào."
+
+**Output của AI:** Bảng selector theo `placeholder` (không có `id`/`data-testid`); state = React
+state `products` + `localStorage['adminToken']`; URL không đổi (SPA một route, `activeTab` là
+state thuần) → không dùng được pattern P2; 2 vi phạm đặc tả có căn cứ dòng cụ thể: **FR-15**
+(`POST/PUT/DELETE /api/products` không validate `name`/`price`/độ dài — `server.js:167-189`; bug
+UI mass-rename khi sửa — `App.jsx:109-114`) và **FR-12** (3 route products thiếu middleware
+`authenticateToken` — so sánh với `import-products` có middleware). Kết luận "dialog xác nhận
+xóa" không thuộc FR-15 (thuộc FR-07) nên không được báo là bug sai đặc tả FR-15.
+
+**Human review:** Tự đọc lại toàn bộ output đã gửi, đối chiếu với các dòng đã đọc thật trong
+`server.js` lúc phân tích — phát hiện đã đọc `GET /api/products/:id` (dòng 159-165) và thấy dòng
+`if (row.id % 2 === 0) row.price = row.price.toString();` (ép kiểu `price` thành **string** cho
+sản phẩm có `id` chẵn) nhưng **không đưa chi tiết này vào câu trả lời cuối** gửi cho người dùng.
+
+**Vì sao AI sót:** Giới hạn mô hình — khi trả lời, tôi tự giới hạn nội dung đúng khuôn 4 câu hỏi
+tường minh của prompt (selector / state / URL / đối chiếu spec) mà không tự hỏi thông tin nào
+khác trong cùng đoạn code vừa đọc sẽ hữu ích cho **bước sau** của chính automation-suite (Bước 3
+— chọn assertion pattern P4 soft-numeric, cần biết trước kiểu dữ liệu trả về có ổn định không).
+Không phải thiếu dữ kiện — dữ kiện đã đọc được — mà là bị lọc bỏ theo mẫu "trả lời đúng khuôn câu
+hỏi" thay vì theo tính hữu ích cho toàn bộ pipeline.
+
+**Tôi đã sửa:** Ghi bổ sung phát hiện này vào chính mục audit thay vì bỏ qua, đánh dấu rõ để dùng
+ở Bước 3 sau này: bất kỳ TC nào đọc giá qua `GET /api/products/:id` với sản phẩm `id` chẵn phải so
+sánh giá bằng ép kiểu (`Number(...)`) thay vì so sánh nghiêm ngặt kiểu số, nếu không sẽ Fail sai
+lý do (lệch kiểu dữ liệu, không phải sai giá trị).
+
+**Kết quả sau khi sửa:** Không cần chạy lại gì (Bước 1 chỉ là phân tích, chưa có script) — bổ
+sung này chỉ nằm trong tài liệu, để không lặp lại sai sót khi viết page object/spec thật ở các
+bước sau.
+
+---
+
+## [AI-18] Quay demo `docs/10`: Bước 2+4 data-driven-tests cho Feature C
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-18 ~10:20 (+07) |
+| Bước trong quy trình | Bước 2 (file dữ liệu) + Bước 4 (kiểm loader) của skill `data-driven-tests`, quay demo `docs/10` |
+
+**Prompt (nguyên văn):**
+
+> "Dùng skill data-driven-tests (đọc .claude/skills/data-driven-tests/SKILL.md trước khi làm) để
+> chuyển test case Feature C (FR-15 Quản lý Sản phẩm) từ HW02 thành file dữ liệu .csv ngoài.
+> Cột expect ghi theo ĐẶC TẢ FR-15, không theo hành vi hiện tại của SUT.
+> Chạy Bước 4 của skill: kiểm xem hàm đọc dữ liệu có làm hộ việc của SUT ở chỗ nào không.
+>
+> QUAN TRỌNG: ghi kết quả ra demo/feature-c.demo.csv.
+> TUYỆT ĐỐI không sửa hay ghi đè bất kỳ file nào trong tests/ — đang quay video."
+
+**Output của AI:** `demo/feature-c.demo.csv` — 16 dòng dữ liệu (17 cột), truy vết về HW02
+(`FR15-DT-*`, `FR15-BV-*`) cộng 2 TC mới (`delete`, `category_id=9999` qua API). Thực nghiệm
+`resolveToken` thật (import chỉ đọc từ `tests/utils/data-loader.js`, không sửa file) xác nhận
+token `<spaces:3>` giữ đúng 3 dấu cách trong khi gõ thẳng 3 dấu cách sẽ bị `trim` mặc định của
+loader cắt sạch — kết luận file không có chỗ nào loader "làm hộ" SUT vì mọi ô cần giữ khoảng
+trắng/độ dài đều dùng token đúng cách.
+
+**Human review:** Khi viết audit log này, tự đọc lại toàn bộ 17 dòng đã sinh (không chỉ tin kết
+luận cũ) và đối chiếu ngược với chính phát hiện của **AI-17 cùng phiên** (server.js
+`POST/PUT/DELETE /api/products` hoàn toàn không validate/không auth) — phát hiện dòng
+`FR15-DT-02` (tên rỗng) đặt `rejectVia=client`: TC này chỉ điền form qua UI (`mode=create`), nên
+thuộc tính HTML `required` chặn đứng trước khi request được gửi đi — TC không bao giờ chạm được
+tới server, và vì vậy **không có khả năng phát hiện việc server cũng không validate `name`** —
+một lỗ hổng cùng bản chất với bug FR-12 (bypass qua gọi API trực tiếp) nhưng chưa có TC nào phủ.
+
+**Vì sao AI sót:** Giới hạn mô hình — khi gán `rejectVia=client` cho `FR15-DT-02`, tôi pattern-
+match theo mẫu phổ biến "có thuộc tính `required` trên input → kiểm qua UI là đủ", một suy luận
+hợp lý ở SUT có validate server thông thường. Nhưng bằng chứng ngược lại (server không validate
+gì) đã có sẵn trong tay từ chính AI-17 **cùng phiên** — tôi đã không đối chiếu lại kết luận đó khi
+thiết kế dòng dữ liệu này.
+
+**Tôi đã sửa:** Thêm dòng `FR15-EP-11` (`mode=api-only`, `productName=<empty>`) gọi thẳng
+`POST /api/products` với tên rỗng, `rejectVia=server`, cùng dạng với `FR15-EP-10`
+(`category_id=9999`) đã có sẵn cho tình huống "không automation được qua UI, phải chuyển tầng
+xuống API". Cập nhật comment đầu file (dòng 2) từ "2 TC mới" thành "3 TC mới" kèm lý do bổ sung
+ngay trong file.
+
+**Kết quả sau khi sửa:** Chạy lại script kiểm cấu trúc bằng chính thuật toán `splitCsvLine` của
+`tests/utils/data-loader.js` (chỉ đọc, không sửa file trong `tests/`): **17 cột, 17 dòng dữ liệu**
+(tăng từ 16), tất cả khớp số cột header — không dòng nào lệch cột sau khi thêm.
+
+---
+
+## [AI-19] Quay demo `docs/10`: lệnh multi-browser-report cho Feature C
+
+| | |
+|---|---|
+| Công cụ | Claude Code (Sonnet 5) |
+| Thời điểm | 2026-08-18 ~10:35 (+07) |
+| Bước trong quy trình | Bước 2 của skill `multi-browser-report`, quay demo `docs/10` — chỉ đưa lệnh, chưa tự chạy (SUT/video do sinh viên vận hành) |
+
+**Prompt (nguyên văn):**
+
+> "Dùng skill multi-browser-report (đọc .claude/skills/multi-browser-report/SKILL.md trước khi làm).
+> Cho tôi lệnh chạy Feature C trên cả 3 browser engine, mỗi lượt một HTML report riêng.
+> Report phải hiện "Run by: 23127183" kèm timestamp ISO.
+> Ghi kết quả vào demo/ để không đè lên 9 report đã nộp kèm báo cáo."
+
+**Output của AI:** Lệnh PowerShell `$env:REPORTS_ROOT = "demo/reports"; node
+tools/run-all-browsers.mjs c` (tận dụng cú pháp có sẵn của `run-all-browsers.mjs` để chạy 1
+feature × cả 3 engine), kèm giải thích 3 chỗ mang MSSV trên report (`metadata`, annotation từng
+TC, dải chân trang + `<title>` do `stamp-report.mjs` chèn) và checklist kiểm bằng mắt.
+
+**Human review:** Không chạy thật lệnh này trong phiên (SUT/terminal thuộc quyền điều khiển của
+sinh viên khi quay video), nên review chỉ bằng cách đọc lại mã nguồn thật của
+`run-all-browsers.mjs`/`stamp-report.mjs`/`playwright.config.js` (trích dẫn dòng cụ thể) để xác
+nhận cơ chế, không đoán. Khi tự soát lại để viết audit log này, phát hiện: cú pháp
+`$env:REPORTS_ROOT = "demo/reports"` là lệnh gán **riêng biệt** trong PowerShell, có hiệu lực
+**toàn bộ phiên cửa sổ đó** cho tới khi bị xoá — không giống một tiền tố "dùng một lần" như
+`VAR=x cmd` của bash. Nếu sinh viên chạy lệnh demo này rồi, trong CÙNG cửa sổ đó chạy tiếp lệnh
+9-lượt chính thức định ghi vào `reports/` mặc định, kết quả sẽ **âm thầm vẫn ghi vào
+`demo/reports/`** — đúng rủi ro mà việc tách `demo/` ra đời để tránh, nay xảy ra theo hướng ngược.
+
+**Vì sao AI sót:** Giả định môi trường — tôi ngầm giả định cách gán biến môi trường trước một
+lệnh có phạm vi "một lần dùng" giống cú pháp inline của bash, nhưng PowerShell `$env:VAR = ...`
+có ngữ nghĩa khác hẳn (toàn phiên). Đây là giả định ngầm về cách sinh viên sẽ dùng lại (hay không
+dùng lại) cùng một cửa sổ terminal giữa lượt demo và lượt nộp bài chính thức, mà tôi không nêu rõ
+trong hướng dẫn.
+
+**Tôi đã sửa:** Bổ sung bước dọn biến môi trường ngay sau khi dùng xong
+(`Remove-Item Env:\REPORTS_ROOT`) trước khi chạy 9 lượt chính thức trong cùng cửa sổ, và đã gửi
+lại hướng dẫn đã sửa cho sinh viên trong lượt trả lời kế tiếp.
+
+**Kết quả sau khi sửa:** Chưa có số liệu chạy thật để đối chiếu (đúng nguyên tắc không bịa số
+liệu) — sẽ xác nhận khi sinh viên báo lại đã chạy xong cả lượt demo (`demo/reports/html/c-*`) lẫn
+lượt chính thức (`reports/html/*`), thấy đúng hai bộ report tách biệt, không lẫn vào nhau.
+
+---
+
+*(lặp block trên cho từng lượt tương tác — AI-01..AI-19 đã đầy đủ cho setup + 3 feature +
+multi-browser report + bug report + main report + sửa bug title + sửa prompt skill + demo quay
+video docs/10 cho Feature C. Còn lại: video Task 2 (`docs/09`), phần còn lại của quay video Agent
+Skills (`docs/10`), AI Critique (`docs/11`), đóng gói (`docs/13`))*
